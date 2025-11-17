@@ -36,7 +36,7 @@ function watcher() {
 
 // Основные задачи
 // const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
-const mainTasks = gulp.series(gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(gulp.parallel(copy, html, scss, js, images, tailwind));
 
 // Построение сценариев выполнения задач
 const build = gulp.series(reset, mainTasks);
