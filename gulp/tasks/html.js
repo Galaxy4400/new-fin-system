@@ -15,7 +15,7 @@ export const html = () => {
 				)
 			)
 			.pipe(fileInclude())
-			// .pipe(app.plugins.replace(/@img\//g, "img/"))
+			.pipe(app.plugins.replace(/@img\//g, "img/"))
 			// .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
 			.pipe(app.gulp.dest(app.path.build.html))
 			.pipe(app.plugins.browsersync.stream())
