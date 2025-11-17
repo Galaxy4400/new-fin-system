@@ -18,6 +18,7 @@ export const path = {
 		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
 		svg: `${srcFolder}/assets/img/**/*.svg`,
 		scss: `${srcFolder}/assets/scss/style.scss`,
+		css: `${srcFolder}/assets/css/tailwind.css`,
 		html: `${srcFolder}/**/*.{html,php}`,
 		files: `${srcFolder}/assets/files/**/*.*`,
 		svgicons: `${srcFolder}/assets/img/svgicons/*.svg`,
@@ -25,6 +26,7 @@ export const path = {
 	watch: {
 		js: `${srcFolder}/assets/js/**/*.js `,
 		scss: `${srcFolder}/assets/scss/**/*.scss`,
+		css: `${srcFolder}/assets/css/tailwind.css`,
 		html: `${srcFolder}/**/*.{html,php}`,
 		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
 		files: `${srcFolder}/assets/files/**/*.*`,

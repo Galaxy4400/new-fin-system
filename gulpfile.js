@@ -20,6 +20,7 @@ import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
+import { tailwind } from "./gulp/tasks/tw.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -39,7 +40,7 @@ const mainTasks = gulp.series(gulp.parallel(copy, html, scss, js, images));
 
 // Построение сценариев выполнения задач
 const build = gulp.series(reset, mainTasks);
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server, tailwind));
 
 // Экспорт сценариев для добавления в скрипт в package.json
 export { dev };
