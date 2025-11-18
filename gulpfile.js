@@ -4,11 +4,11 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // global process
 global.app = {
-	isBuild: process.argv.includes("--build"),
-	isDev: !process.argv.includes("--build"),
-	path: path,
-	gulp: gulp,
-	plugins: plugins,
+  isBuild: process.argv.includes("--build"),
+  isDev: !process.argv.includes("--build"),
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
 };
 
 // Импорт задач
@@ -17,9 +17,9 @@ import { tailwind } from "./gulp/tasks/tw.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
-	gulp.watch(path.watch.html, tailwind);
-	gulp.watch(path.watch.css, tailwind);
-	gulp.watch(path.watch.components, tailwind);
+  gulp.watch(path.watch.pages, tailwind);
+  gulp.watch(path.watch.css, tailwind);
+  gulp.watch(path.watch.components, tailwind);
 }
 
 // Основные задачи
