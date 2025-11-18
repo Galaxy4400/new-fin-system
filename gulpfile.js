@@ -19,6 +19,7 @@ import { tailwind } from "./gulp/tasks/tw.js";
 function watcher() {
 	gulp.watch(path.watch.html, tailwind);
 	gulp.watch(path.watch.css, tailwind);
+	gulp.watch(path.watch.components, tailwind);
 }
 
 // Основные задачи

@@ -18,7 +18,8 @@ export const path = {
 		css: `${srcFolder}/css/tailwind.css`,
 	},
 	watch: {
-		html: `${buildFolder}/*.php`,
+		pages: `${buildFolder}/*.php`,
+		components: `${buildFolder}/components/**/*.php`,
 		css: `${srcFolder}/css/tailwind.css`,
 		// js: `${srcFolder}/js/**/*.js `,
 		// img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
