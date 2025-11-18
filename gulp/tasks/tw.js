@@ -1,47 +1,39 @@
 import { spawn } from "child_process";
 
 export const tailwind = (done) => {
-	const input = app.path.src.css;
+	const src = app.path.src.css;
 	const outNormal = app.path.build.css + "tailwind.css";
 	const outMin = app.path.build.css + "tailwind.min.css";
 
-	// Команда для обычного (не минифицированного)
-	const baseArgs = ["-i", input, "-o", outNormal];
-
-	// Dev → используем watch + одну версию файла
+	// DEV MODE
 	if (app.isDev) {
-		const devArgs = [...baseArgs, "--watch"];
+		const devArgs = ["-i", src, "-o", outNormal, "--watch"];
 
 		spawn("npx", ["tailwindcss", ...devArgs], {
 			shell: true,
 			stdio: "inherit",
 		});
 
-		done(); // watch остаётся висеть
+		done();
 		return;
 	}
 
-	// =======================
 	// BUILD MODE
-	// =======================
+	const normalArgs = ["-i", src, "-o", outNormal];
 
-	// 1. Генерируем обычный CSS
-	const normal = spawn("npx", ["tailwindcss", ...baseArgs], {
+	const normal = spawn("npx", ["tailwindcss", ...normalArgs], {
 		shell: true,
 		stdio: "inherit",
 	});
 
 	normal.on("close", () => {
-		// 2. После генерации запускаем минификацию отдельно
-		const minArgs = ["-i", input, "-o", outMin, "--minify"];
+		const minArgs = ["-i", src, "-o", outMin, "--minify"];
 
 		const minified = spawn("npx", ["tailwindcss", ...minArgs], {
 			shell: true,
 			stdio: "inherit",
 		});
 
-		minified.on("close", () => {
-			done();
-		});
+		minified.on("close", () => done());
 	});
 };

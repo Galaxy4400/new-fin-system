@@ -15,25 +15,24 @@ export const path = {
 	},
 	src: {
 		js: `${srcFolder}/assets/js/app.js`,
-		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
+		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp,avif}`,
 		svg: `${srcFolder}/assets/img/**/*.svg`,
 		scss: `${srcFolder}/assets/scss/style.scss`,
 		css: `${srcFolder}/assets/css/tailwind.css`,
 		html: `${srcFolder}/**/*.{html,php}`,
 		files: `${srcFolder}/assets/files/**/*.*`,
-		svgicons: `${srcFolder}/assets/img/svgicons/*.svg`,
+		htaccess: `${srcFolder}/.htaccess`,
 	},
 	watch: {
 		js: `${srcFolder}/assets/js/**/*.js `,
 		scss: `${srcFolder}/assets/scss/**/*.scss`,
 		css: `${srcFolder}/assets/css/tailwind.css`,
 		html: `${srcFolder}/**/*.{html,php}`,
-		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
+		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
 		files: `${srcFolder}/assets/files/**/*.*`,
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,
 	srcFolder: srcFolder,
 	rootFolder: rootFolder,
-	ftp: "test", // Папка на удалённом сервере
 };
