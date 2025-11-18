@@ -12,6 +12,7 @@ export const path = {
 		images: `${buildFolder}/assets/img/`,
 		fonts: `${buildFolder}/assets/fonts/`,
 		files: `${buildFolder}/assets/files/`,
+		langs: `${buildFolder}/lang/langs/`,
 	},
 	src: {
 		js: `${srcFolder}/assets/js/app.js`,
@@ -21,6 +22,7 @@ export const path = {
 		css: `${srcFolder}/assets/css/tailwind.css`,
 		html: `${srcFolder}/**/*.{html,php}`,
 		files: `${srcFolder}/assets/files/**/*.*`,
+		langs: `${srcFolder}/lang/langs/*.json`,
 		htaccess: `${srcFolder}/.htaccess`,
 	},
 	watch: {
@@ -30,6 +32,8 @@ export const path = {
 		html: `${srcFolder}/**/*.{html,php}`,
 		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
 		files: `${srcFolder}/assets/files/**/*.*`,
+		langs: `${srcFolder}/lang/langs/*.json`,
+		htaccess: `${srcFolder}/.htaccess`,
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,
