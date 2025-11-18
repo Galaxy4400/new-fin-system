@@ -1,15 +1,19 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import 'tailwindcss';
 
 /* Указываем, откуда Tailwind должен забирать классы */
-@source "../../dist/*.{html,php}";
-@source "../../dist/components/**/*.{html,php}";
+@source '../../dist/*.{html,php}';
+@source '../../dist/components/**/*.{html,php}';
 
 @theme {
-	--color-primary: #ff4757;
+  --font-sans: 'Inter', sans-serif;
 
-	--spacing-container: 1224px;
+  --color-primary: #ff4757;
+
+  --spacing-container: 1224px;
 }
 
 @utility bs-content {
-	box-sizing: content-box;
+  box-sizing: content-box;
 }
