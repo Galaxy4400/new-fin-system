@@ -14,17 +14,15 @@
       </nav>
       <div class="flex items-center gap-4">
         <a class="btn" href="<?= url('sign-up') ?>">Sign up</a>
-        <div>
+        <div class="relative">
           <button class="btn"><?= $lang ?></button>
-          <!-- <div>
-            <div>
-              <ul>
-                <?php foreach ($supportedLanguages as $listLang) { ?>
-                <li data-lang="<?= $listLang ?>"><?= $listLang ?></li>
-                <?php } ?>
-              </ul>
-            </div>
-          </div> -->
+          <div class="bg-primary absolute top-full left-0 text-white">
+            <ul>
+              <?php foreach ($supportedLanguages as $listLang) { ?>
+              <li data-lang="<?= $listLang ?>"><?= $listLang ?></li>
+              <?php } ?>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,6 @@
+# Игнорируем всё
 *.php
-!src/**/*.php
-!dist/**/*.php
+
+# Разрешаем форматировать только в dist/
+!dist/*.php
+!dist/components/**/*.php

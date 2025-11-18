@@ -1,6 +1,6 @@
 <?php
 
-$langFiles = glob(__DIR__ . '../lang/*.json');
+$langFiles = glob(__DIR__ . '/../lang/*.json');
 
 $supportedLanguages = array_map(function ($file) {
 	return pathinfo($file, PATHINFO_FILENAME);
@@ -15,7 +15,7 @@ global $lang;
 $lang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
 
 $translations = [];
-$langFile = __DIR__ . "../lang/{$lang}.json";
+$langFile = __DIR__ . "/../lang/{$lang}.json";
 
 if (file_exists($langFile)) {
 	$jsonContent = file_get_contents($langFile);
@@ -27,10 +27,7 @@ if (file_exists($langFile)) {
 	}
 }
 
-$commonKeys = [
-	'{site_name}' => $offer_name,
-	'{country}' => getValueByPath($translations, 'v.country'),
-];
+$commonKeys = ['{site_name}' => $offer_name, '{country}' => getValueByPath($translations, 'v.country')];
 
 function getValueByPath($arr, $path, $separator = '.')
 {
