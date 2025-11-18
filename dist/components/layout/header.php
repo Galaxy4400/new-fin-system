@@ -1,5 +1,5 @@
 <header>
-	<div>
+	<div class="max-w-container mx-auto bg-purple-500 px-4">
 		<a href="<?= url() ?>">
 			<div><?= $offer_name ?></div>
 		</a>
