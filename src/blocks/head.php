@@ -37,7 +37,7 @@ if ($pagePath) {
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="<?= t('t.main.meta_twitter_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
 	<meta name="twitter:description" content="<?= t('t.main.meta_twitter_description', ['{site_name}' => $offer_name]) ?>" />
-	<meta name="twitter:image" content="https://<?= $domain ?>/public/img/twitter_image.png" />
+	<meta name="twitter:image" content="https://<?= $domain ?>/assets/img/twitter_image.png" />
 
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:type" content="website" />
@@ -45,7 +45,7 @@ if ($pagePath) {
 	<meta property="og:url" content="<?= htmlspecialchars($currentPageUrl) ?>" />
 	<meta property="og:title" content="<?= t('t.main.meta_og_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
 	<meta property="og:description" content="<?= t('t.main.meta_og_description', ['{site_name}' => $offer_name]) ?>" />
-	<meta property="og:image" content="https://<?= $domain ?>/public/img/twitter_image.png" />
+	<meta property="og:image" content="https://<?= $domain ?>/assets/img/twitter_image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="<?= $offer_name ?>" />
@@ -70,17 +70,19 @@ if ($pagePath) {
 	<?php endforeach; ?>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="/public/img/favicon.ico">
-	<link rel="icon" type="image/x-icon" sizes="256x256" href="/public/img/favicon.ico">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico">
+	<link rel="icon" type="image/x-icon" sizes="256x256" href="/assets/img/favicon.ico">
 
 	<!-- CSS with preload for better performance -->
-	<link rel="preload" href="/public/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<!-- <link rel="preload" href="/assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript>
-		<link rel="stylesheet" href="/public/css/style.min.css">
-	</noscript>
+		<link rel="stylesheet" href="/assets/css/style.min.css">
+	</noscript> -->
 
-	<!-- <link rel="preload" as="image" href="/public/img/main.webp" imagesrcset="/public/img/main.webp" imagesizes="100vw">
-	<link rel="preload" as="image" href="/public/img/main-mobile.webp" imagesrcset="/public/img/main-mobile.webp" imagesizes="(max-width: 767px) 100vw, 100vw"> -->
+	<link rel="stylesheet" href="/assets/css/tailwind.css">
+
+	<!-- <link rel="preload" as="image" href="/assets/img/main.webp" imagesrcset="/assets/img/main.webp" imagesizes="100vw">
+	<link rel="preload" as="image" href="/assets/img/main-mobile.webp" imagesrcset="/assets/img/main-mobile.webp" imagesizes="(max-width: 767px) 100vw, 100vw"> -->
 
 	<!-- JavaScript Configuration -->
 	<script>
@@ -98,8 +100,8 @@ if ($pagePath) {
 			"@type": "SoftwareApplication",
 			"name": "<?= htmlspecialchars($offer_name) ?>",
 			"url": "<?= htmlspecialchars($currentPageUrl) ?>",
-			"logo": "https://<?= $domain ?>/public/img/favicon.ico",
-			"image": "https://<?= $domain ?>/public/img/twitter_image.png",
+			"logo": "https://<?= $domain ?>/assets/img/favicon.ico",
+			"image": "https://<?= $domain ?>/assets/img/twitter_image.png",
 			"description": "<?= htmlspecialchars(t('t.main.meta_description', ['{site_name}' => $offer_name])) ?>",
 			"applicationCategory": "FinanceApplication",
 			"operatingSystem": "Web Browser",
@@ -123,4 +125,6 @@ if ($pagePath) {
 			}
 		}
 	</script>
+
+	<link rel="preload" href="/assets/css/tailwind.css" as="style">
 </head>
