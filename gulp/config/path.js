@@ -1,14 +1,16 @@
 import * as nodePath from "path";
 
 const rootFolder = nodePath.basename(nodePath.resolve());
-const buildFolder = "./dist/assets";
+const buildFolder = "./dist";
+const assetsFolder = "./dist/assets";
 const srcFolder = "./src";
 
 export const path = {
 	build: {
-		js: `${buildFolder}/js/`,
-		css: `${buildFolder}/css/`,
-		img: `${buildFolder}/img/`,
+		js: `${assetsFolder}/js/`,
+		css: `${assetsFolder}/css/`,
+		img: `${assetsFolder}/img/`,
+		html: `${buildFolder}/`,
 	},
 	src: {
 		js: `${srcFolder}/js/*.js`,
@@ -16,12 +18,14 @@ export const path = {
 		css: `${srcFolder}/css/tailwind.css`,
 	},
 	watch: {
-		js: `${srcFolder}/js/**/*.js `,
+		html: `${buildFolder}/*.php`,
 		css: `${srcFolder}/css/tailwind.css`,
-		img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
+		// js: `${srcFolder}/js/**/*.js `,
+		// img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
 	},
-	clean: buildFolder,
+	clean: assetsFolder,
 	buildFolder: buildFolder,
+	assetsFolder: assetsFolder,
 	srcFolder: srcFolder,
 	rootFolder: rootFolder,
 };
