@@ -17,5 +17,5 @@ npm-debug.log*
 *.rar
 *.zip
 
-# Папка с собранными файлами проекта
-dist/
+dist/lang/langs/*
+!dist/lang/langs/en.json
