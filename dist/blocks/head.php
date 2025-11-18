@@ -73,16 +73,7 @@ if ($pagePath) {
 	<link rel="shortcut icon" href="/assets/img/favicon.ico">
 	<link rel="icon" type="image/x-icon" sizes="256x256" href="/assets/img/favicon.ico">
 
-	<!-- CSS with preload for better performance -->
-	<!-- <link rel="preload" href="/assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript>
-		<link rel="stylesheet" href="/assets/css/style.min.css">
-	</noscript> -->
-
 	<link rel="stylesheet" href="/assets/css/tailwind.css">
-
-	<!-- <link rel="preload" as="image" href="/assets/img/main.webp" imagesrcset="/assets/img/main.webp" imagesizes="100vw">
-	<link rel="preload" as="image" href="/assets/img/main-mobile.webp" imagesrcset="/assets/img/main-mobile.webp" imagesizes="(max-width: 767px) 100vw, 100vw"> -->
 
 	<!-- JavaScript Configuration -->
 	<script>
