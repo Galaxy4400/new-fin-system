@@ -1,0 +1,3 @@
+*.php
+!src/**/*.php
+!dist/**/*.php
