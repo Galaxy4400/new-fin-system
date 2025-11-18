@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight";
 
 /* Указываем, откуда Tailwind должен забирать классы */
 @source "../../dist/*.{html,php}";
@@ -9,4 +8,8 @@
 	--color-primary: #ff4757;
 
 	--spacing-container: 1248px;
+}
+
+@utility bs-content {
+	box-sizing: content-box;
 }
