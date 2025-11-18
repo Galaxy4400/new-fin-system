@@ -1,6 +1,5 @@
 {
   "plugins": ["@prettier/plugin-php", "prettier-plugin-tailwindcss"],
-  "bracketSameLine": true,
   "singleQuote": true,
   "printWidth": 120,
   "overrides": [

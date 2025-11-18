@@ -9,11 +9,17 @@
 @theme {
   --font-sans: 'Inter', sans-serif;
 
+  --color-primary-light: #ff707c;
   --color-primary: #ff4757;
+  --color-primary-dark: #e82939;
 
   --spacing-container: 1224px;
 }
 
 @utility bs-content {
   box-sizing: content-box;
+}
+
+.btn {
+  @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
 }
