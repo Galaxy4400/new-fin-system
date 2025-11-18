@@ -2,26 +2,26 @@
 include_once 'lang/translation.php';
 ?>
 
-<footer class="bg-red-light v-padding">
-	<div class="_container">
-		<div class="grid-big">
-			<div class="grid">
-				<div class="footer-main">
-					<div class="h2"><?= $offer_name ?></div>
-					<nav class="footer-nav">
-						<ul class="footer-ul">
-							<li><a class="menu-link" href="<?= url('/', '', '#about') ?>"><?= t('t.main.menu_about') ?></a></li>
-							<li><a class="menu-link" href="<?= url('/', '', '#features') ?>"><?= t('t.main.menu_features') ?></a></li>
-							<li><a class="menu-link" href="<?= url('/', '', '#reviews') ?>"><?= t('t.main.menu_reviews') ?></a></li>
-							<li><a class="menu-link" href="<?= url('/', '', '#faq') ?>"><?= t('t.main.menu_faq') ?></a></li>
+<footer>
+	<div>
+		<div>
+			<div>
+				<div>
+					<div><?= $offer_name ?></div>
+					<nav>
+						<ul>
+							<li><a href="<?= url('/', '', '#about') ?>"><?= t('t.main.menu_about') ?></a></li>
+							<li><a href="<?= url('/', '', '#features') ?>"><?= t('t.main.menu_features') ?></a></li>
+							<li><a href="<?= url('/', '', '#reviews') ?>"><?= t('t.main.menu_reviews') ?></a></li>
+							<li><a href="<?= url('/', '', '#faq') ?>"><?= t('t.main.menu_faq') ?></a></li>
 						</ul>
-						<ul class="footer-ul">
+						<ul>
 							<li><a href="<?= url('privacy') ?>"><?= t('t.main.menu_privacy') ?></a></li>
 							<li><a href="<?= url('conditions') ?>"><?= t('t.main.menu_conditions') ?></a></li>
 						</ul>
 					</nav>
 				</div>
-				<div class="social">
+				<div>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 						<path d="M18.3263 1.90381H21.6998L14.3297 10.3273L23 21.7898H16.2112L10.894 14.8378L4.80995 21.7898H1.43443L9.31743 12.7799L1 1.90381H7.96111L12.7674 8.25814L18.3263 1.90381ZM17.1423 19.7706H19.0116L6.94539 3.81694H4.93946L17.1423 19.7706Z" fill="currentColor" />
 					</svg>
@@ -33,13 +33,13 @@ include_once 'lang/translation.php';
 					</svg>
 				</div>
 			</div>
-			<div class="grid">
-				<p class="small-text"><?= t('t.main.footer__disclamer_1', ['{site_name}' => $offer_name]) ?></p>
-				<p class="small-text"><?= t('t.main.footer__disclamer_2', ['{site_name}' => $offer_name]) ?></p>
-				<p class="small-text"><?= t('t.main.footer__disclamer_3', ['{site_name}' => $offer_name]) ?></p>
-				<p class="small-text"><?= t('t.main.footer__disclamer_4', ['{site_name}' => $offer_name]) ?></p>
+			<div>
+				<p><?= t('t.main.footer__disclamer_1', ['{site_name}' => $offer_name]) ?></p>
+				<p><?= t('t.main.footer__disclamer_2', ['{site_name}' => $offer_name]) ?></p>
+				<p><?= t('t.main.footer__disclamer_3', ['{site_name}' => $offer_name]) ?></p>
+				<p><?= t('t.main.footer__disclamer_4', ['{site_name}' => $offer_name]) ?></p>
 			</div>
-			<div class="center">Copyright 2025 © BRAND, All Right Reserved</div>
+			<div>Copyright 2025 © BRAND, All Right Reserved</div>
 		</div>
 	</div>
 </footer>
