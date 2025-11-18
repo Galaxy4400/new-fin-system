@@ -17,5 +17,5 @@ npm-debug.log*
 *.rar
 *.zip
 
-build/lang/langs/*
-!build/lang/langs/en.json
+dist/lang/langs/*
+!dist/lang/langs/en.json
