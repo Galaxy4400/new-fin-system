@@ -11,7 +11,7 @@ include_once 'blocks/engine.php';
 	<div>
 		<?php include 'blocks/header.php' ?>
 
-		<main>
+		<main class="text-primary">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit.
 		</main>
 

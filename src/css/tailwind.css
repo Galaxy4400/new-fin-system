@@ -3,3 +3,9 @@
 
 /* Указываем, откуда Tailwind должен забирать классы */
 @source "../../dist/*.{html,php}";
+
+@theme {
+	--color-primary: #ff4757;
+
+	--spacing-container: 1248px;
+}

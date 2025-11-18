@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-primary: #ff4757;
   }
 }
 @layer base {
@@ -201,6 +202,9 @@
   }
   .resize {
     resize: both;
+  }
+  .text-primary {
+    color: var(--color-primary);
   }
   .lowercase {
     text-transform: lowercase;

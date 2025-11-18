@@ -1,6 +1,6 @@
 <?php
 
-$langFiles = glob(__DIR__ . '/langs/*.json');
+$langFiles = glob(__DIR__ . '../lang/*.json');
 
 $supportedLanguages = array_map(function ($file) {
 	return pathinfo($file, PATHINFO_FILENAME);
@@ -15,7 +15,7 @@ global $lang;
 $lang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
 
 $translations = [];
-$langFile = __DIR__ . "/langs/{$lang}.json";
+$langFile = __DIR__ . "../lang/{$lang}.json";
 
 if (file_exists($langFile)) {
 	$jsonContent = file_get_contents($langFile);
