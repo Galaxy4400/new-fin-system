@@ -2,4 +2,4 @@
 @import "tailwindcss/preflight";
 
 /* Указываем, откуда Tailwind должен забирать классы */
-@source "../../build/**/*.{html,php,js}";
+@source "../../dist/**/*.{html,php,js}";
