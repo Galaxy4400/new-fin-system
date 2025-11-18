@@ -1,6 +1,12 @@
 <?php
 require_once 'aff.php';
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+	http_response_code(405);
+	echo json_encode(['success' => false, 'error' => 'Method not allowed']);
+	exit;
+}
+
 define("INVALID_AUTH_ERROR_CODE", "invalid_auth");
 define("INVALID_PARAMS_ERROR_CODE", "invalid_params");
 define("LEAD_DECLINED_ERROR_CODE", "lead_declined");
@@ -129,8 +135,14 @@ $validation_errors = array();
 if (empty($first_name)) {
 	$validation_errors["first_name"] = "First name is required.";
 }
+if (!empty($first_name) && preg_match('/\d/', $first_name)) {
+	$validation_errors["first_name"] = "First name cannot contain numbers.";
+}
 if (empty($last_name)) {
 	$validation_errors["last_name"] = "Last name is required.";
+}
+if (!empty($last_name) && preg_match('/\d/', $last_name)) {
+	$validation_errors["last_name"] = "Last name cannot contain numbers.";
 }
 // if (!emailCheck($email)) {
 //     $validation_errors["email"] = "Please enter a valid email address";
@@ -140,6 +152,9 @@ if (empty($email)) {
 }
 if (empty($phone)) {
 	$validation_errors["phone"] = "Phone number is required.";
+}
+if (isset($_COOKIE['form_submitted'])) {
+	$validation_errors["form_submitted"] = "Form already submitted recently. Please try again later.";
 }
 if (!empty($validation_errors)) {
 	echo json_encode(array(
@@ -164,7 +179,7 @@ $apiData = [
 	'offer_id' => '2',
 	'aff_sub' => $_POST['subid'] ?? 'empty',
 	'aff_sub2' => '',
-	'aff_sub3' => $_POST['offer_name'] ?? 'No name',
+	'aff_sub3' => $offer_name ?? 'No name',
 	'aff_sub4' => $_POST['id'] ?? 'empty',
 	'aff_sub5' => isset($_GET['test']) ? $_GET['test'] : '',
 	'aff_sub11' => 'seo',
@@ -226,6 +241,8 @@ switch ($http_code) {
 		if (!empty($decodedResponse['auto_login_url'])) {
 			$payload["auto_login_url"] = $decodedResponse['auto_login_url'];
 		}
+
+		setcookie('form_submitted', '1', time() + 3600, '/', '', false, true);
 	case 500:
 		break;
 }

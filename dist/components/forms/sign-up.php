@@ -1,8 +1,7 @@
-<form class="form _loading" name="register" method="post" action="reg/send.php" data-form data-send="ajax" data-validation data-after="mainFormAfterSubmit" data-autocomplete-off>
+<form class="form _loading" name="register" method="post" action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>" data-form data-send="ajax" data-validation data-after="mainFormAfterSubmit" data-autocomplete-off>
 	<input type="hidden" name="id" value="su">
 	<input type="hidden" name="country" value="<?= t('v.country') ?>">
 	<input type="hidden" name="subid" value="<?= $subid ?>">
-	<input type="hidden" name="offer_name" value="<?= $offer_name_api ?>">
 	<input type="hidden" name="language" value="<?= $lang ?>">
 
 	<div class="form__section">

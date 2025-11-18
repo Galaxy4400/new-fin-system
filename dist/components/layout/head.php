@@ -82,7 +82,7 @@ if ($pagePath) {
 		window.DEFAULT_LANG = '<?= $defaultLang ?>';
 	</script>
 
-	<?php include 'blocks/scripts.php' ?>
+	<?php include 'scripts.php' ?>
 
 	<!-- Structured Data (Schema.org) -->
 	<script type="application/ld+json">

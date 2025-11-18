@@ -1,6 +1,3 @@
-<?php
-include_once('lang/translation.php');
-?>
 <header>
 	<div>
 		<div>

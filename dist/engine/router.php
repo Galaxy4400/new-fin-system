@@ -25,6 +25,10 @@ if (preg_match('/[A-Z]/', $requestUri)) {
 	exit;
 }
 
+if (isset($_GET['action']) && $_GET['action'] === 'send') {
+	require __DIR__ . 'send.php';
+	exit;
+}
 
 function url($path = '', $query = '', $hash = '')
 {
