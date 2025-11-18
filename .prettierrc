@@ -1,5 +1,7 @@
 {
   "plugins": ["@prettier/plugin-php", "prettier-plugin-tailwindcss"],
+  "bracketSameLine": true,
+  "singleQuote": true,
   "overrides": [
     {
       "files": "**/*.php",
