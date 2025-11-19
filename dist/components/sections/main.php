@@ -1,5 +1,6 @@
-<section class="bg-primary-lighter py-5 md:py-10">
-  <div class="content-container grid gap-7 md:grid-cols-2 md:gap-0">
+<section class="bg-primary-lighter relative py-5 md:py-10">
+  <img class="absolute top-1/2 left-1/2 -translate-1/2" src="/assets/img/bg-1.png" alt="deco" />
+  <div class="content-container relative grid gap-7 md:grid-cols-2 md:gap-0">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
         <h1>The Official Website <mark>[brand]</mark> for AI-Powered Trading in <mark>[country]</mark></h1>
