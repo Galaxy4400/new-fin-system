@@ -1,5 +1,5 @@
 <nav
-  class="fixed top-1/2 left-1/2 flex min-h-[300px] min-w-[250px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-8 rounded-4xl bg-white p-8 shadow-xl"
+  class="fixed top-1/2 left-1/2 z-50 flex min-h-[300px] min-w-[250px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-8 rounded-4xl bg-white p-8 shadow-xl"
   x-show="menuOpen"
   x-transition
 >

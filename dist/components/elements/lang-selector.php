@@ -5,10 +5,12 @@
     @click="open = !open"
   >
     <div class="min-w-[25px] overflow-hidden rounded-sm">
-      <img src="<?= flagUrl($lang) ?>" alt="<?= $lang ?> flag" width="25" />
+      <img src="<?= flagUrl($lang) ?>" alt="<?= $lang ?>" width="25" />
     </div>
     <span class="uppercase"><?= $lang ?></span>
-    <div class="min-w-5"><?php include 'components/icons/lang-arrow.php' ?></div>
+    <div class="min-w-5 transition-transform duration-300" :class="{ 'rotate-180': open }">
+      <?php include 'components/icons/select-arrow.php' ?>
+    </div>
   </button>
   <div
     class="absolute top-[calc(100%+10px)] left-0 max-h-[225px] w-[100px] overflow-y-auto rounded-[10px] bg-white shadow-md transition-all duration-300"
@@ -21,7 +23,7 @@
         data-lang="<?= $listLang ?>"
       >
         <div class="overflow-hidden rounded-sm">
-          <img src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?> flag" width="25" />
+          <img src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" />
         </div>
         <span class="uppercase"><?= $listLang ?></span>
       </li>
