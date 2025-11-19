@@ -10,7 +10,7 @@ export async function imagesResponsive() {
 
   const sizes = [320, 640, 1280, 1920];
 
-  const files = await fg(['**/*.png', '**/*.jpg', '**/*.jpeg'], {
+  const files = await fg(['*.png', '*.jpg', '*.jpeg'], {
     cwd: srcPath,
     absolute: false,
   });
