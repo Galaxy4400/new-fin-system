@@ -9,6 +9,7 @@
 @theme {
   --font-sans: 'Inter', sans-serif;
 
+  --color-primary-lighter: #fff8f8;
   --color-primary-light: #ff707c;
   --color-primary: #ff4757;
   --color-primary-dark: #e82939;
@@ -16,8 +17,18 @@
   --spacing-container: 1224px;
 }
 
+@layer base {
+  body {
+    @apply text-[#1A1A1A];
+  }
+}
+
 @utility bs-content {
   box-sizing: content-box;
+}
+
+.link {
+  @apply hover:text-primary transition-colors;
 }
 
 .btn-primary {
