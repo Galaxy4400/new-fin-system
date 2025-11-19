@@ -11,11 +11,13 @@ export const path = {
     js: `${assetsFolder}/js/`,
     css: `${assetsFolder}/css/`,
     img: `${assetsFolder}/img/`,
+    imgr: `${assetsFolder}/img/responsive/`,
     html: `${buildFolder}/`,
   },
   src: {
     js: `${srcFolder}/js/*.js`,
-    img: `${srcFolder}/img/**/*.*`,
+    img: `${srcFolder}/img/*.*`,
+    imgr: `${srcFolder}/img/responsive/*.{jpg,png}`,
     css: `${srcFolder}/css/tailwind.css`,
   },
   modules: {

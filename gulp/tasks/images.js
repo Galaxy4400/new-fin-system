@@ -14,7 +14,7 @@ export function images() {
 
     .pipe(app.gulp.src(app.path.src.img, { encoding: false }))
     .pipe(app.plugins.newer({ dest: app.path.build.img, ext: '.webp' }))
-    .pipe(webp({ quality: 70, alphaQuality: 70, method: 6 }))
+    .pipe(webp({ quality: 75, alphaQuality: 75, method: 6 }))
     .pipe(app.gulp.dest(app.path.build.img))
 
     .pipe(app.gulp.src(app.path.src.img, { encoding: false }))
