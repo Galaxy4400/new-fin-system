@@ -57,7 +57,7 @@ export async function images() {
     if (!(await app.plugins.isNewer(inputFile, avifFile))) {
       await sharp(inputFile)
         .avif({
-          quality: 60,
+          quality: 50,
           effort: 9,
           chromaSubsampling: '4:4:4',
         })
