@@ -4,11 +4,11 @@
     :class="{ 'bg-rose-100': open }"
     @click="open = !open"
   >
-    <div class="overflow-hidden rounded-sm">
+    <div class="min-w-[25px] overflow-hidden rounded-sm">
       <img src="<?= flagUrl($lang) ?>" alt="<?= $lang ?> flag" width="25" />
     </div>
     <span class="uppercase"><?= $lang ?></span>
-    <?php include 'components/icons/lang-arrow.php' ?>
+    <div class="min-w-5"><?php include 'components/icons/lang-arrow.php' ?></div>
   </button>
   <div
     class="absolute top-[calc(100%+10px)] left-0 max-h-[225px] w-[100px] overflow-y-auto rounded-[10px] bg-white shadow-md transition-all duration-300"
