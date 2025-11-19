@@ -284,9 +284,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[459px\] {
-    max-width: 459px;
-  }
   .max-w-\[755px\] {
     max-width: 755px;
   }
@@ -330,9 +327,6 @@
   .resize {
     resize: both;
   }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -353,9 +347,6 @@
   }
   .justify-center {
     justify-content: center;
-  }
-  .justify-end {
-    justify-content: flex-end;
   }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
@@ -398,6 +389,9 @@
   }
   .gap-y-8 {
     row-gap: calc(var(--spacing) * 8);
+  }
+  .self-start {
+    align-self: flex-start;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -560,6 +554,11 @@
       display: none;
     }
   }
+  .sm\:max-w-\[459px\] {
+    @media (width >= 40rem) {
+      max-width: 459px;
+    }
+  }
   .md\:static {
     @media (width >= 48rem) {
       position: static;
@@ -575,6 +574,11 @@
       display: none;
     }
   }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -585,9 +589,19 @@
       align-items: center;
     }
   }
+  .md\:justify-end {
+    @media (width >= 48rem) {
+      justify-content: flex-end;
+    }
+  }
   .md\:justify-evenly {
     @media (width >= 48rem) {
       justify-content: space-evenly;
+    }
+  }
+  .md\:gap-0 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 0);
     }
   }
   .md\:gap-10 {
@@ -623,6 +637,11 @@
   .md\:pr-0 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:pl-8 {
+    @media (width >= 48rem) {
+      padding-left: calc(var(--spacing) * 8);
     }
   }
   .lg\:gap-x-14 {
@@ -729,7 +748,7 @@
   border-color: transparent;
   background-image: linear-gradient(-30deg,var(--color-primary) 0%,white 100%);
   background-origin: border-box;
-  --tw-shadow: inset 0 100vw var(--tw-shadow-color, white), 6px 5px 18.1px 0 var(--tw-shadow-color, rgba(39,39,39,0.14));
+  --tw-shadow: inset 0 0 0 999px var(--tw-shadow-color, white), 6px 5px 18.1px 0 var(--tw-shadow-color, rgba(39,39,39,0.14));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 .input {

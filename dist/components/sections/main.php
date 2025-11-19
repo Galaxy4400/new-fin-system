@@ -1,5 +1,5 @@
 <section class="bg-primary-lighter py-5 md:py-10">
-  <div class="content-container grid grid-cols-2">
+  <div class="content-container grid gap-7 md:grid-cols-2 md:gap-0">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
         <h1>The Official Website <mark>[brand]</mark> for AI-Powered Trading in <mark>[country]</mark></h1>
@@ -23,6 +23,6 @@
         </p>
       </div>
     </div>
-    <div class="flex justify-end"><?php include 'components/forms/main.php' ?></div>
+    <div class="flex justify-center md:justify-end md:pl-8"><?php include 'components/forms/main.php' ?></div>
   </div>
 </section>
