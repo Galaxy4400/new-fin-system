@@ -16,13 +16,9 @@ export const path = {
   },
   src: {
     js: `${srcFolder}/js/*.js`,
-    css: `${srcFolder}/css/tailwind.css`,
     img: `${srcFolder}/img/*.*`,
-    imgr: [
-      `${srcFolder}/img/responsive/**/*.jpg`,
-      `${srcFolder}/img/responsive/**/*.jpeg`,
-      `${srcFolder}/img/responsive/**/*.png`,
-    ],
+    imgr: `${srcFolder}/img/responsive/*.{jpg,jpeg,png}`,
+    css: `${srcFolder}/css/tailwind.css`,
   },
   modules: {
     alpine: `${modulesFolder}/alpinejs/dist/cdn.min.js`,
