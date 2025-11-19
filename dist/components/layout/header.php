@@ -1,5 +1,5 @@
 <header class="bg-white py-3 shadow md:py-5" x-data="{ menuOpen: false }" @click.outside="menuOpen = false">
-  <div class="max-w-container bs-content mx-auto px-4">
+  <div class="content-container">
     <div class="flex items-center justify-between gap-8">
       <a class="link font-medium uppercase" href="<?= url() ?>"><?= $offer_name ?></a>
       <?php include 'components/elements/header-menu.php' ?>

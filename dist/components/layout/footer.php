@@ -1,5 +1,5 @@
 <footer class="bg-primary-lighter py-14">
-  <div class="max-w-container bs-content mx-auto px-4">
+  <div class="content-container">
     <div class="grid gap-7 md:gap-10">
       <div class="grid gap-5">
         <div class="relative flex flex-col flex-wrap justify-between gap-x-8 gap-y-3 md:flex-row md:items-center">

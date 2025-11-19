@@ -10,7 +10,7 @@ include_once 'engine/engine.php';
     <?php include 'components/layout/header.php' ?>
 
     <main class="grow">
-      <div class="max-w-container bs-content mx-auto px-4">
+      <div class="content-container">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellendus dignissimos delectus quod qui
         eos omnis ea officiis fugit, amet debitis pariatur quisquam unde temporibus tenetur dolorem eum et? Adipisci,
         corrupti? Aperiam culpa praesentium eveniet ut nisi! Delectus, ullam cumque eos molestiae quo id veritatis
