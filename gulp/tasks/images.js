@@ -6,12 +6,15 @@ import imagemin from 'gulp-imagemin';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminSvgo from 'imagemin-svgo';
+import { isNewer } from '../utils/is-newer';
 
 export async function images() {
   const srcDir = `${app.path.srcFolder}/img`;
   const distDir = app.path.build.img;
 
-  // ---------- 1. Генерация AVIF + WebP ----------
+  await fs.mkdir(distDir, { recursive: true });
+
+  // ---------- 1. AVIF/WebP ----------
   const rasterFiles = await fg(['*.png', '*.jpg', '*.jpeg'], {
     cwd: srcDir,
     absolute: false,
@@ -21,37 +24,46 @@ export async function images() {
     const ext = path.extname(file);
     const base = path.basename(file, ext);
 
-    // ABS путь к файлу
     const inputFile = path.join(srcDir, file);
 
-    await fs.mkdir(distDir, { recursive: true });
+    // --- AVIF ---
+    const avifFile = path.join(distDir, `${base}.avif`);
+    if (!(await isNewer(inputFile, avifFile))) {
+      await sharp(inputFile)
+        .avif({
+          quality: 45,
+          effort: 9,
+          chromaSubsampling: '4:4:4',
+        })
+        .toFile(avifFile);
+    }
 
-    // AVIF
-    await sharp(inputFile)
-      .avif({
-        quality: 50,
-        chromaSubsampling: '4:4:4',
-        speed: 0,
-      })
-      .toFile(path.join(distDir, `${base}.avif`));
-
-    // WebP
-    await sharp(inputFile)
-      .webp({
-        quality: 75,
-        alphaQuality: 75,
-        method: 6,
-      })
-      .toFile(path.join(distDir, `${base}.webp`));
+    // --- WebP ---
+    const webpFile = path.join(distDir, `${base}.webp`);
+    if (!(await isNewer(inputFile, webpFile))) {
+      await sharp(inputFile)
+        .webp({
+          quality: 72,
+          alphaQuality: 85,
+          effort: 6,
+        })
+        .toFile(webpFile);
+    }
   }
 
   // ---------- 2. JPEG/PNG оптимизация ----------
-  await new Promise((resolve) =>
+  // Используем newer для imagemin — через .on('data') проверяем
+  await new Promise((resolve) => {
     app.gulp
       .src(`${srcDir}/*.{jpg,jpeg,png}`)
       .pipe(
         imagemin([
-          imageminMozjpeg({ quality: 75, progressive: true }),
+          imageminMozjpeg({
+            quality: 78,
+            progressive: true,
+            chromaSubsampling: '4:4:4',
+            mozjpeg: true,
+          }),
           imageminPngquant({ quality: [0.6, 0.8], speed: 1 }),
           imageminSvgo({
             plugins: [
@@ -62,14 +74,15 @@ export async function images() {
         ]),
       )
       .pipe(app.gulp.dest(distDir))
-      .on('end', resolve),
-  );
+      .on('end', resolve);
+  });
 
-  // ---------- 3. Простое копирование SVG, ICO и других ----------
+  // ---------- 3. SVG, ICO, GIF, WEBP (исходные) — копирование с NEWER ----------
   return app.gulp
     .src([
       `${srcDir}/**/*.*`,
-      `!${srcDir}/*.{jpg,jpeg,png}`, // исключить растровые
+      `!${srcDir}/*.{jpg,jpeg,png}`, // растровые исключаем
     ])
+    .pipe(app.plugins.newer(distDir))
     .pipe(app.gulp.dest(distDir));
 }

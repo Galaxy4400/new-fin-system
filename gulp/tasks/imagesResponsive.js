@@ -2,6 +2,7 @@ import sharp from 'sharp';
 import fg from 'fast-glob';
 import path from 'path';
 import fs from 'fs/promises';
+import { isNewer } from '../utils/is-newer';
 
 export async function imagesResponsive() {
   const srcPath = `${app.path.srcFolder}/img/responsive`;
@@ -26,48 +27,82 @@ export async function imagesResponsive() {
     for (const width of sizes) {
       const input = sharp(inputFile).resize({ width });
 
+      // ---------- PNG ----------
       if (ext === '.png') {
-        await input
-          .clone()
-          .avif({
-            quality: 50,
-            chromaSubsampling: '4:4:4',
-            speed: 0,
-          })
-          .toFile(path.join(outDir, `${base}-${width}.avif`));
+        const outAvif = path.join(outDir, `${base}-${width}.avif`);
+        if (!(await isNewer(inputFile, outAvif))) {
+          await input
+            .clone()
+            .avif({
+              quality: 45,
+              effort: 9,
+              chromaSubsampling: '4:4:4',
+            })
+            .toFile(outAvif);
+        }
 
-        await input
-          .clone()
-          .webp({
-            quality: 75,
-            alphaQuality: 75,
-            method: 6,
-          })
-          .toFile(path.join(outDir, `${base}-${width}.webp`));
+        const outWebp = path.join(outDir, `${base}-${width}.webp`);
+        if (!(await isNewer(inputFile, outWebp))) {
+          await input
+            .clone()
+            .webp({
+              quality: 72,
+              alphaQuality: 85,
+              effort: 6,
+            })
+            .toFile(outWebp);
+        }
 
-        await input
-          .clone()
-          .png({
-            compressionLevel: 9,
-          })
-          .toFile(path.join(outDir, `${base}-${width}.png`));
+        const outPng = path.join(outDir, `${base}-${width}.png`);
+        if (!(await isNewer(inputFile, outPng))) {
+          await input
+            .clone()
+            .png({
+              compressionLevel: 9,
+              adaptiveFiltering: true,
+              palette: true,
+            })
+            .toFile(outPng);
+        }
       }
 
+      // ---------- JPG/JPEG ----------
       if (ext === '.jpg' || ext === '.jpeg') {
-        await input
-          .clone()
-          .avif({ quality: 50, speed: 0, chromaSubsampling: '4:4:4' })
-          .toFile(path.join(outDir, `${base}-${width}.avif`));
+        const outAvif = path.join(outDir, `${base}-${width}.avif`);
+        if (!(await isNewer(inputFile, outAvif))) {
+          await input
+            .clone()
+            .avif({
+              quality: 45,
+              effort: 9,
+              chromaSubsampling: '4:4:4',
+            })
+            .toFile(outAvif);
+        }
 
-        await input
-          .clone()
-          .webp({ quality: 75, method: 6 })
-          .toFile(path.join(outDir, `${base}-${width}.webp`));
+        const outWebp = path.join(outDir, `${base}-${width}.webp`);
+        if (!(await isNewer(inputFile, outWebp))) {
+          await input
+            .clone()
+            .webp({
+              quality: 72,
+              effort: 6,
+            })
+            .toFile(outWebp);
+        }
 
-        await input
-          .clone()
-          .jpeg({ quality: 82, progressive: true, chromaSubsampling: '4:4:4' })
-          .toFile(path.join(outDir, `${base}-${width}.jpg`));
+        const outJpg = path.join(outDir, `${base}-${width}.jpg`);
+        if (!(await isNewer(inputFile, outJpg))) {
+          await input
+            .clone()
+            .jpeg({
+              quality: 78,
+              progressive: true,
+              chromaSubsampling: '4:4:4',
+              mozjpeg: true,
+            })
+            .toFile(outJpg);
+        }
       }
     }
   }
