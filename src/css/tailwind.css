@@ -52,7 +52,11 @@
 }
 
 .gradient-border {
-  @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_100vw_white];
+  @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_100vw_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
+}
+
+.input {
+  @apply h-10 rounded-[10px] border border-gray-300 px-2.5 py-2 text-sm;
 }
 
 /* Кастомные стили скроллбара */

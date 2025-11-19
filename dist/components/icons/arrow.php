@@ -1,17 +1,8 @@
-<svg
-  class="transition-transform duration-300"
-  :class="{ 'rotate-180': open }"
-  xmlns="http://www.w3.org/2000/svg"
-  width="20"
-  height="20"
-  viewBox="0 0 20 20"
-  fill="none"
->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path
-    d="M16.6004 7.4585L11.1671 12.8918C10.5254 13.5335 9.47539 13.5335 8.83372 12.8918L3.40039 7.4585"
+    d="M5 12H19M19 12L13 6M19 12L13 18"
     stroke="currentColor"
-    stroke-width="1.5"
-    stroke-miterlimit="10"
+    stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
   />

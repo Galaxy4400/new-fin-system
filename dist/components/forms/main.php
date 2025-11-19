@@ -16,23 +16,25 @@
     <div class="grid gap-4">
       <label class="grid gap-1.5">
         <span class="label">First Name</span>
-        <input type="text" name="first_name" placeholder="Enter your First Name" required />
+        <input class="input" type="text" name="first_name" placeholder="Enter your First Name" required />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Last Name</span>
-        <input type="text" name="last_name" placeholder="Enter your Last Name" required />
+        <input class="input" type="text" name="last_name" placeholder="Enter your Last Name" required />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Email</span>
-        <input type="text" name="email" placeholder="Enter your Email " required />
+        <input class="input" type="text" name="email" placeholder="Enter your Email " required />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Phone</span>
-        <input type="text" name="phone" placeholder="Enter your Number Phone" required />
+        <input class="input" type="text" name="phone" placeholder="Enter your Number Phone" required />
       </label>
     </div>
     <div>
-      <button class="btn-primary">Sign Up Now</button>
+      <button class="btn-primary flex w-full items-center gap-2.5">
+        Sign Up Now <?php include 'components/icons/arrow.php' ?>
+      </button>
     </div>
     <footer class="grid items-center gap-5 text-center">
       <p class="text-sm leading-[140%] opacity-60">
