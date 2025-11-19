@@ -19,6 +19,7 @@
 		"gulp-avif": "^1.1.1",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-dart-sass": "^1.1.0",
+		"gulp-debug": "^5.0.1",
 		"gulp-file-include": "^2.3.0",
 		"gulp-filter": "^9.0.1",
 		"gulp-group-css-media-queries": "^1.2.2",
