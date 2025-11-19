@@ -15,7 +15,7 @@ export const path = {
   },
   src: {
     js: `${srcFolder}/js/*.js`,
-    img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
+    img: `${srcFolder}/img/**/*.*`,
     css: `${srcFolder}/css/tailwind.css`,
   },
   modules: {
