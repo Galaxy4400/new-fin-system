@@ -4,17 +4,17 @@ import imagemin from 'gulp-imagemin';
 
 export function images() {
   return app.gulp
-    .src(`${app.path.srcFolder}/img/*.{jpg,jpeg,png}`, { encoding: false })
+    .src(`${app.path.srcFolder}/img/*.{jpg,jpeg,png}`)
     .pipe(app.plugins.newer({ dest: app.path.build.img, ext: '.avif' }))
     .pipe(avif({ quality: 50 }))
     .pipe(app.gulp.dest(app.path.build.img))
 
-    .pipe(app.gulp.src(app.path.src.img, { encoding: false }))
+    .pipe(app.gulp.src(app.path.src.img))
     .pipe(app.plugins.newer({ dest: app.path.build.img, ext: '.webp' }))
     .pipe(webp({ quality: 50 }))
     .pipe(app.gulp.dest(app.path.build.img))
 
-    .pipe(app.gulp.src(app.path.src.img, { encoding: false }))
+    .pipe(app.gulp.src(app.path.src.img))
     .pipe(app.plugins.newer(app.path.build.img))
     .pipe(imagemin())
     .pipe(app.gulp.dest(app.path.build.img));
