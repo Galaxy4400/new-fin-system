@@ -2,7 +2,7 @@ import sharp from 'sharp';
 import fg from 'fast-glob';
 import path from 'path';
 import fs from 'fs/promises';
-import { isNewer } from '../utils/is-newer';
+import { isNewer } from '../utils/is-newer.js';
 
 export async function imagesResponsive() {
   const srcPath = `${app.path.srcFolder}/img/responsive`;

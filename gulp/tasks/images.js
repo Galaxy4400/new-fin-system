@@ -2,11 +2,7 @@ import sharp from 'sharp';
 import fg from 'fast-glob';
 import path from 'path';
 import fs from 'fs/promises';
-import imagemin from 'gulp-imagemin';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminPngquant from 'imagemin-pngquant';
-import imageminSvgo from 'imagemin-svgo';
-import { isNewer } from '../utils/is-newer';
+import { isNewer } from '../utils/is-newer.js';
 
 export async function images() {
   const srcDir = `${app.path.srcFolder}/img`;
@@ -14,20 +10,51 @@ export async function images() {
 
   await fs.mkdir(distDir, { recursive: true });
 
-  // ---------- 1. AVIF/WebP ----------
+  // ---------- 1. PNG/JPG → оптимизированные PNG/JPG + AVIF + WebP ----------
   const rasterFiles = await fg(['*.png', '*.jpg', '*.jpeg'], {
     cwd: srcDir,
     absolute: false,
   });
 
   for (const file of rasterFiles) {
-    const ext = path.extname(file);
+    const ext = path.extname(file).toLowerCase();
     const base = path.basename(file, ext);
-
+    const relDir = path.dirname(file);
     const inputFile = path.join(srcDir, file);
+    const outDir = path.join(distDir, relDir);
 
-    // --- AVIF ---
-    const avifFile = path.join(distDir, `${base}.avif`);
+    await fs.mkdir(outDir, { recursive: true });
+
+    // ---------- оптимизированный оригинал ----------
+    if (ext === '.png') {
+      const outPng = path.join(outDir, `${base}.png`);
+      if (!(await isNewer(inputFile, outPng))) {
+        await sharp(inputFile)
+          .png({
+            compressionLevel: 9,
+            adaptiveFiltering: true,
+            palette: true,
+          })
+          .toFile(outPng);
+      }
+    }
+
+    if (ext === '.jpg' || ext === '.jpeg') {
+      const outJpg = path.join(outDir, `${base}.jpg`);
+      if (!(await isNewer(inputFile, outJpg))) {
+        await sharp(inputFile)
+          .jpeg({
+            quality: 78,
+            progressive: true,
+            chromaSubsampling: '4:4:4',
+            mozjpeg: true,
+          })
+          .toFile(outJpg);
+      }
+    }
+
+    // ---------- AVIF ----------
+    const avifFile = path.join(outDir, `${base}.avif`);
     if (!(await isNewer(inputFile, avifFile))) {
       await sharp(inputFile)
         .avif({
@@ -38,8 +65,8 @@ export async function images() {
         .toFile(avifFile);
     }
 
-    // --- WebP ---
-    const webpFile = path.join(distDir, `${base}.webp`);
+    // ---------- WebP ----------
+    const webpFile = path.join(outDir, `${base}.webp`);
     if (!(await isNewer(inputFile, webpFile))) {
       await sharp(inputFile)
         .webp({
@@ -51,37 +78,11 @@ export async function images() {
     }
   }
 
-  // ---------- 2. JPEG/PNG оптимизация ----------
-  // Используем newer для imagemin — через .on('data') проверяем
-  await new Promise((resolve) => {
-    app.gulp
-      .src(`${srcDir}/*.{jpg,jpeg,png}`)
-      .pipe(
-        imagemin([
-          imageminMozjpeg({
-            quality: 78,
-            progressive: true,
-            chromaSubsampling: '4:4:4',
-            mozjpeg: true,
-          }),
-          imageminPngquant({ quality: [0.6, 0.8], speed: 1 }),
-          imageminSvgo({
-            plugins: [
-              { name: 'removeViewBox', active: false },
-              { name: 'cleanupIDs', active: true },
-            ],
-          }),
-        ]),
-      )
-      .pipe(app.gulp.dest(distDir))
-      .on('end', resolve);
-  });
-
-  // ---------- 3. SVG, ICO, GIF, WEBP (исходные) — копирование с NEWER ----------
+  // ---------- 2. SVG/ICO/GIF/и т.п. — просто копируем с newer ----------
   return app.gulp
     .src([
-      `${srcDir}/**/*.*`,
-      `!${srcDir}/*.{jpg,jpeg,png}`, // растровые исключаем
+      `${srcDir}/*.*`,
+      `!${srcDir}/**/*.{jpg,jpeg,png}`, // исключаем растровые, их уже сделали sharp
     ])
     .pipe(app.plugins.newer(distDir))
     .pipe(app.gulp.dest(distDir));
