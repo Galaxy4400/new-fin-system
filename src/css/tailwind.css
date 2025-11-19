@@ -27,7 +27,7 @@
   }
 
   h3 {
-    @apply text-md leading-[120%] font-medium md:text-xl;
+    @apply text-lg leading-[120%] font-medium md:text-xl;
   }
 
   mark {
@@ -49,6 +49,10 @@
 
 .btn-primary {
   @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 cursor-pointer items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
+}
+
+.gradient-border {
+  @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_100vw_white];
 }
 
 /* Кастомные стили скроллбара */

@@ -1,6 +1,6 @@
 <section class="py-5 md:py-10">
   <div class="content-container grid grid-cols-2">
-    <div class="grid gap-8">
+    <div class="grid gap-8 md:pt-7">
       <header class="grid gap-5">
         <h1>The Official Website <mark>[brand]</mark> for AI-Powered Trading in <mark>[country]</mark></h1>
         <p class="text-lg">

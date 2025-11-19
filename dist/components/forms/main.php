@@ -1,4 +1,5 @@
 <form
+  class="gradient-border max-w-[459px] rounded-[20px] bg-white p-5 pb-7"
   name="form"
   method="post"
   action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"
@@ -13,17 +14,21 @@
       <h3>Register now</h3>
     </header>
     <div class="grid gap-4">
-      <label>
+      <label class="grid gap-1.5">
         <span class="label">First Name</span>
+        <input type="text" name="first_name" placeholder="Enter your First Name" required />
       </label>
-      <label>
+      <label class="grid gap-1.5">
         <span class="label">Last Name</span>
+        <input type="text" name="last_name" placeholder="Enter your Last Name" required />
       </label>
-      <label>
+      <label class="grid gap-1.5">
         <span class="label">Email</span>
+        <input type="text" name="email" placeholder="Enter your Email " required />
       </label>
-      <label>
+      <label class="grid gap-1.5">
         <span class="label">Phone</span>
+        <input type="text" name="phone" placeholder="Enter your Number Phone" required />
       </label>
     </div>
     <div>
