@@ -43,7 +43,6 @@ function getValueByPath($arr, $path, $separator = '.')
 	return $arr;
 }
 
-
 function t($key, $vars = [])
 {
 	global $translations, $commonKeys;
@@ -55,4 +54,13 @@ function t($key, $vars = [])
 	$translation = strtr($translation, array_merge($vars, $commonKeys));
 
 	return $translation;
+}
+
+function flagUrl($lang) {
+	switch ($lang) {
+		case 'en': $lang = 'gb'; break;
+		default: break;
+	}
+
+	return "https://flagcdn.com/$lang.svg";
 }
