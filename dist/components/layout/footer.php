@@ -32,7 +32,7 @@
             <?php include 'components/elements/lang-selector.php' ?>
           </div>
         </div>
-        <div class="inline-flex items-center gap-2"><?php include 'components/elements/footer-socials.php' ?></div>
+        <div class="inline-flex items-center gap-2"><?php include 'components/icons/footer-socials.php' ?></div>
       </div>
       <div>
         General Investing Disclaimer Important: <br />All profit examples are illustrative and do not guarantee similar
