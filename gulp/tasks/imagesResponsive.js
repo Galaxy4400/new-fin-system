@@ -29,13 +29,28 @@ export async function imagesResponsive() {
       if (ext === '.png') {
         await input
           .clone()
-          .avif({ quality: 50, speed: 0, chromaSubsampling: '4:4:4' })
+          .avif({
+            quality: 50,
+            chromaSubsampling: '4:4:4',
+            speed: 0,
+          })
           .toFile(path.join(outDir, `${base}-${width}.avif`));
 
         await input
           .clone()
-          .webp({ quality: 75, alphaQuality: 75, method: 6 })
+          .webp({
+            quality: 75,
+            alphaQuality: 75,
+            method: 6,
+          })
           .toFile(path.join(outDir, `${base}-${width}.webp`));
+
+        await input
+          .clone()
+          .png({
+            compressionLevel: 9,
+          })
+          .toFile(path.join(outDir, `${base}-${width}.png`));
       }
 
       if (ext === '.jpg' || ext === '.jpeg') {
