@@ -25,8 +25,6 @@ export const path = {
     pages: `${buildFolder}/*.php`,
     components: `${buildFolder}/components/**/*.php`,
     css: `${srcFolder}/css/tailwind.css`,
-    // js: `${srcFolder}/js/**/*.js `,
-    // img: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,avif}`,
   },
   clean: assetsFolder,
   cleanCss: `${assetsFolder}/css`,

@@ -15,6 +15,7 @@ global.app = {
 import { copy } from './gulp/tasks/copy.js';
 import { reset } from './gulp/tasks/reset.js';
 import { tailwind } from './gulp/tasks/tw.js';
+import { images } from './gulp/tasks/images.js';
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -24,7 +25,7 @@ function watcher() {
 }
 
 // Построение сценариев выполнения задач
-const build = gulp.series(reset, copy, tailwind);
+const build = gulp.series(reset, copy, images, tailwind);
 const dev = gulp.series(reset, tailwind, watcher);
 
 // Экспорт сценариев для добавления в скрипт в package.json
