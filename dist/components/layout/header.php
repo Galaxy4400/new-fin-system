@@ -14,12 +14,20 @@
       </nav>
       <div class="flex items-center gap-4">
         <a class="btn" href="<?= url('sign-up') ?>">Sign up</a>
-        <div class="relative">
-          <button class="btn"><?= $lang ?></button>
-          <div class="bg-primary absolute top-full left-0 text-white">
-            <ul>
+        <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+          <button class="btn" @click="open = !open"><?= $lang ?></button>
+          <div
+            class="bg-primary absolute top-[calc(100%+10px)] left-0 max-h-[150px] w-[60px] overflow-y-auto rounded-[10px] text-white transition-all duration-300"
+            x-bind:class="open ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'"
+          >
+            <ul class="py-2">
               <?php foreach ($supportedLanguages as $listLang) { ?>
-              <li data-lang="<?= $listLang ?>"><?= $listLang ?></li>
+              <li
+                class="hover:bg-primary-dark w-full cursor-pointer px-3 py-1 transition-colors"
+                data-lang="<?= $listLang ?>"
+              >
+                <?= $listLang ?>
+              </li>
               <?php } ?>
             </ul>
           </div>

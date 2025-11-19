@@ -21,5 +21,27 @@
 }
 
 .btn {
-  @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
+  @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 cursor-pointer items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
+}
+
+@media (any-hover: hover) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-white);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+    border: 2px solid var(--color-white);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-light);
+  }
 }
