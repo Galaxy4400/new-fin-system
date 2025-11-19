@@ -2,7 +2,6 @@ import sharp from 'sharp';
 import fg from 'fast-glob';
 import path from 'path';
 import fs from 'fs/promises';
-import { isNewer } from '../utils/is-newer.js';
 
 export async function images() {
   const srcDir = `${app.path.srcFolder}/img`;
@@ -28,7 +27,7 @@ export async function images() {
     // ---------- оптимизированный оригинал ----------
     if (ext === '.png') {
       const outPng = path.join(outDir, `${base}.png`);
-      if (!(await isNewer(inputFile, outPng))) {
+      if (!(await app.plugins.isNewer(inputFile, outPng))) {
         await sharp(inputFile)
           .png({
             compressionLevel: 9,
@@ -41,7 +40,7 @@ export async function images() {
 
     if (ext === '.jpg' || ext === '.jpeg') {
       const outJpg = path.join(outDir, `${base}.jpg`);
-      if (!(await isNewer(inputFile, outJpg))) {
+      if (!(await app.plugins.isNewer(inputFile, outJpg))) {
         await sharp(inputFile)
           .jpeg({
             quality: 78,
@@ -55,7 +54,7 @@ export async function images() {
 
     // ---------- AVIF ----------
     const avifFile = path.join(outDir, `${base}.avif`);
-    if (!(await isNewer(inputFile, avifFile))) {
+    if (!(await app.plugins.isNewer(inputFile, avifFile))) {
       await sharp(inputFile)
         .avif({
           quality: 45,
@@ -67,7 +66,7 @@ export async function images() {
 
     // ---------- WebP ----------
     const webpFile = path.join(outDir, `${base}.webp`);
-    if (!(await isNewer(inputFile, webpFile))) {
+    if (!(await app.plugins.isNewer(inputFile, webpFile))) {
       await sharp(inputFile)
         .webp({
           quality: 72,

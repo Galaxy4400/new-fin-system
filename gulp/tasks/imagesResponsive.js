@@ -2,7 +2,6 @@ import sharp from 'sharp';
 import fg from 'fast-glob';
 import path from 'path';
 import fs from 'fs/promises';
-import { isNewer } from '../utils/is-newer.js';
 
 export async function imagesResponsive() {
   const srcPath = `${app.path.srcFolder}/img/responsive`;
@@ -30,7 +29,7 @@ export async function imagesResponsive() {
       // ---------- PNG ----------
       if (ext === '.png') {
         const outAvif = path.join(outDir, `${base}-${width}.avif`);
-        if (!(await isNewer(inputFile, outAvif))) {
+        if (!(await app.plugins.isNewer(inputFile, outAvif))) {
           await input
             .clone()
             .avif({
@@ -42,7 +41,7 @@ export async function imagesResponsive() {
         }
 
         const outWebp = path.join(outDir, `${base}-${width}.webp`);
-        if (!(await isNewer(inputFile, outWebp))) {
+        if (!(await app.plugins.isNewer(inputFile, outWebp))) {
           await input
             .clone()
             .webp({
@@ -54,7 +53,7 @@ export async function imagesResponsive() {
         }
 
         const outPng = path.join(outDir, `${base}-${width}.png`);
-        if (!(await isNewer(inputFile, outPng))) {
+        if (!(await app.plugins.isNewer(inputFile, outPng))) {
           await input
             .clone()
             .png({
@@ -69,7 +68,7 @@ export async function imagesResponsive() {
       // ---------- JPG/JPEG ----------
       if (ext === '.jpg' || ext === '.jpeg') {
         const outAvif = path.join(outDir, `${base}-${width}.avif`);
-        if (!(await isNewer(inputFile, outAvif))) {
+        if (!(await app.plugins.isNewer(inputFile, outAvif))) {
           await input
             .clone()
             .avif({
@@ -81,7 +80,7 @@ export async function imagesResponsive() {
         }
 
         const outWebp = path.join(outDir, `${base}-${width}.webp`);
-        if (!(await isNewer(inputFile, outWebp))) {
+        if (!(await app.plugins.isNewer(inputFile, outWebp))) {
           await input
             .clone()
             .webp({
@@ -92,7 +91,7 @@ export async function imagesResponsive() {
         }
 
         const outJpg = path.join(outDir, `${base}-${width}.jpg`);
-        if (!(await isNewer(inputFile, outJpg))) {
+        if (!(await app.plugins.isNewer(inputFile, outJpg))) {
           await input
             .clone()
             .jpeg({

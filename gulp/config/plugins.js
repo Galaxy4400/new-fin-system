@@ -4,6 +4,7 @@ import notify from 'gulp-notify'; // Сообщения (подсказки)
 import newer from 'gulp-newer'; // Проверка обновлений
 import ifPlugin from 'gulp-if'; // Условное ветвление
 import browsersync from 'browser-sync'; // Локальный сервер
+import { isNewer } from '../utils/is-newer.js';
 
 // Экспортируем объект
 export const plugins = {
@@ -13,4 +14,5 @@ export const plugins = {
   newer: newer,
   if: ifPlugin,
   browsersync: browsersync,
+  isNewer: isNewer,
 };
