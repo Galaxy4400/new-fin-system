@@ -27,7 +27,11 @@
 	<link rel="icon" type="image/x-icon" sizes="256x256" href="/assets/img/favicon.ico">
 
 	<!-- Canonical URL -->
-	<?php include 'head-elements/canonical.php' ?>
+	<link rel="canonical" href="<?= htmlspecialchars($currentPageUrl) ?>" />
+	<link rel="alternate" hreflang="x-default" href="https://<?= $domain ?><?= $pagePath ? '/' . $pagePath : '' ?>" />
+	<?php foreach ($supportedLanguages as $langItem): ?>
+		<link rel="alternate" hreflang="<?= htmlspecialchars($langItem) ?>" href="<?= htmlspecialchars(getAltUrl($langItem)) ?>" />
+	<?php endforeach; ?>
 
 	<!-- Styles -->
 	<?php include 'head-elements/styles.php' ?>
