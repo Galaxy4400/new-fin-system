@@ -4,5 +4,6 @@ include_once 'aff.php';
 include_once 'translation.php';
 include_once 'click.php';
 include_once 'router.php';
+include_once 'helpers.php';
 
 $subid = fetchSubId($token);

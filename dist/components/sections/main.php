@@ -1,5 +1,6 @@
-<section class="bg-primary-lighter relative py-5 md:py-10">
-  <img class="absolute top-1/2 left-1/2 -translate-1/2" src="/assets/img/bg-1.png" alt="deco" />
+<section class="bg-primary-lighter relative overflow-hidden py-5 md:py-10">
+  <?= pictureSet("/assets/img/deco-bg-main.png", "absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2",
+  ["alt" => "backgound"] ) ?>
   <div class="content-container relative grid gap-7 md:grid-cols-2 md:gap-0">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">

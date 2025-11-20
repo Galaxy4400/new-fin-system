@@ -227,6 +227,9 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
+  .left-\[40\%\] {
+    left: 40%;
+  }
   .z-50 {
     z-index: 50;
   }
@@ -269,6 +272,9 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-\[1063px\] {
+    height: 1063px;
+  }
   .max-h-\[225px\] {
     max-height: 225px;
   }
@@ -280,6 +286,9 @@
   }
   .w-\[100px\] {
     width: 100px;
+  }
+  .w-\[2513px\] {
+    width: 2513px;
   }
   .w-full {
     width: 100%;
