@@ -1,0 +1,13 @@
+@layer components {
+  .gradient-border-block {
+    @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 cursor-pointer items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
+  }
+
+  .input {
+    @apply h-10 rounded-[10px] border border-gray-300 px-2.5 py-2 text-sm;
+  }
+}

@@ -1,5 +1,5 @@
 <form
-  class="gradient-border self-start rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px]"
+  class="gradient-border-block self-start rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px]"
   name="form"
   method="post"
   action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"

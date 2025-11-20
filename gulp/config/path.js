@@ -26,7 +26,7 @@ export const path = {
   watch: {
     pages: `${buildFolder}/*.php`,
     components: `${buildFolder}/components/**/*.php`,
-    css: `${srcFolder}/css/tailwind.css`,
+    css: `${srcFolder}/css/*.css`,
   },
   clean: assetsFolder,
   cleanCss: `${assetsFolder}/css`,

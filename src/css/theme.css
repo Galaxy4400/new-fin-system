@@ -1,0 +1,10 @@
+@theme {
+  --font-sans: 'Inter', sans-serif;
+
+  --color-primary-lighter: #fff8f8;
+  --color-primary-light: #ff707c;
+  --color-primary: #ff4757;
+  --color-primary-dark: #e82939;
+
+  --spacing-container: 1224px;
+}

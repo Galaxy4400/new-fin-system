@@ -6,78 +6,8 @@
 @source '../../dist/*.{html,php}';
 @source '../../dist/components/**/*.{html,php}';
 
-@theme {
-  --font-sans: 'Inter', sans-serif;
-
-  --color-primary-lighter: #fff8f8;
-  --color-primary-light: #ff707c;
-  --color-primary: #ff4757;
-  --color-primary-dark: #e82939;
-
-  --spacing-container: 1224px;
-}
-
-@layer base {
-  body {
-    @apply text-[#1A1A1A];
-  }
-
-  h1 {
-    @apply text-4xl leading-[120%] font-semibold md:text-5xl;
-  }
-
-  h3 {
-    @apply text-lg leading-[120%] font-medium md:text-xl;
-  }
-
-  mark {
-    @apply text-primary bg-transparent;
-  }
-}
-
-.content-container {
-  @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
-}
-
-.link {
-  @apply hover:text-primary transition-colors duration-300;
-}
-
-.label {
-  @apply text-sm leading-[140%];
-}
-
-.btn-primary {
-  @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 cursor-pointer items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
-}
-
-.gradient-border {
-  @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
-}
-
-.input {
-  @apply h-10 rounded-[10px] border border-gray-300 px-2.5 py-2 text-sm;
-}
-
-/* Кастомные стили скроллбара */
-@media (any-hover: hover) {
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--color-white);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 5px;
-    border: 2px solid var(--color-white);
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-light);
-  }
-}
+@import './theme.css';
+@import './base.css';
+@import './utilities.css';
+@import './components.css';
+@import './custom.css';
