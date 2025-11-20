@@ -79,10 +79,13 @@ export async function images() {
 
   // ---------- 2. SVG/ICO/GIF/и т.п. — просто копируем с newer ----------
   return app.gulp
-    .src([
-      `${srcDir}/*.*`,
-      `!${srcDir}/**/*.{jpg,jpeg,png}`, // исключаем растровые, их уже сделали sharp
-    ])
+    .src(
+      [
+        `${srcDir}/*.*`,
+        `!${srcDir}/**/*.{jpg,jpeg,png}`, // исключаем растровые, их уже сделали sharp
+      ],
+      { encoding: false },
+    )
     .pipe(app.plugins.newer(distDir))
     .pipe(app.gulp.dest(distDir));
 }
