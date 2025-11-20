@@ -13,7 +13,7 @@
     </div>
   </button>
   <div
-    class="absolute top-[calc(100%+10px)] left-0 max-h-[225px] w-[100px] overflow-y-auto rounded-[10px] bg-white shadow-md transition-all duration-300"
+    class="absolute top-[calc(100%+10px)] left-0 z-50 max-h-[225px] w-[100px] overflow-y-auto rounded-[10px] bg-white shadow-md transition-all duration-300"
     x-bind:class="open ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'"
   >
     <ul class="py-2">
