@@ -2,7 +2,7 @@
 	<input type="hidden" name="id" value="su">
 	<input type="hidden" name="country" value="<?= t('v.country') ?>">
 	<input type="hidden" name="subid" value="<?= $subid ?>">
-	<input type="hidden" name="language" value="<?= $lang ?>">
+	<input type="hidden" name="language" value="<?= $currentLang ?>">
 
 	<div class="form__section">
 		<h1 class="form__title h3"><?= t('t.main.signup') ?></h1>
@@ -30,8 +30,8 @@
 			<div class="form__column">
 				<input type="checkbox" name="aggreement" value="1" required data-check data-label="
 				<?= t('t.main.aggree', [
-					'{privacy_link}' => "<a href='/" . $lang . "/privacy'>" . t('t.main.main_form_privacy_link') . "</a>",
-					'{terms_link}' => "<a href='/" . $lang . "/conditions'>" . t('t.main.main_form_terms_link') . "</a>"
+					'{privacy_link}' => "<a href='/" . $currentLang . "/privacy'>" . t('t.main.main_form_privacy_link') . "</a>",
+					'{terms_link}' => "<a href='/" . $currentLang . "/conditions'>" . t('t.main.main_form_terms_link') . "</a>"
 				]) ?>">
 			</div>
 		</div>

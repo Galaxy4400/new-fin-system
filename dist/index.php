@@ -3,7 +3,7 @@ include_once 'engine/engine.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="<?= $lang ?>">
+<html lang="<?= $currentLang ?>">
   <?php include 'components/layout/head.php' ?>
 
   <body class="flex min-h-screen flex-col">

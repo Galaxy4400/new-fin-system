@@ -10,12 +10,12 @@ $uri = $_SERVER['REQUEST_URI'];
 $segments = explode('/', trim($uri, '/'));
 $firstSegment = $segments[0] ?? '';
 
-global $lang;
+global $currentLang;
 
-$lang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
+$currentLang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
 
 $translations = [];
-$langFile = __DIR__ . "/../lang/{$lang}.json";
+$langFile = __DIR__ . "/../lang/{$currentLang}.json";
 
 if (file_exists($langFile)) {
 	$jsonContent = file_get_contents($langFile);
@@ -56,11 +56,11 @@ function t($key, $vars = [])
 	return $translation;
 }
 
-function flagUrl($lang) {
-	switch ($lang) {
-		case 'en': $lang = 'gb'; break;
+function flagUrl($currentLang) {
+	switch ($currentLang) {
+		case 'en': $currentLang = 'gb'; break;
 		default: break;
 	}
 
-	return "https://flagcdn.com/$lang.svg";
+	return "https://flagcdn.com/$currentLang.svg";
 }

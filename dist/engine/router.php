@@ -1,29 +1,44 @@
 <?php
 
 //===============================================================
-$currentUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$currentUri = rtrim($currentUri, '/');
-$pathParts = array_filter(explode('/', $currentUri));
+$pagePath = definePagePath();
 
-$currentLang = $lang;
-$pagePath = '';
+function definePagePath() {
+	global $supportedLanguages, $defaultLang;
 
-if (!empty($pathParts)) {
-	$firstPart = reset($pathParts);
-	if (in_array($firstPart, $supportedLanguages) && $firstPart !== $defaultLang) {
-		array_shift($pathParts);
-	} elseif ($firstPart === $defaultLang) {
-		array_shift($pathParts);
+	$path = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+	$pathParts = array_filter(explode('/', $path));
+
+	$pagePath = '';
+
+	if (!empty($pathParts)) {
+		$firstPart = reset($pathParts);
+		if (in_array($firstPart, $supportedLanguages) && $firstPart !== $defaultLang) {
+			array_shift($pathParts);
+		} elseif ($firstPart === $defaultLang) {
+			array_shift($pathParts);
+		}
 	}
-}
-$pagePath = !empty($pathParts) ? implode('/', $pathParts) : '';
 
-$currentPageUrl = 'https://' . $domain;
-if ($currentLang !== $defaultLang) {
-	$currentPageUrl .= '/' . $currentLang;
+	$pagePath = !empty($pathParts) ? implode('/', $pathParts) : '';
+
+	return $pagePath;
 }
-if ($pagePath) {
-	$currentPageUrl .= '/' . $pagePath;
+
+
+function getCurrentPageUrl() {
+	global $domain, $defaultLang, $pagePath, $currentLang;
+
+	$currentPageUrl = 'https://' . $domain;
+
+	if ($currentLang !== $defaultLang) {
+		$currentPageUrl .= '/' . $currentLang;
+	}
+	if ($pagePath) {
+		$currentPageUrl .= '/' . $pagePath;
+	}
+
+	return $currentPageUrl;
 }
 
 function getAltUrl($langItem) {
@@ -75,9 +90,9 @@ if (isset($_GET['action']) && $_GET['action'] === 'send') {
 
 function url($path = '', $query = '', $hash = '')
 {
-	global $lang, $defaultLang;
+	global $currentLang, $defaultLang;
 
 	$path = ltrim($path, '/');
 
-	return ($lang === $defaultLang ? "/$path" : "/$lang/$path") . $query . $hash;
+	return ($currentLang === $defaultLang ? "/$path" : "/$currentLang/$path") . $query . $hash;
 }

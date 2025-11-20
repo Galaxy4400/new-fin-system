@@ -62,10 +62,11 @@
           </div>
           <div class="form__row form__row_1">
             <p class="form__sub-text">
-              <?= t('t.main.help-form__sub-text', [ '{privacy_link}' => '<a href="/' . $lang . '/privacy"
+              <?= t('t.main.help-form__sub-text', [ '{privacy_link}' => '<a href="/' . $currentLang . '/privacy"
                 >' . t('t.main.main_form_privacy_link') . '</a
-              >', '{terms_link}' => '<a href="/' . $lang . '/conditions">' . t('t.main.main_form_terms_link') . '</a>'
-              ]) ?>
+              >', '{terms_link}' => '<a href="/' . $currentLang . '/conditions"
+                >' . t('t.main.main_form_terms_link') . '</a
+              >' ]) ?>
             </p>
           </div>
         </div>

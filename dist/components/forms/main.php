@@ -7,7 +7,7 @@
   <input type="hidden" name="id" value="m<?= ++$main_form_counter ?>" />
   <input type="hidden" name="country" value="<?= t('v.country') ?>" />
   <input type="hidden" name="subid" value="<?= $subid ?>" />
-  <input type="hidden" name="language" value="<?= $lang ?>" />
+  <input type="hidden" name="language" value="<?= $currentLang ?>" />
 
   <div class="grid gap-5">
     <header class="text-center">

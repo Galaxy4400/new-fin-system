@@ -5,9 +5,9 @@
     @click="open = !open"
   >
     <div class="min-w-[25px] overflow-hidden rounded-sm">
-      <img src="<?= flagUrl($lang) ?>" alt="<?= $lang ?>" width="25" />
+      <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>" width="25" />
     </div>
-    <span class="uppercase"><?= $lang ?></span>
+    <span class="uppercase"><?= $currentLang ?></span>
     <div class="min-w-5 transition-transform duration-300" :class="{ 'rotate-180': open }">
       <?php include 'components/icons/select-arrow.php' ?>
     </div>
