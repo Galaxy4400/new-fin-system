@@ -10,7 +10,11 @@ include_once 'engine/engine.php';
     <?php include 'components/layout/header.php' ?>
 
     <main class="grow">
-      <?php include 'components/sections/main.php' ?> <?php include 'components/sections/main.php' ?>
+      <!-- ------- -->
+      <?php include 'components/sections/main.php' ?>
+      <!-- ------- -->
+      <?php include 'components/sections/main.php' ?>
+      <!-- ------- -->
     </main>
 
     <?php include 'components/layout/footer.php' ?>

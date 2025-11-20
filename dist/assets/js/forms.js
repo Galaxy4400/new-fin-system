@@ -1,19 +1,17 @@
 const initCountryPhones = (form) => {
-  const countryPhoneInput = form.querySelector('input[data-phone]');
+  const intlTelInput = form.querySelector('input[data-phone]');
 
-  if (!countryPhoneInput) return;
+  if (!intlTelInput) return;
 
-  form.iti = window.intlTelInput(countryPhoneInput, {
+  form.iti = window.intlTelInput(intlTelInput, {
     strictMode: true,
     separateDialCode: true,
     initialCountry: window.userCountry,
-    utilsScript: '/public/js/intlTelInput-utils.min.js',
+    loadUtils: () => import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.js'),
   });
 };
 
 document.querySelectorAll('form[data-form]').forEach((form) => {
-  // initCountryPhones(form);
+  initCountryPhones(form);
   // validateForm(form);
-
-  console.log(form);
 });

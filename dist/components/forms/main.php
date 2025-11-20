@@ -3,6 +3,7 @@
   name="form"
   method="post"
   action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"
+  data-form
 >
   <input type="hidden" name="id" value="m<?= ++$main_form_counter ?>" />
   <input type="hidden" name="country" value="<?= t('v.country') ?>" />
@@ -24,11 +25,11 @@
       </label>
       <label class="grid gap-1.5">
         <span class="label">Email</span>
-        <input class="input" type="text" name="email" placeholder="Enter your Email " required />
+        <input class="input" type="email" name="email" placeholder="Enter your Email " required />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Phone</span>
-        <input class="input" type="text" name="phone" placeholder="Enter your Number Phone" required />
+        <input class="input" type="tel" name="phone" data-phone required />
       </label>
     </div>
     <div>

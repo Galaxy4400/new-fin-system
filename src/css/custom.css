@@ -20,3 +20,12 @@
     background: var(--color-primary-light);
   }
 }
+
+/* Кастомные стили селектора телефона */
+.iti__selected-dial-code {
+  font-size: 14px;
+}
+
+.iti__selected-country-primary {
+  padding: 0 6px 0 12px;
+}

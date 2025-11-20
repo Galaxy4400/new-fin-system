@@ -193,9 +193,6 @@
   .pointer-events-none {
     pointer-events: none;
   }
-  .collapse {
-    visibility: collapse;
-  }
   .visible {
     visibility: visible;
   }
@@ -264,9 +261,6 @@
   }
   .hidden {
     display: none;
-  }
-  .inline {
-    display: inline;
   }
   .inline-flex {
     display: inline-flex;
@@ -525,11 +519,6 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-all {
     transition-property: all;
@@ -832,6 +821,7 @@
   }
   .input {
     height: calc(var(--spacing) * 10);
+    width: 100%;
     border-radius: 10px;
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -859,6 +849,12 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-light);
   }
+}
+.iti__selected-dial-code {
+  font-size: 14px;
+}
+.iti__selected-country-primary {
+  padding: 0 6px 0 12px;
 }
 @property --tw-translate-x {
   syntax: "*";

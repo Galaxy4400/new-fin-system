@@ -8,6 +8,6 @@
   }
 
   .input {
-    @apply h-10 rounded-[10px] border border-gray-300 px-2.5 py-2 text-sm;
+    @apply h-10 w-full rounded-[10px] border border-gray-300 px-2.5 py-2 text-sm;
   }
 }
