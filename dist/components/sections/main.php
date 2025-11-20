@@ -1,6 +1,6 @@
 <section class="bg-primary-lighter relative overflow-hidden py-5 md:py-10">
-  <!-- <?= pictureSet("deco-bg-main.png", "absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2", ["alt" =>
-  "backgound"] ) ?> -->
+  <?= pictureSet("deco-bg-main.png", "absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2", ["alt" =>
+  "backgound"] ) ?>
   <div class="content-container relative grid gap-7 md:grid-cols-2 md:gap-0">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
@@ -28,5 +28,3 @@
     <div class="flex justify-center md:justify-end md:pl-8"><?php include 'components/forms/main.php' ?></div>
   </div>
 </section>
-
-<?= pictureSetResponsive( "deco-bg-main.png", "", ["alt" => "backgound"], "1024:600px,640:400px,250px" ) ?>

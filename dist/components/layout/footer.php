@@ -44,8 +44,3 @@
     </div>
   </div>
 </footer>
-
-<!-- <p><?= t('t.main.footer__disclamer_1', ['{site_name}' => $offer_name]) ?></p>
-<p><?= t('t.main.footer__disclamer_2', ['{site_name}' => $offer_name]) ?></p>
-<p><?= t('t.main.footer__disclamer_3', ['{site_name}' => $offer_name]) ?></p>
-<p><?= t('t.main.footer__disclamer_4', ['{site_name}' => $offer_name]) ?></p> -->
