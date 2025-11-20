@@ -1,7 +1,7 @@
 <form
-  class="gradient-border-block self-start rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px]"
   name="form"
   method="post"
+  class="gradient-border-block self-start rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px]"
   action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"
   data-form
 >
@@ -17,15 +17,22 @@
     <div class="grid gap-4">
       <label class="grid gap-1.5">
         <span class="label">First Name</span>
-        <input class="input" type="text" name="first_name" placeholder="Enter your First Name" required />
+        <input class="input" type="text" name="first_name" placeholder="Enter your First Name" required value="test" />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Last Name</span>
-        <input class="input" type="text" name="last_name" placeholder="Enter your Last Name" required />
+        <input class="input" type="text" name="last_name" placeholder="Enter your Last Name" required value="test" />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Email</span>
-        <input class="input" type="email" name="email" placeholder="Enter your Email " required />
+        <input
+          class="input"
+          type="email"
+          name="email"
+          placeholder="Enter your Email "
+          required
+          value="test@test.test"
+        />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Phone</span>
