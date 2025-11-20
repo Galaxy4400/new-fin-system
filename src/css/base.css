@@ -15,6 +15,10 @@
     @apply text-lg leading-[120%] font-medium md:text-xl;
   }
 
+  a {
+    @apply hover:text-primary transition-colors duration-300;
+  }
+
   mark {
     @apply text-primary bg-transparent;
   }
