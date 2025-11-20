@@ -22,6 +22,9 @@ export const path = {
   },
   modules: {
     alpine: `${modulesFolder}/alpinejs/dist/cdn.min.js`,
+    intlTelMain: `${modulesFolder}/intl-tel-input/build/js/intlTelInput.min.js`,
+    intlTelUtils: `${modulesFolder}/intl-tel-input/build/js/utils.js`,
+    intlTelCss: `${modulesFolder}/intl-tel-input/build/css/intlTelInput.css`,
   },
   watch: {
     pages: `${buildFolder}/*.php`,
