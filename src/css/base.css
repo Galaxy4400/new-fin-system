@@ -1,6 +1,6 @@
 @layer base {
   body {
-    @apply leading-[1.4] text-[#1A1A1A];
+    @apply text-sm leading-[1.4] text-[#1A1A1A] md:text-lg;
   }
 
   h1 {

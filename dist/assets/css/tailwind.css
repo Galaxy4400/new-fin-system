@@ -410,8 +410,8 @@
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
-  .py-7 {
-    padding-block: calc(var(--spacing) * 7);
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
@@ -444,6 +444,10 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-gray-500 {
     color: var(--color-gray-500);
@@ -537,6 +541,16 @@
       position: static;
     }
   }
+  .md\:order-1 {
+    @media (width >= 48rem) {
+      order: 1;
+    }
+  }
+  .md\:order-2 {
+    @media (width >= 48rem) {
+      order: 2;
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -567,6 +581,11 @@
       justify-content: space-evenly;
     }
   }
+  .md\:justify-start {
+    @media (width >= 48rem) {
+      justify-content: flex-start;
+    }
+  }
   .md\:gap-10 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 10);
@@ -592,9 +611,9 @@
       padding-block: calc(var(--spacing) * 10);
     }
   }
-  .md\:py-16 {
+  .md\:py-20 {
     @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 16);
+      padding-block: calc(var(--spacing) * 20);
     }
   }
   .md\:pt-7 {
@@ -607,6 +626,24 @@
       padding-right: calc(var(--spacing) * 0);
     }
   }
+  .md\:text-base {
+    @media (width >= 48rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .md\:font-medium {
+    @media (width >= 48rem) {
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
+    }
+  }
   .lg\:gap-x-14 {
     @media (width >= 64rem) {
       column-gap: calc(var(--spacing) * 14);
@@ -615,9 +652,15 @@
 }
 @layer base {
   body {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
     --tw-leading: 1.4;
     line-height: 1.4;
     color: #1A1A1A;
+    @media (width >= 48rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
   }
   h1 {
     font-size: var(--text-4xl);

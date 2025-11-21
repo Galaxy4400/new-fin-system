@@ -6,12 +6,12 @@
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
         <h1><?= t('t.index.main_title') ?></h1>
-        <p class="text-lg"><?= t('t.index.main_label') ?></p>
+        <p><?= t('t.index.main_label') ?></p>
       </header>
       <div class="grid gap-2.5 opacity-60">
-        <p><?= t('t.index.main_text_1') ?></p>
-        <p><?= t('t.index.main_text_2') ?></p>
-        <p><?= t('t.index.main_text_3') ?></p>
+        <p class="text-sm md:text-base"><?= t('t.index.main_text_1') ?></p>
+        <p class="text-sm md:text-base"><?= t('t.index.main_text_2') ?></p>
+        <p class="text-sm md:text-base"><?= t('t.index.main_text_3') ?></p>
       </div>
     </div>
     <div class="flex justify-center md:justify-end"><?php include 'components/forms/main.php' ?></div>
