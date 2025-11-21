@@ -7,7 +7,8 @@
         <p><?= t('t.index.about_text_1') ?></p>
       </div>
       <div class="flex justify-center md:justify-end">
-        <?= pictureSetResponsive('experience-1.png', "", ["alt" => "deco 1", "loading" => "lazy"], "768:458px,100%") ?>
+        <?= pictureSetResponsive('experience-1.png', "max-w-full aspect-458/355", ["alt" => "deco 1", "loading" =>
+        "lazy"], "768:458px,100%") ?>
       </div>
     </div>
     <div class="grid items-center gap-7 md:grid-cols-2">
@@ -15,7 +16,8 @@
         <p><?= t('t.index.about_text_2') ?></p>
       </div>
       <div class="flex justify-center md:order-1 md:justify-start">
-        <?= pictureSetResponsive('experience-2.png', "", ["alt" => "deco 2", "loading" => "lazy"], "768:496px,100%") ?>
+        <?= pictureSetResponsive('experience-2.png', "max-w-full aspect-496/351", ["alt" => "deco 2", "loading" =>
+        "lazy"], "768:496px,100%") ?>
       </div>
     </div>
     <div class="grid items-center gap-7 md:grid-cols-2">
@@ -23,7 +25,8 @@
         <p><?= t('t.index.about_text_3') ?></p>
       </div>
       <div class="flex justify-center md:justify-end">
-        <?= pictureSetResponsive('experience-3.png', "", ["alt" => "deco 3", "loading" => "lazy"], "768:496px,100%") ?>
+        <?= pictureSetResponsive('experience-3.png', "max-w-full aspect-496/375", ["alt" => "deco 3", "loading" =>
+        "lazy"], "768:496px,100%") ?>
       </div>
     </div>
     <div class="grid items-center gap-7 md:grid-cols-2">
@@ -31,7 +34,8 @@
         <p><?= t('t.index.about_text_4') ?></p>
       </div>
       <div class="flex justify-center md:order-1 md:justify-start">
-        <?= pictureSetResponsive('experience-4.png', "", ["alt" => "deco 4", "loading" => "lazy"], "768:496px,100%") ?>
+        <?= pictureSetResponsive('experience-4.png', "max-w-full aspect-496/393", ["alt" => "deco 4", "loading" =>
+        "lazy"], "768:496px,100%") ?>
       </div>
     </div>
   </div>

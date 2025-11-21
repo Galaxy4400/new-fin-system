@@ -1,6 +1,6 @@
 <div class="relative" data-connect-parent>
   <button class="lang-icon group" data-connector="lang-menu">
-    <div class="min-w-[25px] overflow-hidden rounded-sm">
+    <div class="aspect-25/13 min-w-[25px] overflow-hidden rounded-sm">
       <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>" width="25" />
     </div>
     <span class="uppercase"><?= $currentLang ?></span>
