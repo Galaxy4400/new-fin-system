@@ -1,6 +1,49 @@
 const local = (key) => window.workWithLang.local(key);
 
 //===============================================================
+const mockData = {
+  mockSuccess: {
+    success: true,
+  },
+
+  mockSuccessWithAutoLogin: {
+    success: true,
+    auto_login_url: 'https://site.com/autologin/abc123',
+  },
+
+  mockInvalidParamsObject: {
+    success: false,
+    code: 'invalid_params',
+    errors: {
+      email: 'Invalid email',
+      password: 'Too short',
+    },
+  },
+
+  mockInvalidParamsArray: {
+    success: false,
+    code: 'invalid_params',
+    errors: ['email_invalid', 'password_short', 'name_required'],
+  },
+
+  mockInvalidParamsString: {
+    success: false,
+    code: 'invalid_params',
+    errors: 'wrong_format',
+  },
+
+  mockUnknownError: {
+    success: false,
+    code: 'server_error',
+    errors: null,
+  },
+
+  mockNoCodeError: {
+    success: false,
+  },
+};
+
+//---------------------------------------------------------------
 const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
   new Promise((resolve, reject) =>
     setTimeout(() => {
@@ -179,10 +222,10 @@ const initSubmit = (form) => {
     if (form.iti) formData.append('full_phone', form.iti.getNumber());
     if (form.iti) formData.append('country_code', '+' + form.iti.getSelectedCountryData().dialCode);
 
-    mokFetch(1000, Object.fromEntries(formData), true)
+    mokFetch(1000, mockData.mockSuccess, true)
       .then((res) => {
-        console.log('THEN:', res);
         resetForm(form);
+        responseHandler(form, res);
       })
       .catch((err) => {
         console.log('CATCH:', err);
