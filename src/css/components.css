@@ -31,6 +31,14 @@
     @apply hover:text-primary data-active:text-primary inline-flex cursor-pointer transition-colors duration-300 md:hidden;
   }
 
+  .lang-icon {
+    @apply inline-flex h-10 cursor-pointer items-center gap-2 rounded-[10px] px-2.5 py-1 transition-colors hover:bg-rose-100 data-active:bg-rose-100;
+  }
+
+  .lang-menu {
+    @apply pointer-events-none absolute top-[calc(100%+10px)] left-0 z-50 max-h-[225px] w-[100px] translate-y-3 overflow-y-auto rounded-[10px] bg-white opacity-0 shadow-md transition-all duration-300 data-active:pointer-events-auto data-active:translate-y-0 data-active:opacity-100;
+  }
+
   .gradient-border-block {
     @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
   }

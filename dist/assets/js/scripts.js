@@ -1,3 +1,35 @@
+//===============================================================
+const handleConnectors = () => {
+  document.querySelectorAll('[data-connector]').forEach((connector) => {
+    let isOpen = false;
+
+    const parent = connector.closest('[data-connect-parent]') || document;
+    const target = parent.querySelector(`[data-connect="${connector.dataset.connector}"]`);
+
+    if (!target) return;
+
+    const toggle = (state) => {
+      isOpen = state;
+      connector.toggleAttribute('data-active', isOpen);
+      target.toggleAttribute('data-active', isOpen);
+    };
+
+    connector.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggle(!isOpen);
+    });
+
+    target.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    document.addEventListener('click', () => {
+      if (isOpen) toggle(false);
+    });
+  });
+};
+
+//===============================================================
 const handleMobuleMenu = () => {
   let isOpen = false;
 
@@ -25,4 +57,6 @@ const handleMobuleMenu = () => {
   });
 };
 
+//===============================================================
 handleMobuleMenu();
+handleConnectors();

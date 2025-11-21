@@ -1,9 +1,5 @@
-<div class="relative" x-data="{ open: false }" @click.outside="open = false">
-  <button
-    class="rounded-2lg inline-flex h-10 cursor-pointer items-center gap-2 px-2.5 py-1 transition-colors hover:bg-rose-100"
-    :class="{ 'bg-rose-100': open }"
-    @click="open = !open"
-  >
+<div class="relative" data-connect-parent>
+  <button class="lang-icon" data-connector="lang-menu">
     <div class="min-w-[25px] overflow-hidden rounded-sm">
       <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>" width="25" />
     </div>
@@ -12,10 +8,7 @@
       <?php include 'components/icons/select-arrow.php' ?>
     </div>
   </button>
-  <div
-    class="rounded-2lg absolute top-[calc(100%+10px)] left-0 z-50 max-h-[225px] w-[100px] overflow-y-auto bg-white shadow-md transition-all duration-300"
-    x-bind:class="open ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'"
-  >
+  <div class="lang-menu" data-connect="lang-menu">
     <ul class="py-2">
       <?php foreach ($supportedLanguages as $listLang) { ?>
       <li
