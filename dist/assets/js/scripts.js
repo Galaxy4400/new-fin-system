@@ -1,5 +1,5 @@
 //===============================================================
-const handleConnectors = () => {
+const initConnectors = () => {
   document.querySelectorAll('[data-connector]').forEach((connector) => {
     let isOpen = false;
 
@@ -30,7 +30,7 @@ const handleConnectors = () => {
 };
 
 //===============================================================
-const handleMobuleMenu = () => {
+const initMobuleMenu = () => {
   let isOpen = false;
 
   const icon = document.querySelector('[data-menu-icon]');
@@ -71,7 +71,7 @@ const initLanguage = () => {
 };
 
 //===============================================================
-const langSelectInit = () => {
+const initLangSelect = () => {
   document.querySelectorAll('.language-list li').forEach((item) => {
     item.addEventListener('click', function () {
       const lang = this.getAttribute('data-lang');
@@ -94,5 +94,6 @@ const langSelectInit = () => {
 
 //===============================================================
 initLanguage();
-handleMobuleMenu();
-handleConnectors();
+initLangSelect();
+initMobuleMenu();
+initConnectors();

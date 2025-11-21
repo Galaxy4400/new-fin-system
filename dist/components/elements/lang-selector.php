@@ -8,19 +8,21 @@
       <?php include 'components/icons/select-arrow.php' ?>
     </div>
   </button>
-  <div class="lang-menu" data-connect="lang-menu">
+  <nav class="lang-menu" data-connect="lang-menu">
     <ul class="py-2">
       <?php foreach ($supportedLanguages as $listLang) { ?>
-      <li
-        class="inline-flex w-full cursor-pointer items-center gap-2 px-3 py-2 transition-colors hover:bg-rose-100"
-        data-lang="<?= $listLang ?>"
-      >
-        <div class="overflow-hidden rounded-sm">
-          <img src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" />
-        </div>
-        <span class="uppercase"><?= $listLang ?></span>
+      <li class="" data-lang="<?= $listLang ?>">
+        <a
+          class="<?php if ($currentLang === $listLang) { ?>bg-rose-100<?php } ?> inline-flex w-full cursor-pointer items-center gap-2 px-3 py-2 transition-colors hover:bg-rose-100 data-active:bg-rose-100"
+          href="#"
+        >
+          <div class="overflow-hidden rounded-sm">
+            <img src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" />
+          </div>
+          <span class="uppercase"><?= $listLang ?></span>
+        </a>
       </li>
       <?php } ?>
     </ul>
-  </div>
+  </nav>
 </div>

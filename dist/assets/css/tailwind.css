@@ -385,6 +385,9 @@
   .bg-primary-lighter {
     background-color: var(--color-primary-lighter);
   }
+  .bg-rose-100 {
+    background-color: var(--color-rose-100);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -498,6 +501,11 @@
       @media (hover: hover) {
         background-color: var(--color-rose-100);
       }
+    }
+  }
+  .data-active\:bg-rose-100 {
+    &[data-active] {
+      background-color: var(--color-rose-100);
     }
   }
   .sm\:block {
