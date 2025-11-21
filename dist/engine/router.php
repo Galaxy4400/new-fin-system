@@ -84,7 +84,7 @@ if (preg_match('/[A-Z]/', $requestUri)) {
 }
 
 if (isset($_GET['action']) && $_GET['action'] === 'send') {
-	require __DIR__ . 'send.php';
+	require __DIR__ . '/send.php';
 	exit;
 }
 

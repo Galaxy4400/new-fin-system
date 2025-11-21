@@ -110,6 +110,10 @@ function emailCheck($email)
 
 function logRequest($data)
 {
+	if ($_SERVER['SERVER_PORT'] == 8080) {
+		return;
+	}
+
 	$publicHtmlPath = __DIR__ . '/../';
 	$logDir = $publicHtmlPath . 'logs';
 	if (!is_dir($logDir)) {
