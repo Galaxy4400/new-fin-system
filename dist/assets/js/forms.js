@@ -1,3 +1,10 @@
+const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
+  new Promise((resolve, reject) =>
+    setTimeout(() => {
+      success ? resolve(payload) : reject(payload);
+    }, ms),
+  );
+
 const initCountryPhones = (form) => {
   const intlTelInput = form.querySelector('input[data-phone]');
 
@@ -38,25 +45,36 @@ const initSubmit = (form) => {
 
     const formData = new FormData(form);
 
-    // formLoading(form);
+    form.setAttribute('data-loading', '');
 
     if (form.iti) formData.set('phone', formData.get('phone').replace(/^0+/, ''));
     if (form.iti) formData.append('full_phone', form.iti.getNumber());
     if (form.iti) formData.append('country_code', '+' + form.iti.getSelectedCountryData().dialCode);
 
-    fetch(formAction, {
-      method: formMethod,
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((payload) => {
-        console.log(payload);
-        // mainFormAfterSubmit(form, payload);
+    mokFetch(1000, Object.fromEntries(formData), true)
+      .then((res) => {
+        console.log('THEN:', res);
       })
-      .catch((error) => console.log(error.message))
+      .catch((err) => {
+        console.log('CATCH:', err);
+      })
       .finally(() => {
-        // formUnloading(form);
+        form.removeAttribute('data-loading');
       });
+
+    // fetch(formAction, {
+    //   method: formMethod,
+    //   body: formData,
+    // })
+    //   .then((response) => response.json())
+    //   .then((payload) => {
+    //     console.log(payload);
+    //     // mainFormAfterSubmit(form, payload);
+    //   })
+    //   .catch((error) => console.log(error.message))
+    //   .finally(() => {
+    //     form.removeAttribute('data-loading');
+    //   });
   });
 };
 

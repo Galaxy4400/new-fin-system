@@ -1,7 +1,7 @@
 <form
   name="form"
   method="post"
-  class="gradient-border-block self-start rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px]"
+  class="group gradient-border-block relative self-start overflow-hidden rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px]"
   action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"
   data-form
 >
@@ -9,6 +9,8 @@
   <input type="hidden" name="country" value="<?= t('v.country') ?>" />
   <input type="hidden" name="subid" value="<?= $subid ?>" />
   <input type="hidden" name="language" value="<?= $currentLang ?>" />
+
+  <?php include 'components/elements/form-loader.php' ?>
 
   <div class="grid gap-5">
     <header class="text-center">
@@ -36,7 +38,7 @@
       </label>
       <label class="grid gap-1.5">
         <span class="label">Phone</span>
-        <input class="input" type="tel" name="phone" data-phone required />
+        <input class="input" type="tel" name="phone" data-phone required value="612345678" />
       </label>
     </div>
     <div>
