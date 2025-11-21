@@ -181,19 +181,19 @@ const initSubmit = (form) => {
     if (form.iti) formData.append('full_phone', form.iti.getNumber());
     if (form.iti) formData.append('country_code', '+' + form.iti.getSelectedCountryData().dialCode);
 
-    // fetch(formAction, {
-    //   method: formMethod,
-    //   body: formData,
-    // })
-    //   .then((response) => response.json())
-    //   .then((payload) => {
-    //     console.log(payload);
-    //     // responseHandler(form, payload);
-    //   })
-    //   .catch((error) => console.log(error.message))
-    //   .finally(() => {
-    //     form.removeAttribute('data-loading');
-    //   });
+    fetch(formAction, {
+      method: formMethod,
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(res.status);
+        responseHandler(form, res);
+      })
+      .catch((err) => responseHandler(form, { tech: err }))
+      .finally(() => {
+        form.removeAttribute('data-loading');
+      });
   });
 
   form.addEventListener('input', () => {
