@@ -29,7 +29,7 @@ function definePagePath() {
 function getCurrentPageUrl() {
 	global $domain, $defaultLang, $pagePath, $currentLang;
 
-	$currentPageUrl = 'https://' . $domain;
+	$currentPageUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $domain;
 
 	if ($currentLang !== $defaultLang) {
 		$currentPageUrl .= '/' . $currentLang;
@@ -44,7 +44,7 @@ function getCurrentPageUrl() {
 function getAltUrl($langItem) {
 	global $domain, $defaultLang, $pagePath;
 
-	$altUrl = 'https://' . $domain;
+	$altUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $domain;
 
 	if ($langItem !== $defaultLang) { 
 		$altUrl .= '/' . $langItem; 
