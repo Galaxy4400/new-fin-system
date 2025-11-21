@@ -130,8 +130,6 @@ const showFormMessage = (form, { type = 'success', title = '', text = '' }) => {
 //===============================================================
 const responseHandler = (form, { success, code, errors, auto_login_url }) => {
   if (success) {
-    clearForm(form);
-
     if (auto_login_url) {
       setCookie('autologin', auto_login_url, { expires: 172800 });
 
@@ -212,6 +210,14 @@ const initSubmit = (form) => {
     if (form.hasAttribute('data-submited')) {
       validateForm(form);
     }
+  });
+};
+
+//===============================================================
+const formsHandle = () => {
+  document.querySelectorAll('form[data-form]').forEach((form) => {
+    initCountryPhones(form);
+    initSubmit(form);
   });
 };
 

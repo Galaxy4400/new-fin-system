@@ -4,7 +4,7 @@ class WorkWithLangs {
 
   constructor() {
     const urlPart = window.location.pathname.split('/')[1];
-    this.__currentLangPrefix = urlPart && urlPart.length === 2 ? urlPart : window.DEFAULT_LANG;
+    this.__currentLangPrefix = urlPart && urlPart.length === 2 ? urlPart : window.defaultLang;
   }
 
   async init() {
@@ -26,7 +26,7 @@ class WorkWithLangs {
     }
 
     try {
-      const res = await fetch(`${window.location.origin}/langs/${langPrefix}.json`);
+      const res = await fetch(`${window.location.origin}/lang/${langPrefix}.json`);
       const json = await res.json();
       localStorage.setItem(langPrefix, JSON.stringify(json));
       this.__lang = json;
