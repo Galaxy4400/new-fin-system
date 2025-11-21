@@ -87,7 +87,7 @@ function pictureSetResponsive(string $fileName, ?string $class = '', array $attr
 	$root = $_SERVER['DOCUMENT_ROOT'];
 
 	// фиксированный набор размеров
-	$sizesList = [320, 640, 1280, 1920];
+	$sizesList = [320, 640, 1280];
 
 	// ПАРСЕР НОВОГО УДОБНОГО ФОРМАТА SIZES
 	if (!$sizes) {

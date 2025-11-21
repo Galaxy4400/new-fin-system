@@ -7,7 +7,7 @@ export async function imagesResponsive() {
   const srcPath = `${app.path.srcFolder}/img/responsive`;
   const distPath = `${app.path.build.imgr}`;
 
-  const sizes = [320, 640, 1280, 1920];
+  const sizes = [320, 640, 1280];
 
   const files = await fg(['*.png', '*.jpg', '*.jpeg'], {
     cwd: srcPath,
