@@ -17,6 +17,7 @@
     --color-green-900: oklch(39.3% 0.095 152.535);
     --color-rose-100: oklch(94.1% 0.03 12.58);
     --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
@@ -444,6 +445,9 @@
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
   }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
   .lowercase {
     text-transform: lowercase;
   }
@@ -611,13 +615,15 @@
 }
 @layer base {
   body {
+    --tw-leading: 1.4;
+    line-height: 1.4;
     color: #1A1A1A;
   }
   h1 {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     @media (width >= 48rem) {
@@ -628,8 +634,8 @@
   h2 {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     @media (width >= 48rem) {
@@ -640,8 +646,8 @@
   h3 {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     @media (width >= 48rem) {
@@ -652,8 +658,8 @@
   h4 {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     @media (width >= 48rem) {

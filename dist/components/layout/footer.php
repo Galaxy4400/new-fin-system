@@ -7,24 +7,24 @@
           <nav class="flex max-w-[755px] grow flex-col flex-wrap gap-5 md:flex-row md:justify-evenly">
             <ul class="flex flex-col gap-x-5 gap-y-4 md:flex-row md:gap-x-12">
               <li>
-                <a class="link" href="<?= url('/', '', '#about') ?>">About</a>
+                <a class="link" href="<?= url('/', '', '#about') ?>"><?= t('t.main.menu_about') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('/', '', '#features') ?>">Features</a>
+                <a class="link" href="<?= url('/', '', '#features') ?>"><?= t('t.main.menu_features') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('/', '', '#reviews') ?>">Reviews</a>
+                <a class="link" href="<?= url('/', '', '#reviews') ?>"><?= t('t.main.menu_reviews') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('/', '', '#faq') ?>">FAQ</a>
+                <a class="link" href="<?= url('/', '', '#faq') ?>"><?= t('t.main.menu_faq') ?></a>
               </li>
             </ul>
             <ul class="flex flex-col gap-x-5 gap-y-4 md:flex-row">
               <li>
-                <a class="link" href="<?= url('privacy') ?>">Privacy Policy</a>
+                <a class="link" href="<?= url('privacy') ?>"><?= t('t.main.menu_privacy') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('conditions') ?>">Conditions of Use</a>
+                <a class="link" href="<?= url('conditions') ?>"><?= t('t.main.menu_conditions') ?></a>
               </li>
             </ul>
           </nav>
@@ -34,13 +34,16 @@
         </div>
         <div class="inline-flex items-center gap-2"><?php include 'components/icons/footer-socials.php' ?></div>
       </div>
-      <div>
-        General Investing Disclaimer Important: <br />All profit examples are illustrative and do not guarantee similar
-        results. Trading in any market carries potential risks, and performance depends entirely on your investment
-        choices. Always evaluate potential losses and make sure to trade responsibly. [brand] assumes no liability for
-        financial outcomes.
+      <div class="grid gap-2.5 text-sm text-gray-500">
+        <p><?= t('t.main.footer__disclamer_1') ?></p>
+        <p><?= t('t.main.footer__disclamer_2') ?></p>
+        <p><?= t('t.main.footer__disclamer_3') ?></p>
+        <p><?= t('t.main.footer__disclamer_4') ?></p>
       </div>
-      <div class="text-center">Copyright 2025 © BRAND, All Right Reserved</div>
+      <div class="text-center">
+        <?= t('t.main.footer__copy', ['{year}' =>
+        date('Y')]) ?>
+      </div>
     </div>
   </div>
 </footer>
