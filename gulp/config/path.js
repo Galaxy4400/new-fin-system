@@ -15,7 +15,7 @@ export const path = {
     html: `${buildFolder}/`,
   },
   src: {
-    js: `${srcFolder}/js/*.js`,
+    js: `${assetsFolder}/js/*.js`,
     img: `${srcFolder}/img/*.*`,
     imgr: `${srcFolder}/img/responsive/*.{jpg,jpeg,png}`,
     css: `${srcFolder}/css/tailwind.css`,
