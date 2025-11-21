@@ -1,57 +1,6 @@
 const local = (key) => window.workWithLang.local(key);
 
 //===============================================================
-const mockData = {
-  mockSuccess: {
-    success: true,
-  },
-
-  mockSuccessWithAutoLogin: {
-    success: true,
-    auto_login_url: 'https://site.com/autologin/abc123',
-  },
-
-  mockInvalidParamsObject: {
-    success: false,
-    code: 'invalid_params',
-    errors: {
-      email: 'Invalid email',
-      password: 'Too short',
-    },
-  },
-
-  mockInvalidParamsArray: {
-    success: false,
-    code: 'invalid_params',
-    errors: ['email_invalid', 'password_short', 'name_required'],
-  },
-
-  mockInvalidParamsString: {
-    success: false,
-    code: 'invalid_params',
-    errors: 'wrong_format',
-  },
-
-  mockUnknownError: {
-    success: false,
-    code: 'server_error',
-    errors: null,
-  },
-
-  mockNoCodeError: {
-    success: false,
-  },
-};
-
-//---------------------------------------------------------------
-const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
-  new Promise((resolve, reject) =>
-    setTimeout(() => {
-      success ? resolve(payload) : reject(payload);
-    }, ms),
-  );
-
-//===============================================================
 const initCountryPhones = (form) => {
   const intlTelInput = form.querySelector('input[data-phone]');
 
@@ -164,6 +113,8 @@ const showFormMessage = (form, { type = 'success', title = '', text = '' }) => {
 
   messageBlock.setAttribute(type === 'success' ? 'data-success' : 'data-error', '');
 
+  if (typeof text === 'object') text = Object.values(text);
+
   messageBlock.querySelector('[data-form-message-title]').innerHTML = title;
   messageBlock.querySelector('[data-form-message-content]').innerHTML = Array.isArray(text)
     ? `<ul>${text.map((t) => `<li>${t}</li>`).join('')}</ul>`
@@ -171,19 +122,19 @@ const showFormMessage = (form, { type = 'success', title = '', text = '' }) => {
 };
 
 //===============================================================
-const responseHandler = (form, { success, code, errors, auto_login_url }) => {
+const responseHandler = (form, { success, code, errors, auto_login_url, tech }) => {
   if (success) {
-    if (auto_login_url) {
-      setCookie('autologin', auto_login_url, { expires: 172800 });
+    resetForm(form);
 
+    if (auto_login_url) {
       return showFormMessage(form, {
-        title: local('t.main.reg_complete'),
-        text: local('t.main.redirect_timer'),
+        title: local('t.response.reg_complete'),
+        text: local('t.response.redirect_timer'),
       });
     }
 
     return showFormMessage(form, {
-      title: local('t.main.reg_complete'),
+      title: local('t.response.reg_complete'),
     });
   }
 
@@ -191,15 +142,23 @@ const responseHandler = (form, { success, code, errors, auto_login_url }) => {
   if (code === 'invalid_params') {
     return showFormMessage(form, {
       type: 'error',
-      title: local('t.main.something_wrong'),
-      text: Array.isArray(errors) ? Object.keys(errors || []) : [errors],
+      title: local('t.response.something_wrong'),
+      text: errors,
+    });
+  }
+
+  if (tech) {
+    return showFormMessage(form, {
+      type: 'error',
+      title: local('t.response.something_wrong'),
+      text: local('t.response.ask_support'),
     });
   }
 
   return showFormMessage(form, {
     type: 'error',
-    title: local('t.main.something_wrong'),
-    text: local('t.main.try_again'),
+    title: local('t.response.something_wrong'),
+    text: local('t.response.try_again'),
   });
 };
 
@@ -221,18 +180,6 @@ const initSubmit = (form) => {
     if (form.iti) formData.set('phone', formData.get('phone').replace(/^0+/, ''));
     if (form.iti) formData.append('full_phone', form.iti.getNumber());
     if (form.iti) formData.append('country_code', '+' + form.iti.getSelectedCountryData().dialCode);
-
-    mokFetch(1000, mockData.mockSuccess, true)
-      .then((res) => {
-        resetForm(form);
-        responseHandler(form, res);
-      })
-      .catch((err) => {
-        console.log('CATCH:', err);
-      })
-      .finally(() => {
-        form.removeAttribute('data-loading');
-      });
 
     // fetch(formAction, {
     //   method: formMethod,
