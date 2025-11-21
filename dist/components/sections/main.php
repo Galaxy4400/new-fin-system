@@ -2,7 +2,7 @@
   <div class="absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>
-  <div class="content-container relative grid gap-7 md:grid-cols-2 md:gap-0">
+  <div class="content-container relative grid gap-7 md:grid-cols-2">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
         <h1>The Official Website <mark>[brand]</mark> for AI-Powered Trading in <mark>[country]</mark></h1>
@@ -26,6 +26,6 @@
         </p>
       </div>
     </div>
-    <div class="flex justify-center md:justify-end md:pl-8"><?php include 'components/forms/main.php' ?></div>
+    <div class="flex justify-center md:justify-end"><?php include 'components/forms/main.php' ?></div>
   </div>
 </section>

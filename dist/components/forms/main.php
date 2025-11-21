@@ -27,7 +27,6 @@
           required
           data-regexp="^[^\d]+$"
           data-should-validate
-          value="test"
         />
       </label>
       <label class="grid gap-1.5">
@@ -40,24 +39,15 @@
           required
           data-regexp="^[^\d]+$"
           data-should-validate
-          value="test"
         />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Email</span>
-        <input
-          class="input"
-          type="email"
-          name="email"
-          placeholder="Enter your Email"
-          required
-          data-should-validate
-          value="test@test.test"
-        />
+        <input class="input" type="email" name="email" placeholder="Enter your Email" required data-should-validate />
       </label>
       <label class="grid gap-1.5">
         <span class="label">Phone</span>
-        <input class="input" type="tel" name="phone" data-phone required data-should-validate value="612345678" />
+        <input class="input" type="tel" name="phone" data-phone required data-should-validate />
       </label>
     </div>
     <div>

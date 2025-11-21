@@ -409,6 +409,9 @@
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
   }
@@ -560,11 +563,6 @@
       justify-content: space-evenly;
     }
   }
-  .md\:gap-0 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 0);
-    }
-  }
   .md\:gap-10 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 10);
@@ -590,6 +588,11 @@
       padding-block: calc(var(--spacing) * 10);
     }
   }
+  .md\:py-16 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
   .md\:pt-7 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 7);
@@ -598,11 +601,6 @@
   .md\:pr-0 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 0);
-    }
-  }
-  .md\:pl-8 {
-    @media (width >= 48rem) {
-      padding-left: calc(var(--spacing) * 8);
     }
   }
   .lg\:gap-x-14 {
