@@ -57,6 +57,12 @@
         Sign Up Now <?php include 'components/icons/arrow.php' ?>
       </button>
     </div>
+
+    <div class="form-message" data-form-message>
+      <p class="h4" data-form-message-title></p>
+      <div data-form-message-content></div>
+    </div>
+
     <footer class="grid items-center gap-5 text-center">
       <p class="text-sm leading-[140%] opacity-60">
         By entering your personal information and clicking the button, you accept the Privacy Policy and Terms of Use of

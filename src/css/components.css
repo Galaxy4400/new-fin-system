@@ -11,6 +11,10 @@
     @apply text-lg leading-[120%] font-medium md:text-xl;
   }
 
+  .h4 {
+    @apply text-base leading-[120%] font-medium md:text-lg;
+  }
+
   .content-container {
     @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
   }
@@ -45,6 +49,14 @@
 
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 cursor-pointer items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
+  }
+
+  .form-message {
+    @apply hidden gap-2 rounded-lg border p-4 text-sm data-error:grid data-error:border-red-400 data-error:bg-red-100 data-error:text-red-700 data-success:grid data-success:border-green-400 data-success:bg-green-200 data-success:text-green-900;
+  }
+
+  .form-message ul {
+    @apply list-inside list-disc;
   }
 
   .input {

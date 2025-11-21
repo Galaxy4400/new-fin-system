@@ -1,3 +1,6 @@
+const local = (key) => window.workWithLang.local(key);
+
+//===============================================================
 const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
   new Promise((resolve, reject) =>
     setTimeout(() => {
@@ -5,6 +8,7 @@ const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
     }, ms),
   );
 
+//===============================================================
 const initCountryPhones = (form) => {
   const intlTelInput = form.querySelector('input[data-phone]');
 
@@ -36,6 +40,7 @@ const initCountryPhones = (form) => {
   });
 };
 
+//===============================================================
 const validateForm = (form) => {
   let isFormValid = true;
   form.removeAttribute('data-novalid');
@@ -92,6 +97,7 @@ const validateForm = (form) => {
   return isFormValid;
 };
 
+//===============================================================
 const resetForm = (form) => {
   form.reset();
 
@@ -106,6 +112,57 @@ const resetForm = (form) => {
   form.removeAttribute('data-submited');
 };
 
+//===============================================================
+const showFormMessage = (form, { type = 'success', title = '', text = '' }) => {
+  const messageBlock = form.querySelector('[data-form-message]');
+
+  messageBlock.removeAttribute('data-success');
+  messageBlock.removeAttribute('data-error');
+
+  messageBlock.setAttribute(type === 'success' ? 'data-success' : 'data-error', '');
+
+  messageBlock.querySelector('[data-form-message-title]').innerHTML = title;
+  messageBlock.querySelector('[data-form-message-content]').innerHTML = Array.isArray(text)
+    ? `<ul>${text.map((t) => `<li>${t}</li>`).join('')}</ul>`
+    : text;
+};
+
+//===============================================================
+const responseHandler = (form, { success, code, errors, auto_login_url }) => {
+  if (success) {
+    clearForm(form);
+
+    if (auto_login_url) {
+      setCookie('autologin', auto_login_url, { expires: 172800 });
+
+      return showFormMessage(form, {
+        title: local('t.main.reg_complete'),
+        text: local('t.main.redirect_timer'),
+      });
+    }
+
+    return showFormMessage(form, {
+      title: local('t.main.reg_complete'),
+    });
+  }
+
+  // Errors
+  if (code === 'invalid_params') {
+    return showFormMessage(form, {
+      type: 'error',
+      title: local('t.main.something_wrong'),
+      text: Array.isArray(errors) ? Object.keys(errors || []) : [errors],
+    });
+  }
+
+  return showFormMessage(form, {
+    type: 'error',
+    title: local('t.main.something_wrong'),
+    text: local('t.main.try_again'),
+  });
+};
+
+//===============================================================
 const initSubmit = (form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -158,138 +215,5 @@ const initSubmit = (form) => {
   });
 };
 
-const formsHandle = () => {
-  document.querySelectorAll('form[data-form]').forEach((form) => {
-    initCountryPhones(form);
-    initSubmit(form);
-  });
-};
-
+//===============================================================
 formsHandle();
-
-//===============================================================
-//===============================================================
-//===============================================================
-function responseHandler(form, { success, ...payload }) {
-  success ? mainFormSuccessHandler(form, payload) : mainFormErrorHandler(form, payload);
-}
-
-function mainFormSuccessHandler(form, { auto_login_url }) {
-  auto_login_url ? renderSuccessRegistrationAndRedirect(form, auto_login_url) : renderSuccessRegistration(form);
-
-  clearForm(form);
-  submitCooldown();
-}
-
-function mainFormErrorHandler(form, { code, errors }) {
-  code === 'invalid_params' ? renderInvalidParamsError(form, errors) : renderRegistrationError(form);
-}
-
-function renderSuccessRegistrationAndRedirect(form, url) {
-  setCookie('autologin', url, { expires: 2 * 24 * 60 * 60 });
-
-  const message = new FormMessage(form.querySelector('.form-message'), {
-    title: window.workWithLang.local('t.main.reg_complete'),
-    text: window.workWithLang.local('t.main.redirect_timer'),
-    link: url,
-  });
-
-  message.render();
-}
-
-function renderSuccessRegistration(form) {
-  const message = new FormMessage(form.querySelector('.form-message'), {
-    title: window.workWithLang.local('t.main.reg_complete'),
-  });
-
-  message.render();
-}
-
-function renderInvalidParamsError(form, errors) {
-  const message = new FormMessage(form.querySelector('.form-message'), {
-    error: true,
-    title: window.workWithLang.local('t.main.something_wrong'),
-    text: Array.isArray(errors) ? Object.keys(errors || []) : [errors],
-  });
-
-  message.render();
-}
-
-function renderRegistrationError(form) {
-  const message = new FormMessage(form.querySelector('.form-message'), {
-    error: true,
-    title: window.workWithLang.local('t.main.something_wrong'),
-    text: window.workWithLang.local('t.main.try_again'),
-  });
-
-  message.render();
-}
-
-//===============================================================
-
-function helpFormAfterSubmit({ success }) {
-  success ? renderHelpFormSuccess(this) : renderHelpFormError(this);
-}
-
-function renderHelpFormSuccess(form) {
-  clearForm(form);
-
-  const message = new FormMessage(form.querySelector('.form-message'), {
-    title: window.workWithLang.local('t.main.application_accepted'),
-  });
-
-  message.render();
-}
-
-function renderHelpFormError(form) {
-  const message = new FormMessage(form.querySelector('.form-message'), {
-    error: true,
-    title: window.workWithLang.local('t.main.something_wrong'),
-    text: window.workWithLang.local('t.main.try_again'),
-  });
-
-  message.render();
-}
-
-//===============================================================
-
-function forgotFormAfterSubmit() {
-  clearForm(this);
-
-  const message = new FormMessage(this.querySelector('.form-message'), {
-    title: window.workWithLang.local('t.main.reset_password'),
-  });
-
-  message.render();
-}
-
-//===============================================================
-
-function signinFormAfterSubmit() {
-  clearForm(this);
-
-  const message = new FormMessage(this.querySelector('.form-message'), {
-    error: true,
-    title: window.workWithLang.local('t.main.no_user_found'),
-  });
-
-  message.render();
-}
-
-//===============================================================
-//===============================================================
-//===============================================================
-
-function submitCooldown() {
-  const buttons = document.querySelectorAll('button[type="submit"]');
-
-  buttons.forEach((btn) => {
-    btn.disabled = true;
-  });
-
-  setTimeout(() => {
-    buttons.forEach((btn) => {
-      btn.disabled = false;
-    });
-  }, 1000 * 30);
-}
