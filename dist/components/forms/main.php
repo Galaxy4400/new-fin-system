@@ -19,30 +19,41 @@
     <div class="grid gap-4">
       <label class="grid gap-1.5">
         <span class="label">First Name</span>
-        <input class="input" type="text" name="first_name" placeholder="Enter your First Name" required value="test" />
-      </label>
-      <label class="grid gap-1.5">
-        <span class="label">Last Name</span>
-        <input class="input" type="text" name="last_name" placeholder="Enter your Last Name" required value="test" />
-      </label>
-      <label class="grid gap-1.5">
-        <span class="label">Email</span>
         <input
           class="input"
-          type="email"
-          name="email"
-          placeholder="Enter your Email "
+          type="text"
+          name="first_name"
+          placeholder="Enter your First Name"
           required
-          value="test@test.test"
+          data-regexp="^[^\d]+$"
+          data-should-validate
         />
       </label>
       <label class="grid gap-1.5">
+        <span class="label">Last Name</span>
+        <input
+          class="input"
+          type="text"
+          name="last_name"
+          placeholder="Enter your Last Name"
+          required
+          data-regexp="^[^\d]+$"
+          data-should-validate
+        />
+      </label>
+      <label class="grid gap-1.5">
+        <span class="label">Email</span>
+        <input class="input" type="email" name="email" placeholder="Enter your Email" required data-should-validate />
+      </label>
+      <label class="grid gap-1.5">
         <span class="label">Phone</span>
-        <input class="input" type="tel" name="phone" data-phone required value="612345678" />
+        <input class="input" type="tel" name="phone" data-phone required data-should-validate />
       </label>
     </div>
     <div>
-      <button class="btn-primary flex w-full items-center gap-2.5">
+      <button
+        class="btn-primary flex w-full items-center gap-2.5 group-data-novalid:cursor-default group-data-novalid:bg-gray-300"
+      >
         Sign Up Now <?php include 'components/icons/arrow.php' ?>
       </button>
     </div>

@@ -36,9 +36,82 @@ const initCountryPhones = (form) => {
   });
 };
 
+const validateForm = (form) => {
+  let isFormValid = true;
+  form.removeAttribute('data-novalid');
+
+  const inputs = form.querySelectorAll('[data-should-validate]');
+
+  for (const input of inputs) {
+    const type = input.type ? input.type : false;
+    const required = input.required ? true : false;
+    const regexp = input.dataset.regexp ? input.dataset.regexp : false;
+
+    // clean status
+    input.removeAttribute('data-valid');
+    input.removeAttribute('data-novalid');
+
+    let isValid = true;
+    const value = input.value.trim();
+
+    // required
+    if (isValid && required) {
+      if (!value) isValid = false;
+    }
+
+    // email
+    if (isValid && type === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) isValid = false;
+    }
+
+    // tel
+    if (isValid && type === 'tel') {
+      if (!form.iti.isValidNumber()) isValid = false;
+    }
+
+    // regexp
+    if (isValid && regexp) {
+      const customRegex = new RegExp(regexp, 'gi');
+      if (!customRegex.test(value)) isValid = false;
+    }
+
+    // status
+    if (isValid) {
+      input.setAttribute('data-valid', '');
+    } else {
+      input.setAttribute('data-novalid', '');
+      isFormValid = false;
+    }
+  }
+
+  if (!isFormValid) {
+    form.setAttribute('data-novalid', '');
+  }
+
+  return isFormValid;
+};
+
+const resetForm = (form) => {
+  form.reset();
+
+  form.iti.setNumber('');
+
+  form.querySelectorAll('[data-valid], [data-novalid]').forEach((input) => {
+    input.removeAttribute('data-valid');
+    input.removeAttribute('data-novalid');
+  });
+
+  form.removeAttribute('data-novalid');
+  form.removeAttribute('data-submited');
+};
+
 const initSubmit = (form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+    form.setAttribute('data-submited', '');
+
+    if (!validateForm(form)) return;
 
     const formAction = form.action ? form.getAttribute('action').trim() : '#';
     const formMethod = form.method ? form.getAttribute('method').trim() : 'GET';
@@ -54,6 +127,7 @@ const initSubmit = (form) => {
     mokFetch(1000, Object.fromEntries(formData), true)
       .then((res) => {
         console.log('THEN:', res);
+        resetForm(form);
       })
       .catch((err) => {
         console.log('CATCH:', err);
@@ -69,24 +143,34 @@ const initSubmit = (form) => {
     //   .then((response) => response.json())
     //   .then((payload) => {
     //     console.log(payload);
-    //     // mainFormAfterSubmit(form, payload);
+    //     // responseHandler(form, payload);
     //   })
     //   .catch((error) => console.log(error.message))
     //   .finally(() => {
     //     form.removeAttribute('data-loading');
     //   });
   });
+
+  form.addEventListener('input', () => {
+    if (form.hasAttribute('data-submited')) {
+      validateForm(form);
+    }
+  });
 };
 
-document.querySelectorAll('form[data-form]').forEach((form) => {
-  initCountryPhones(form);
-  initSubmit(form);
-});
+const formsHandle = () => {
+  document.querySelectorAll('form[data-form]').forEach((form) => {
+    initCountryPhones(form);
+    initSubmit(form);
+  });
+};
+
+formsHandle();
 
 //===============================================================
 //===============================================================
 //===============================================================
-function mainFormAfterSubmit(form, { success, ...payload }) {
+function responseHandler(form, { success, ...payload }) {
   success ? mainFormSuccessHandler(form, payload) : mainFormErrorHandler(form, payload);
 }
 
@@ -195,103 +279,6 @@ function signinFormAfterSubmit() {
 //===============================================================
 //===============================================================
 //===============================================================
-
-class FormMessage {
-  static #defaulOptions = {
-    error: false,
-    title: '',
-    text: '', // string|array
-    link: '',
-    redirectTimeout: 5,
-  };
-
-  constructor(messageElement, options) {
-    this.messageElement = messageElement;
-    this.options = options ? { ...FormMessage.#defaulOptions, ...options } : FormMessage.#defaulOptions;
-  }
-
-  render() {
-    this._clear();
-    this._setStatus();
-    this._renderTitle();
-    this._renderMessage();
-    this._renderContent();
-  }
-
-  _renderTitle() {
-    this.titleElement = document.createElement('h5');
-    this.titleElement.innerHTML = this.options.title;
-  }
-
-  _renderMessage() {
-    if (!this.options.text) return;
-
-    const isTextArray = Array.isArray(this.options.text);
-
-    if (isTextArray) {
-      // this._renderList();
-    } else if (this.options.link) {
-      this._renderLink();
-    } else {
-      this._renderParagraph();
-    }
-  }
-
-  _renderParagraph() {
-    this.textElement = document.createElement('p');
-
-    this.textElement.innerHTML = this.options.text;
-  }
-
-  _renderList() {
-    this.textElement = document.createElement('ul');
-
-    this.options.text.forEach((text) => {
-      const listItem = document.createElement('li');
-      listItem.innerHTML = text;
-      this.textElement.append(listItem);
-    });
-  }
-
-  _renderLink() {
-    this.textElement = document.createElement('p');
-    this.textElement.innerHTML = this.options.text.replace('{{timer}}', `<span>${this.options.redirectTimeout}</span>`);
-
-    const intervalId = setInterval(() => {
-      this.textElement.innerHTML = this.options.text.replace(
-        '{{timer}}',
-        `<span>${--this.options.redirectTimeout}</span>`,
-      );
-
-      if (!this.options.redirectTimeout > 0) {
-        clearInterval(intervalId);
-        window.location.href = this.options.link;
-      }
-    }, 1000);
-  }
-
-  _renderContent() {
-    const messageContentElement = document.createElement('div');
-
-    this.titleElement && messageContentElement.append(this.titleElement);
-    this.textElement && messageContentElement.append(this.textElement);
-
-    this.messageElement.append(messageContentElement);
-  }
-
-  _setStatus() {
-    this.options.error ? this.messageElement.classList.add('_error') : this.messageElement.classList.add('_success');
-  }
-
-  _clear() {
-    this.messageElement.innerHTML = '';
-
-    this.messageElement.classList.remove('_success');
-    this.messageElement.classList.remove('_error');
-
-    return this;
-  }
-}
 
 function submitCooldown() {
   const buttons = document.querySelectorAll('button[type="submit"]');

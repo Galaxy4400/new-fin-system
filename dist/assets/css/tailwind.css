@@ -7,6 +7,8 @@
     --font-sans: 'Inter', sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-green-600: oklch(62.7% 0.194 149.214);
     --color-rose-100: oklch(94.1% 0.03 12.58);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-white: #fff;
@@ -472,6 +474,16 @@
       display: flex;
     }
   }
+  .group-data-novalid\:cursor-default {
+    &:is(:where(.group)[data-novalid] *) {
+      cursor: default;
+    }
+  }
+  .group-data-novalid\:bg-gray-300 {
+    &:is(:where(.group)[data-novalid] *) {
+      background-color: var(--color-gray-300);
+    }
+  }
   .hover\:bg-rose-100 {
     &:hover {
       @media (hover: hover) {
@@ -878,6 +890,12 @@
     padding-block: calc(var(--spacing) * 2);
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
+    &[data-novalid] {
+      border-color: var(--color-red-500);
+    }
+    &[data-valid] {
+      border-color: var(--color-green-600);
+    }
   }
 }
 @media (any-hover: hover) {
