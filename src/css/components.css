@@ -1,4 +1,36 @@
 @layer components {
+  .h1 {
+    @apply text-4xl leading-[120%] font-semibold md:text-5xl;
+  }
+
+  .h2 {
+    @apply text-3xl leading-[120%] font-semibold md:text-4xl;
+  }
+
+  .h3 {
+    @apply text-lg leading-[120%] font-medium md:text-xl;
+  }
+
+  .content-container {
+    @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  .label {
+    @apply text-sm leading-[140%];
+  }
+
+  .link {
+    @apply hover:text-primary cursor-pointer transition-colors duration-300;
+  }
+
+  .mobile-menu {
+    @apply pointer-events-none fixed top-1/2 left-1/2 z-50 flex min-h-[300px] min-w-[250px] -translate-x-1/2 -translate-y-1/2 scale-90 flex-col items-center justify-center gap-8 rounded-4xl bg-white p-8 opacity-0 shadow-xl transition-all duration-300 ease-out data-active:pointer-events-auto data-active:scale-100 data-active:opacity-100;
+  }
+
+  .menu-icon {
+    @apply hover:text-primary data-active:text-primary inline-flex cursor-pointer transition-colors duration-300 md:hidden;
+  }
+
   .gradient-border-block {
     @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
   }
