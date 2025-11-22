@@ -122,9 +122,6 @@
       "form_email_placeholder": "Enter your Email",
       "form_phone_label": "Phone",
 
-      "main_form_privacy_link": "Privacy Policy",
-      "main_form_terms_link": "Terms of Use",
-
       "menu_home": "Home",
       "menu_about": "About",
       "menu_features": "Features",
@@ -163,7 +160,7 @@
 
       "footer__label": "Your secure trading partner",
 
-      "main-form__footer": "By entering your personal information and clicking the button, you accept the {privacy_link} and {terms_link} of the website.",
+      "main-form__footer": "By entering your personal information and clicking the button, you accept the <a class='link' href='{privacy_link}'>Privacy Policy</a> and <a class='link' href='{terms_link}'>Terms of Use</a> of the website.",
 
       "footer__disclamer_1": "HIGH RISK WARNING: Dealing or Trading FX, CFDs and Cryptocurrencies is highly speculative, carries a level of non-negligible risk and may not be suitable for all investors. You may lose some or all of your invested capital, therefore you should not speculate with capital that you cannot afford to lose. Please refer to the risk disclosure below. {site_name} does not gain or lose profits based on your activity and operates as a services company. {site_name} is not a financial services firm and is not eligible of providing financial advice. Therefore, {site_name} shall not be liable for any losses occurred via or in relation to this informational website.",
       "footer__disclamer_2": "SITE RISK DISCLOSURE: {site_name} does not accept any liability for loss or damage as a result of reliance on the information contained within this website; this includes education material, price quotes and charts, and analysis. Please be aware of and seek professional advice for the risks associated with trading the financial markets; never invest more money than you can risk losing. The risks involved in FX, CFDs and Cryptocurrencies may not be suitable for all investors. {site_name} doesn't retain responsibility for any trading losses you might face as a result of using or inferring from the data hosted on this site.",

@@ -1,4 +1,17 @@
 //===============================================================
+const redirectToUserLanguage = () => {
+  const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+
+  const initLang = localStorage.getItem('init_lang');
+
+  if (initLang || userLang === window.defaultLang || !window.languageList.includes(userLang)) return;
+
+  localStorage.setItem('init_lang', userLang);
+
+  window.location.replace(`${window.location.origin}/${userLang}`);
+};
+
+//===============================================================
 const initConnectors = () => {
   document.querySelectorAll('[data-connector]').forEach((connector) => {
     let isOpen = false;
@@ -58,19 +71,6 @@ const initMobuleMenu = () => {
 };
 
 //===============================================================
-const initLanguage = () => {
-  const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
-
-  const initLang = localStorage.getItem('init_lang');
-
-  if (initLang || userLang === window.defaultLang || !window.languageList.includes(userLang)) return;
-
-  localStorage.setItem('init_lang', userLang);
-
-  window.location.replace(`${window.location.origin}/${userLang}`);
-};
-
-//===============================================================
 const initLangSelect = () => {
   document.querySelectorAll('.language-list li').forEach((item) => {
     item.addEventListener('click', function () {
@@ -92,6 +92,7 @@ const initLangSelect = () => {
   });
 };
 
+//===============================================================
 const initLazy = () => {
   new LazyLoad({
     elements_selector: '[data-lazy]',
@@ -100,8 +101,8 @@ const initLazy = () => {
 };
 
 //===============================================================
+redirectToUserLanguage();
 initLazy();
-initLanguage();
 initLangSelect();
 initMobuleMenu();
 initConnectors();

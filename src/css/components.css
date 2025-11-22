@@ -24,7 +24,7 @@
   }
 
   .link {
-    @apply hover:text-primary cursor-pointer transition-colors duration-300;
+    @apply text-primary hover:text-primary-dark cursor-pointer transition-colors duration-300;
   }
 
   .mobile-menu {
