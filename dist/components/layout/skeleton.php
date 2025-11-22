@@ -153,9 +153,9 @@
   <div id="sk-header">
     <div id="sk-container">
       <div id="sk-header-body">
-        <div id="sk-logo" class="sk"></div>
-        <div id="sk-menu" class="sk"></div>
-        <div id="sk-actions" class="sk"></div>
+        <div id="sk-logo">Logo</div>
+        <div id="sk-menu">Menu item 1 | Menu item 2 | Menu item 3</div>
+        <div id="sk-actions">Actions</div>
       </div>
     </div>
   </div>
