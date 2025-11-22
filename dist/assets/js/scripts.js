@@ -92,7 +92,15 @@ const initLangSelect = () => {
   });
 };
 
+const initLazy = () => {
+  new LazyLoad({
+    elements_selector: '[data-lazy]',
+    threshold: 300,
+  });
+};
+
 //===============================================================
+initLazy();
 initLanguage();
 initLangSelect();
 initMobuleMenu();
