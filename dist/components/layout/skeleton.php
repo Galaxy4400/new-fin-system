@@ -1,5 +1,16 @@
-<div id="sk" style="display: flex; min-height: 100vh; flex-direction: column">
+<div id="sk">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
     #sk-container {
       max-width: 1224px;
       margin-left: auto;
@@ -12,7 +23,7 @@
     #sk-header {
       position: relative;
       z-index: 10;
-      min-height: 4rem;
+      height: 4rem;
       background-color: #ffffff;
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
@@ -69,9 +80,9 @@
     }
 
     #sk-main-head-form {
-      max-width: auto;
+      max-width: unset;
       min-height: 600px;
-      margin: auto;
+      margin: unset;
     }
 
     .sk {
@@ -85,12 +96,6 @@
         padding-left: 2rem;
         padding-right: 2rem;
       }
-
-      #sk-main-head-form {
-        max-width: 459px;
-        min-height: 600px;
-        margin: 0 0 0 auto;
-      }
     }
 
     @media (min-width: 768px) {
@@ -100,7 +105,7 @@
       }
 
       #sk-header {
-        min-height: 5rem;
+        height: 5rem;
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
       }
@@ -117,6 +122,12 @@
 
       #sk-main-head-body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #sk-main-head-form {
+        max-width: 459px;
+        min-height: 600px;
+        margin: 0 0 0 auto;
       }
     }
 
