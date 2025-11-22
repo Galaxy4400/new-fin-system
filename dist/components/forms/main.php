@@ -2,7 +2,8 @@
   name="form"
   method="post"
   class="group gradient-border-block relative self-start overflow-hidden rounded-[20px] bg-white p-5 pb-7 sm:max-w-[459px] md:min-h-[602px]"
-  action="/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"
+  action="
+	/?action=send<?= isset($_GET['test']) ? '&test=' . urlencode($_GET['test']) : '' ?>"
   data-form
 >
   <input type="hidden" name="id" value="m<?= ++$main_form_counter ?>" />

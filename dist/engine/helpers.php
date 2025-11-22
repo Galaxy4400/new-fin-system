@@ -146,7 +146,7 @@ function pictureSetResponsive(
 	?string $sizes = null, 
 	?bool $lazy = true): string
 {
-	$defaultSize = 1280;
+	$fallbackSize = $lazy ? 320 : 1280;
 	$basePath = '/assets/img/responsive/';
 	$src = $basePath . $fileName;
 	$ext  = strtolower(pathinfo($src, PATHINFO_EXTENSION));
@@ -157,17 +157,18 @@ function pictureSetResponsive(
 	$webpSrcSet = getSrcSet($baseFileName, "webp");
 	$imgSrcSet = getSrcSet($baseFileName, $ext);
 
-	$imgAttrs = getAttributes($attrs);
-
-	$defaultSrc = $baseFileName . "-{$defaultSize}." . $ext;
-
+	$fallbackSrc = $baseFileName . "-{$fallbackSize}." . $ext;
 	$dataLazy = $lazy ? "data-lazy" : "";
+	$srcSetAttrKey = $lazy ? "data-srcset" : 'srcset';
+	$srcAttrKey = $lazy ? "data-src" : 'src';
+
+	$imgAttrs = getAttributes($attrs);
 
 	return <<<HTML
 <picture class="{$class}">
-	<source type="image/avif" srcset="{$avifSrcSet}" sizes="{$sizes}">
-	<source type="image/webp" srcset="{$webpSrcSet}" sizes="{$sizes}">
-	<img src="{$defaultSrc}" srcset="{$imgSrcSet}" sizes="{$sizes}" {$imgAttrs} {$dataLazy}>
+	<source type="image/avif" {$srcSetAttrKey}="{$avifSrcSet}" sizes="{$sizes}">
+	<source type="image/webp" {$srcSetAttrKey}="{$webpSrcSet}" sizes="{$sizes}">
+	<img {$srcAttrKey}="{$fallbackSrc}" {$srcSetAttrKey}="{$imgSrcSet}" sizes="{$sizes}" {$imgAttrs} {$dataLazy}>
 </picture>
 HTML;
 }
