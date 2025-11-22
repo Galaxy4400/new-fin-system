@@ -309,9 +309,6 @@
   .min-w-\[25px\] {
     min-width: 25px;
   }
-  .flex-grow {
-    flex-grow: 1;
-  }
   .grow {
     flex-grow: 1;
   }
@@ -591,6 +588,11 @@
   .md\:min-h-20 {
     @media (width >= 48rem) {
       min-height: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:min-h-\[602px\] {
+    @media (width >= 48rem) {
+      min-height: 602px;
     }
   }
   .md\:min-h-\[682px\] {
