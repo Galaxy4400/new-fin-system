@@ -228,6 +228,9 @@
   .left-\[40\%\] {
     left: 40%;
   }
+  .z-10 {
+    z-index: 10;
+  }
   .z-20 {
     z-index: 20;
   }
@@ -305,6 +308,9 @@
   }
   .min-w-\[25px\] {
     min-width: 25px;
+  }
+  .flex-grow {
+    flex-grow: 1;
   }
   .grow {
     flex-grow: 1;

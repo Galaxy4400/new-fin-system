@@ -1,4 +1,4 @@
-<header class="min-h-16 bg-white py-3 shadow md:min-h-20 md:py-5">
+<header class="relative z-10 min-h-16 bg-white py-3 shadow md:min-h-20 md:py-5">
   <div class="content-container">
     <div class="flex items-center justify-between gap-8">
       <a class="h3 uppercase" href="<?= url() ?>"><?= $offer_name ?></a>

@@ -1,10 +1,10 @@
 <style>
-  html.loading {
-    visibility: hidden;
+  html.loading body > *:not(#sk) {
+    visibility: hidden !important;
   }
-  html.loading *,
-  html.loading *::before,
-  html.loading *::after {
+  html.loading body *,
+  html.loading body *::before,
+  html.loading body *::after {
     animation: none !important;
     transition: none !important;
   }
@@ -42,5 +42,6 @@
 
   waitForStylesheet('tailwind.min.css', () => {
     document.documentElement.classList.remove('loading');
+    document.getElementById('sk').remove();
   });
 </script>
