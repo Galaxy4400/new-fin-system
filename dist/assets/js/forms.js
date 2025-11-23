@@ -6,8 +6,6 @@ const initCountryPhones = (form) => {
 
   if (!intlTelInput) return;
 
-  console.log(window.geo?.data?.country_code?.toLowerCase() || window.userCountry.toLowerCase());
-
   form.iti = window.intlTelInput(intlTelInput, {
     strictMode: true,
     separateDialCode: true,
