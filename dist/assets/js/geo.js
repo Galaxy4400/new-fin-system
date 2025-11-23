@@ -22,5 +22,3 @@ class Geo {
 }
 
 window.geo = new Geo();
-
-await window.geo.init();

@@ -39,6 +39,6 @@
 
 <script src="/assets/js/geo.js" type="module"></script>
 <script src="/assets/js/localization.js" type="module"></script>
-<!-- <script src="/assets/js/currency.js" type="module"></script> -->
+<script src="/assets/js/currency.js" type="module"></script>
 <script src="/assets/js/forms.js" type="module"></script>
 <script src="/assets/js/scripts.js" type="module"></script>

@@ -2,7 +2,7 @@ const numFormat = (num) => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
-class WorkWithCurrency {
+class Currency {
   currentRate;
   localCurrency;
   localCurrencySymbol;
@@ -100,33 +100,12 @@ class WorkWithCurrency {
     this.currentRate = await this.getCurrentRate();
   }
 
-  async getCountryCode() {
-    const cached = localStorage.getItem('country_code');
-
-    if (cached) return cached;
-
-    try {
-      const res = await fetch('https://ipapi.co/json/');
-
-      if (!res.ok) throw new Error('ipapi error');
-
-      const data = await res.json();
-
-      localStorage.setItem('country_code', data.country);
-
-      return data.country;
-    } catch (err) {
-      console.warn('GeoIP not response:', err);
-      return 'US';
-    }
-  }
-
   getCurrencySymbol() {
     return this.currencyToSymbol[this.localCurrency] || '$';
   }
 
   async getLocalCurrency() {
-    const countryCode = await this.getCountryCode();
+    const countryCode = window.geo?.data?.country_code || window.userCountry;
 
     const localCurrency = this.countryToCurrency[countryCode];
 
@@ -179,19 +158,19 @@ class WorkWithCurrency {
   }
 }
 
-window.workWithCurrency = new WorkWithCurrency();
+window.currency = new Currency();
 
-const convertPriceInHTML = () => {
-  const currencyBlocks = document.querySelectorAll('[data-local-currency]');
+// const convertPriceInHTML = () => {
+//   const currencyBlocks = document.querySelectorAll('[data-local-currency]');
 
-  for (const block of currencyBlocks) {
-    const value = block.dataset.localCurrency;
-    const converted = window.workWithCurrency.convertToLocalCurrency(value);
-    block.innerText = window.workWithCurrency.toLocalFormat(converted);
-  }
-};
+//   for (const block of currencyBlocks) {
+//     const value = block.dataset.localCurrency;
+//     const converted = window.workWithCurrency.convertToLocalCurrency(value);
+//     block.innerText = window.workWithCurrency.toLocalFormat(converted);
+//   }
+// };
 
-window.addEventListener('DOMContentLoaded', async () => {
-  await window.workWithCurrency.init();
-  convertPriceInHTML();
-});
+// window.addEventListener('DOMContentLoaded', async () => {
+//   await window.workWithCurrency.init();
+//   convertPriceInHTML();
+// });

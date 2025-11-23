@@ -6,6 +6,8 @@ const initCountryPhones = (form) => {
 
   if (!intlTelInput) return;
 
+  console.log(window.geo?.data?.country_code?.toLowerCase() || window.userCountry.toLowerCase());
+
   form.iti = window.intlTelInput(intlTelInput, {
     strictMode: true,
     separateDialCode: true,
@@ -186,7 +188,7 @@ const initSubmit = (form) => {
 };
 
 //===============================================================
-const formsHandle = () => {
+const initForms = () => {
   document.querySelectorAll('form[data-form]').forEach((form) => {
     initCountryPhones(form);
     initSubmit(form);
@@ -194,4 +196,4 @@ const formsHandle = () => {
 };
 
 //===============================================================
-formsHandle();
+window.forms.init = initForms;
