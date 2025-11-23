@@ -98,6 +98,7 @@ class Currency {
     this.localCurrency = await this.getLocalCurrency();
     this.localCurrencySymbol = this.getCurrencySymbol();
     this.currentRate = await this.getCurrentRate();
+    await this.convertPriceInHTML();
   }
 
   getCurrencySymbol() {
@@ -156,21 +157,16 @@ class Currency {
       withCurrency ? ' ' + (useSymbol ? this.localCurrencySymbol : this.localCurrency) : ''
     }`;
   }
+
+  convertPriceInHTML() {
+    const currencyBlocks = document.querySelectorAll('[data-local-currency]');
+
+    for (const block of currencyBlocks) {
+      const value = block.dataset.localCurrency;
+      const converted = this.convertToLocalCurrency(value);
+      block.innerText = this.toLocalFormat(converted);
+    }
+  }
 }
 
 window.currency = new Currency();
-
-// const convertPriceInHTML = () => {
-//   const currencyBlocks = document.querySelectorAll('[data-local-currency]');
-
-//   for (const block of currencyBlocks) {
-//     const value = block.dataset.localCurrency;
-//     const converted = window.workWithCurrency.convertToLocalCurrency(value);
-//     block.innerText = window.workWithCurrency.toLocalFormat(converted);
-//   }
-// };
-
-// window.addEventListener('DOMContentLoaded', async () => {
-//   await window.workWithCurrency.init();
-//   convertPriceInHTML();
-// });
