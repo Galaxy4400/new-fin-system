@@ -17,6 +17,7 @@
     "browser-sync": "^3.0.4",
     "del": "^8.0.1",
     "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.2",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^10.0.0",
     "gulp-avif": "^1.1.1",

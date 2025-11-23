@@ -449,6 +449,9 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .italic {
+    font-style: italic;
+  }
   .opacity-60 {
     opacity: 60%;
   }
