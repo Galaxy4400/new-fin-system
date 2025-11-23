@@ -31,14 +31,12 @@
 
 <script>
   function waitForStylesheet(href, cb) {
-    const obs = new MutationObserver(() => {
-      if ([...document.styleSheets].some((s) => s.href?.includes(href))) {
-        obs.disconnect();
+    const id = setInterval(() => {
+      if ([...document.styleSheets].some((s) => s.href && s.href.includes(href))) {
+        clearInterval(id);
         cb();
       }
-    });
-
-    obs.observe(document.head, { childList: true, subtree: true });
+    }, 10);
   }
 
   waitForStylesheet('tailwind.min.css', () => {
