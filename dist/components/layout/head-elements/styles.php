@@ -10,8 +10,6 @@
   }
 </style>
 
-<link rel="preload" href="/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
-
 <link
   rel="preload"
   href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/css/intlTelInput.min.css"
