@@ -23,7 +23,7 @@
     document.getElementById('skeleton').remove();
   });
 
-  waitForStylesheet('intlTelInput.css', () => {
+  waitForStylesheet('intlTelInput.min.css', () => {
     document.documentElement.classList.remove('intltel-loading');
   });
 </script>
@@ -37,6 +37,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/intlTelInput.min.js" defer></script>
 
+<script src="/assets/js/geo.js" type="module"></script>
 <script src="/assets/js/localization.js" type="module"></script>
 <script src="/assets/js/currency.js" type="module"></script>
 <script src="/assets/js/forms.js" type="module"></script>

@@ -12,7 +12,7 @@
 
 <link
   rel="preload"
-  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/css/intlTelInput.css"
+  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/css/intlTelInput.min.css"
   as="style"
   crossorigin="anonymous"
   onload="this.onload=null;this.rel='stylesheet'"
