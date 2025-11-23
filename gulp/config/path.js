@@ -12,6 +12,7 @@ export const path = {
     css: `${assetsFolder}/css/`,
     img: `${assetsFolder}/img/`,
     imgr: `${assetsFolder}/img/responsive/`,
+    fonts: `${assetsFolder}/fonts/`,
     html: `${buildFolder}/`,
   },
   src: {
@@ -19,6 +20,8 @@ export const path = {
     img: `${srcFolder}/img/*.*`,
     imgr: `${srcFolder}/img/responsive/*.{jpg,jpeg,png}`,
     css: `${srcFolder}/css/tailwind.css`,
+    fonts: `${srcFolder}/fonts/*.ttf`,
+    fontsw: `${srcFolder}/fonts/*.{woff,woff2}`,
   },
   modules: {
     alpine: `${modulesFolder}/alpinejs/dist/cdn.min.js`,

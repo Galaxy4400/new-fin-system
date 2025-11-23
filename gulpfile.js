@@ -13,6 +13,7 @@ global.app = {
 
 // Импорт задач
 import { reset } from './gulp/tasks/reset.js';
+import { fonts } from './gulp/tasks/fonts.js';
 import { tailwind } from './gulp/tasks/tw.js';
 import { images } from './gulp/tasks/images.js';
 import { imagesResponsive } from './gulp/tasks/imagesResponsive.js';
@@ -25,7 +26,7 @@ function watcher() {
 }
 
 // Построение сценариев выполнения задач
-const build = gulp.series(reset, tailwind, images, imagesResponsive);
+const build = gulp.series(reset, tailwind, fonts, images, imagesResponsive);
 const dev = gulp.series(reset, tailwind, watcher);
 
 // Экспорт сценариев для добавления в скрипт в package.json
