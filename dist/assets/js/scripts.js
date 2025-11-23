@@ -93,7 +93,17 @@ const initLangSelect = () => {
 };
 
 //===============================================================
+const initLangFlags = () => {
+  window.addEventListener('load', () => {
+    document.querySelectorAll('[data-flag-img]').forEach((img) => {
+      img.src = img.dataset.src;
+    });
+  });
+};
+
+//===============================================================
 redirectToUserLanguage();
+initLangFlags();
 initLangSelect();
 initMobuleMenu();
 initConnectors();

@@ -17,7 +17,7 @@
           href="<?= getAltUrl($listLang) ?>"
         >
           <div class="overflow-hidden rounded-sm">
-            <img src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" />
+            <img data-src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" data-flag-img />
           </div>
           <span class="uppercase"><?= $listLang ?></span>
         </a>
