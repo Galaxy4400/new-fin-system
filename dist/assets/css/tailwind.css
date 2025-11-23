@@ -1096,6 +1096,12 @@
   padding: 0 6px 0 12px;
   border-radius: 10px;
 }
+.iti__tel-input {
+  padding-left: 90px !important;
+}
+html.intltel-loading .iti__dropdown-content {
+  display: none !important;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

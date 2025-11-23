@@ -12,6 +12,7 @@
 
 <script>
   document.documentElement.classList.add('loading');
+  document.documentElement.classList.add('intltel-loading');
 </script>
 
 <link
@@ -43,5 +44,9 @@
   waitForStylesheet('tailwind.min.css', () => {
     document.documentElement.classList.remove('loading');
     document.getElementById('sk').remove();
+  });
+
+  waitForStylesheet('intlTelInput.css', () => {
+    document.documentElement.classList.remove('intltel-loading');
   });
 </script>
