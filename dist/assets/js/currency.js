@@ -98,7 +98,7 @@ class Currency {
     this.localCurrency = await this.getLocalCurrency();
     this.localCurrencySymbol = this.getCurrencySymbol();
     this.currentRate = await this.getCurrentRate();
-    await this.convertPriceInHTML();
+    this.convertPriceInHTML();
   }
 
   getCurrencySymbol() {
