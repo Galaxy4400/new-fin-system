@@ -1,4 +1,4 @@
-const local = (key) => window.workWithLang.local(key);
+const local = (key) => window.lang.local(key);
 
 //===============================================================
 const initCountryPhones = (form) => {

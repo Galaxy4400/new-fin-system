@@ -2,6 +2,7 @@
   window.userCountry = '<?= t('v.country') ?>';
   window.languageList = <?= json_encode($supportedLanguages) ?>;
   window.defaultLang = '<?= $defaultLang ?>';
+  window.currentLangJson = <?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/lang/' . $currentLang . '.json') ?>;
 </script>
 
 <script>
