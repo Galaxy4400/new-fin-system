@@ -1,5 +1,5 @@
 <style>
-  html.loading body > *:not(#sk) {
+  html.loading body > *:not(#skeleton) {
     visibility: hidden !important;
   }
   html.loading body *,
@@ -9,11 +9,6 @@
     transition: none !important;
   }
 </style>
-
-<script>
-  document.documentElement.classList.add('loading');
-  document.documentElement.classList.add('intltel-loading');
-</script>
 
 <link
   rel="preload"
@@ -28,23 +23,3 @@
 
 <link rel="preload" href="/assets/css/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css" /></noscript>
-
-<script>
-  function waitForStylesheet(href, cb) {
-    const id = setInterval(() => {
-      if ([...document.styleSheets].some((s) => s.href && s.href.includes(href))) {
-        clearInterval(id);
-        cb();
-      }
-    }, 10);
-  }
-
-  waitForStylesheet('tailwind.min.css', () => {
-    document.documentElement.classList.remove('loading');
-    document.getElementById('sk').remove();
-  });
-
-  waitForStylesheet('intlTelInput.css', () => {
-    document.documentElement.classList.remove('intltel-loading');
-  });
-</script>

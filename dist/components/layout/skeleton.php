@@ -1,4 +1,4 @@
-<div id="sk" style="background: #fff8f8; min-height: 100vh">
+<div id="skeleton" style="background: #fff8f8; min-height: 100vh">
   <style>
     * {
       margin: 0;

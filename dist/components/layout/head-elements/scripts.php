@@ -4,6 +4,29 @@
   window.defaultLang = '<?= $defaultLang ?>';
 </script>
 
+<script>
+  document.documentElement.classList.add('loading');
+  document.documentElement.classList.add('intltel-loading');
+
+  const waitForStylesheet = (href, cb) => {
+    const id = setInterval(() => {
+      if ([...document.styleSheets].some((s) => s.href && s.href.includes(href))) {
+        clearInterval(id);
+        cb();
+      }
+    }, 10);
+  };
+
+  waitForStylesheet('tailwind.min.css', () => {
+    document.documentElement.classList.remove('loading');
+    document.getElementById('skeleton').remove();
+  });
+
+  waitForStylesheet('intlTelInput.css', () => {
+    document.documentElement.classList.remove('intltel-loading');
+  });
+</script>
+
 <link
   rel="prefetch"
   href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js"
