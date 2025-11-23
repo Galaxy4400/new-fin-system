@@ -29,7 +29,7 @@
 </script>
 
 <link
-  rel="prefetch"
+  rel="preload"
   href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js"
   as="script"
   crossorigin="anonymous"
