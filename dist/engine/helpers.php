@@ -73,48 +73,28 @@ function getAttributes($attrs) {
  *
  * @param string      $fileName Имя файла (banner.jpg)
  * @param string|null $class    CSS-классы для <picture>
- * @param array       $attrs    Дополнительные атрибуты для <img>
+ * @param array|string       $attrs    Дополнительные атрибуты <img>
  *
  * @return string HTML <picture>
  */
-function pictureSet(string $fileName, ?string $class = '', array $attrs = []): string
+function pictureSet(string $fileName, string $class = '', array|string $attrs = ""): string
 {
 	$basePath = '/assets/img/';
-
 	$src = $basePath . $fileName;
+	$ext  = strtolower(pathinfo($src, PATHINFO_EXTENSION));
+	$baseFileName = substr($src, 0, -(strlen($ext) + 1));
 
-	$ext  = strtolower(pathinfo($src, PATHINFO_EXTENSION)); // jpg/png
-	$base = substr($src, 0, -(strlen($ext) + 1));           // /assets/img/banner
+	$avifSrcSet = $baseFileName . '.avif';
+	$webpSrcSet = $baseFileName . '.webp';
+	$fallbackSrc = $baseFileName . '.' . $ext;
 
-	$root = $_SERVER['DOCUMENT_ROOT'];
-
-	$variants = [
-		'avif' => $base . '.avif',
-		'webp' => $base . '.webp',
-	];
-
-	$sources = '';
-
-	// AVIF
-	if (file_exists($root . $variants['avif'])) {
-		$sources .= '<source type="image/avif" srcset="' . $variants['avif'] . '">' . PHP_EOL;
-	}
-
-	// WEBP
-	if (file_exists($root . $variants['webp'])) {
-		$sources .= '<source type="image/webp" srcset="' . $variants['webp'] . '">' . PHP_EOL;
-	}
-
-	// Атрибуты <img>
-	$attrStr = '';
-	foreach ($attrs as $key => $value) {
-		$attrStr .= " $key=\"$value\"";
-	}
+	$imgAttrs = getAttributes($attrs);
 
 	return <<<HTML
 <picture class="{$class}">
-	{$sources}
-	<img src="{$src}"{$attrStr} />
+	<source type="image/avif" srcset="{$avifSrcSet}">
+	<source type="image/webp" srcset="{$webpSrcSet}">
+	<img src="{$fallbackSrc}" {$imgAttrs}>
 </picture>
 HTML;
 }
@@ -135,18 +115,12 @@ HTML;
  * @param string|null $class    CSS-классы <picture>
  * @param array|string       $attrs    Дополнительные атрибуты <img>
  * @param string|null $sizes    sizes="..." (по умолчанию 100vw)
- * @param bool $lazy    режим лейзилоада. По умолчанию включён
  *
  * @return string HTML <picture>
  */
-function pictureSetResponsive(
-	string $fileName, 
-	string $class = '', 
-	array|string $attrs = "", 
-	?string $sizes = null, 
-	?bool $lazy = true): string
+function pictureSetResponsive(string $fileName, string $class = '', array|string $attrs = "", ?string $sizes = null): string
 {
-	$fallbackSize = $lazy ? 320 : 1280;
+	$fallbackSize = 1280;
 	$basePath = '/assets/img/responsive/';
 	$src = $basePath . $fileName;
 	$ext  = strtolower(pathinfo($src, PATHINFO_EXTENSION));
@@ -158,17 +132,13 @@ function pictureSetResponsive(
 	$imgSrcSet = getSrcSet($baseFileName, $ext);
 
 	$fallbackSrc = $baseFileName . "-{$fallbackSize}." . $ext;
-	$dataLazy = $lazy ? "data-lazy" : "";
-	$srcSetAttrKey = $lazy ? "data-srcset" : 'srcset';
-	$srcAttrKey = $lazy ? "data-src" : 'src';
-
 	$imgAttrs = getAttributes($attrs);
 
 	return <<<HTML
 <picture class="{$class}">
-	<source type="image/avif" {$srcSetAttrKey}="{$avifSrcSet}" sizes="{$sizes}">
-	<source type="image/webp" {$srcSetAttrKey}="{$webpSrcSet}" sizes="{$sizes}">
-	<img {$srcAttrKey}="{$fallbackSrc}" {$srcSetAttrKey}="{$imgSrcSet}" sizes="{$sizes}" {$imgAttrs} {$dataLazy}>
+	<source type="image/avif" srcset="{$avifSrcSet}" sizes="{$sizes}">
+	<source type="image/webp" srcset="{$webpSrcSet}" sizes="{$sizes}">
+	<img src="{$fallbackSrc}" srcset="{$imgSrcSet}" sizes="{$sizes}" {$imgAttrs}>
 </picture>
 HTML;
 }

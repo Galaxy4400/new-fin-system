@@ -7,24 +7,24 @@
           <nav class="flex max-w-[755px] grow flex-col flex-wrap gap-5 md:flex-row md:justify-evenly">
             <ul class="flex flex-col gap-x-5 gap-y-4 md:flex-row md:gap-x-12">
               <li>
-                <a class="link" href="<?= url('/', '', '#about') ?>"><?= t('t.main.menu_about') ?></a>
+                <a href="<?= url('/', '', '#about') ?>"><?= t('t.main.menu_about') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('/', '', '#features') ?>"><?= t('t.main.menu_features') ?></a>
+                <a href="<?= url('/', '', '#features') ?>"><?= t('t.main.menu_features') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('/', '', '#reviews') ?>"><?= t('t.main.menu_reviews') ?></a>
+                <a href="<?= url('/', '', '#reviews') ?>"><?= t('t.main.menu_reviews') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('/', '', '#faq') ?>"><?= t('t.main.menu_faq') ?></a>
+                <a href="<?= url('/', '', '#faq') ?>"><?= t('t.main.menu_faq') ?></a>
               </li>
             </ul>
             <ul class="flex flex-col gap-x-5 gap-y-4 md:flex-row">
               <li>
-                <a class="link" href="<?= url('privacy') ?>"><?= t('t.main.menu_privacy') ?></a>
+                <a href="<?= url('privacy') ?>"><?= t('t.main.menu_privacy') ?></a>
               </li>
               <li>
-                <a class="link" href="<?= url('conditions') ?>"><?= t('t.main.menu_conditions') ?></a>
+                <a href="<?= url('conditions') ?>"><?= t('t.main.menu_conditions') ?></a>
               </li>
             </ul>
           </nav>
@@ -40,10 +40,7 @@
         <p><?= t('t.main.footer__disclamer_3') ?></p>
         <p><?= t('t.main.footer__disclamer_4') ?></p>
       </div>
-      <div class="text-center">
-        <?= t('t.main.footer__copy', ['{year}' =>
-        date('Y')]) ?>
-      </div>
+      <div class="text-center"><?= t('t.main.footer__copy', ['{year}' => date('Y')]) ?></div>
     </div>
   </div>
 </footer>
