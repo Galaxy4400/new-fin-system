@@ -26,7 +26,7 @@ class WorkWithLangs {
     }
 
     try {
-      const res = await fetch(`${window.location.origin}/lang/${langPrefix}.json`);
+      const res = await fetch(`/lang/${langPrefix}.json`);
       const json = await res.json();
       localStorage.setItem(langPrefix, JSON.stringify(json));
       this.__lang = json;
