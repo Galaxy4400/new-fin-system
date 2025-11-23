@@ -137,10 +137,26 @@ class WorkWithCurrency {
     try {
       if (from === this.localCurrency) return 1;
 
+      const storageKey = `rate_${from}_${this.localCurrency}`;
+      const cachedData = JSON.parse(localStorage.getItem(storageKey) || 'null');
+      const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+      if (cachedData && cachedData.date === today) {
+        return cachedData.rate;
+      }
+
       const response = await fetch(`https://api.frankfurter.app/latest?from=${from}&to=${this.localCurrency}`);
       const result = await response.json();
 
       const rate = result.rates[this.localCurrency];
+
+      localStorage.setItem(
+        storageKey,
+        JSON.stringify({
+          rate: rate,
+          date: today,
+        }),
+      );
 
       return rate;
     } catch (err) {
