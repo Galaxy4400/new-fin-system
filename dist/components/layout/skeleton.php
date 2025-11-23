@@ -1,4 +1,7 @@
-<div id="skeleton" style="background: #fff8f8; min-height: 100vh">
+<div
+  id="skeleton"
+  style="background: #fff8f8; min-height: 100vh; position: fixed; top: 0; left: 0; width: 100%; z-index: 999"
+>
   <style>
     * {
       margin: 0;
