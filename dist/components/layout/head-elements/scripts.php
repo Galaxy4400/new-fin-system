@@ -4,7 +4,12 @@
   window.defaultLang = '<?= $defaultLang ?>';
 </script>
 
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js" as="script" />
+<link
+  rel="prefetch"
+  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js"
+  as="script"
+  crossorigin="anonymous"
+/>
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/intlTelInput.min.js" defer></script>
 

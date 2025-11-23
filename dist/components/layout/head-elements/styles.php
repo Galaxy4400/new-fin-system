@@ -30,15 +30,15 @@
 <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css" /></noscript>
 
 <script>
-  function waitForStylesheet(href, callback) {
-    var interval = setInterval(() => {
-      for (var s of document.styleSheets) {
-        if (s.href && s.href.includes(href)) {
-          clearInterval(interval);
-          callback();
-        }
+  function waitForStylesheet(href, cb) {
+    const obs = new MutationObserver(() => {
+      if ([...document.styleSheets].some((s) => s.href?.includes(href))) {
+        obs.disconnect();
+        cb();
       }
-    }, 10);
+    });
+
+    obs.observe(document.head, { childList: true, subtree: true });
   }
 
   waitForStylesheet('tailwind.min.css', () => {
