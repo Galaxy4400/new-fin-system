@@ -196,4 +196,4 @@ const initForms = () => {
 };
 
 //===============================================================
-window.forms.init = initForms;
+window.forms = { init: initForms };
