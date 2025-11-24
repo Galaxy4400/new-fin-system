@@ -53,5 +53,8 @@
     "sass": "^1.94.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "intl-tel-input": "^25.12.5"
   }
 }
