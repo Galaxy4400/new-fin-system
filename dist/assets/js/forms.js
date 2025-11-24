@@ -14,6 +14,11 @@ const initCountryPhones = (form) => {
     initialCountry: window.geo?.data?.country_code?.toLowerCase() || window.userCountry.toLowerCase(),
     loadUtils: () => import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js'),
   });
+
+  intlTelInput.addEventListener('input', (e) => {
+    const cleaned = e.target.value.replace(/[^0-9-\s]+/g, '');
+    if (cleaned !== e.target.value) e.target.value = cleaned;
+  });
 };
 
 //===============================================================
