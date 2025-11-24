@@ -1,4 +1,4 @@
-<section class="bg-primary-lighter relative overflow-hidden py-5 md:min-h-[682px] md:py-10">
+<div class="bg-primary-lighter relative overflow-hidden py-5 md:min-h-[682px] md:py-10">
   <div class="absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>
@@ -16,4 +16,4 @@
     </div>
     <div class="flex justify-center md:justify-end"><?php include 'components/forms/main.php' ?></div>
   </div>
-</section>
+</div>
