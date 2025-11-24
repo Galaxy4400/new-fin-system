@@ -9,7 +9,7 @@ const initCountryPhones = (form) => {
   intlTelInput.setAttribute('autocomplete', 'tel');
 
   form.iti = window.intlTelInput(intlTelInput, {
-    strictMode: true,
+    strictMode: false,
     separateDialCode: true,
     initialCountry: window.geo?.data?.country_code?.toLowerCase() || window.userCountry.toLowerCase(),
     loadUtils: () => import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js'),
