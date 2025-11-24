@@ -6,11 +6,17 @@ const initCountryPhones = (form) => {
 
   if (!intlTelInput) return;
 
+  intlTelInput.setAttribute('autocomplete', 'tel');
+
   form.iti = window.intlTelInput(intlTelInput, {
     strictMode: true,
     separateDialCode: true,
     initialCountry: window.geo?.data?.country_code?.toLowerCase() || window.userCountry.toLowerCase(),
     loadUtils: () => import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js'),
+  });
+
+  intlTelInput.addEventListener('paste', () => {
+    setTimeout(() => form.iti.setNumber(intlTelInput.value), 0);
   });
 };
 
