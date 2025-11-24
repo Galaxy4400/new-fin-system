@@ -55,7 +55,7 @@
       </label>
       <label class="grid gap-1.5">
         <span class="label"><?= t('t.main.form_phone_label') ?></span>
-        <input class="input" type="tel" autocomplete="tel" name="phone" data-phone required data-should-validate />
+        <input class="input" type="tel" name="phone" data-phone required data-should-validate />
       </label>
     </div>
     <div>
