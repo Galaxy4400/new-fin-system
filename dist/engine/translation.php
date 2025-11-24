@@ -1,33 +1,75 @@
 <?php
 
-$langFiles = glob(__DIR__ . '/../lang/*.json');
+$supportedLanguages = getSupportedLanguages();
+$currentLang = getCurrentLang();
+$translations = getTranslations();
 
-$supportedLanguages = array_map(function ($file) {
-	return pathinfo($file, PATHINFO_FILENAME);
-}, $langFiles);
+//===============================================================
 
-$uri = $_SERVER['REQUEST_URI'];
-$segments = explode('/', trim($uri, '/'));
-$firstSegment = $segments[0] ?? '';
+function getSupportedLanguages() {
+	$langFiles = glob(__DIR__ . '/../lang/*.json');
 
-global $currentLang;
+	$supportedLanguages = array_map(function ($file) {
+		return pathinfo($file, PATHINFO_FILENAME);
+	}, $langFiles);
 
-$currentLang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
-
-$translations = [];
-$langFile = __DIR__ . "/../lang/{$currentLang}.json";
-
-if (file_exists($langFile)) {
-	$jsonContent = file_get_contents($langFile);
-	$translations = json_decode($jsonContent, true);
-
-	if (json_last_error() !== JSON_ERROR_NONE) {
-		error_log("Failed to parse {$langFile}: " . json_last_error_msg());
-		$translations = [];
-	}
+	return $supportedLanguages;
 }
 
-$commonKeys = ['{site_name}' => $offer_name, '{country}' => getValueByPath($translations, 'v.country')];
+//---------------------------------------------------------------
+
+function getCurrentLang() {
+	global $supportedLanguages, $defaultLang;
+
+	$uri = $_SERVER['REQUEST_URI'];
+	$segments = explode('/', trim($uri, '/'));
+	$firstSegment = $segments[0] ?? '';
+
+	$currentLang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
+
+	return $currentLang;
+}
+
+//---------------------------------------------------------------
+
+function getTranslations() {
+	global $currentLang;
+
+	$translations = [];
+
+	$langFile = __DIR__ . "/../lang/{$currentLang}.json";
+
+	if (file_exists($langFile)) {
+		$jsonContent = file_get_contents($langFile);
+		$translations = json_decode($jsonContent, true);
+
+		if (json_last_error() !== JSON_ERROR_NONE) {
+			error_log("Failed to parse {$langFile}: " . json_last_error_msg());
+			$translations = [];
+		}
+	}
+
+	return $translations;
+}
+
+//---------------------------------------------------------------
+
+function t($key, $vars = [])
+{
+	global $translations, $offer_name;
+
+	$commonKeys = ['{site_name}' => $offer_name, '{country}' => getValueByPath($translations, 'v.country')];
+
+	$translation = getValueByPath($translations, $key);
+
+	if (!$translation) return $key;
+
+	$translation = strtr($translation, array_merge($vars, $commonKeys));
+
+	return $translation;
+}
+
+//---------------------------------------------------------------
 
 function getValueByPath($arr, $path, $separator = '.')
 {
@@ -43,18 +85,7 @@ function getValueByPath($arr, $path, $separator = '.')
 	return $arr;
 }
 
-function t($key, $vars = [])
-{
-	global $translations, $commonKeys;
-
-	$translation = getValueByPath($translations, $key);
-
-	if (!$translation) return $key;
-
-	$translation = strtr($translation, array_merge($vars, $commonKeys));
-
-	return $translation;
-}
+//---------------------------------------------------------------
 
 function flagUrl($currentLang) {
 	switch ($currentLang) {
@@ -64,3 +95,5 @@ function flagUrl($currentLang) {
 
 	return "https://flagcdn.com/$currentLang.svg";
 }
+
+//---------------------------------------------------------------
