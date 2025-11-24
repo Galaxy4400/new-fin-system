@@ -18,7 +18,7 @@
  */
 function pictureSet(string $fileName, array|string $attrs = "", ?string $class = ''): string
 {
-	$basePath = '/assets/img/';
+	$basePath = '/assets/img/formats/';
 	$src = $basePath . $fileName;
 	$ext  = strtolower(pathinfo($src, PATHINFO_EXTENSION));
 	$baseFileName = substr($src, 0, -(strlen($ext) + 1));
