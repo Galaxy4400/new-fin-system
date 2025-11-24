@@ -1,29 +1,24 @@
 <?php
 
-$pagePath = definePagePath();
+$pagePath = getNormalizePagePath();
 
 //===============================================================
 
-function definePagePath() {
-	global $supportedLanguages, $defaultLang;
+function getNormalizePagePath() {
+	global $supportedLanguages;
 
-	$path = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-	$pathParts = array_filter(explode('/', $path));
+	$path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+	$parts = $path ? explode('/', $path) : [];
 
-	$pagePath = '';
+	if (!empty($parts)) {
+		$first = $parts[0];
 
-	if (!empty($pathParts)) {
-		$firstPart = reset($pathParts);
-		if (in_array($firstPart, $supportedLanguages) && $firstPart !== $defaultLang) {
-			array_shift($pathParts);
-		} elseif ($firstPart === $defaultLang) {
-			array_shift($pathParts);
+		if (in_array($first, $supportedLanguages)) {
+			array_shift($parts);
 		}
 	}
 
-	$pagePath = !empty($pathParts) ? implode('/', $pathParts) : '';
-
-	return $pagePath;
+	return implode('/', $parts);
 }
 
 //---------------------------------------------------------------
