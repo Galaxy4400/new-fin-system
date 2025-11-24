@@ -5,7 +5,7 @@
       <?php include 'components/elements/header-menu.php' ?>
       <div class="flex items-center gap-4">
         <div class="hidden sm:block"><?php include 'components/elements/lang-selector.php' ?></div>
-        <a class="btn-primary" href="<?= url('sign-up') ?>">Sign up</a>
+        <a class="btn-primary" href="<?= url('sign-up') ?>"><?= t('t.main.signup') ?></a>
       </div>
       <button class="menu-icon" data-menu-icon><?php include 'components/icons/menu-icon.php' ?></button>
     </div>
