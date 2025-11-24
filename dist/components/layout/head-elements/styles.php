@@ -8,6 +8,10 @@
     animation: none !important;
     transition: none !important;
   }
+
+  html.intltel-loading .iti__dropdown-content {
+    display: none !important;
+  }
 </style>
 
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
