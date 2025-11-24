@@ -1,4 +1,6 @@
-const local = (key) => window.lang.local(key);
+const local = (path) => {
+  return path.split('.').reduce((obj, key) => obj?.[key], window.translations) ?? path;
+};
 
 //===============================================================
 const initCountryPhones = (form) => {

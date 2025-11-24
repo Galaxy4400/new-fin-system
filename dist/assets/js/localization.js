@@ -1,8 +1,8 @@
 class Lang {
   __lang = {};
 
-  async init() {
-    this.__lang = window.currentLangJson || {};
+  init() {
+    this.__lang = window.translations || {};
   }
 
   local(path) {
@@ -13,5 +13,3 @@ class Lang {
 }
 
 window.lang = new Lang();
-
-await window.lang.init();

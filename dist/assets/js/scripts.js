@@ -115,6 +115,3 @@ initLangFlags();
 initLangSelect();
 initMobuleMenu();
 initConnectors();
-
-//===============================================================
-// window.geo.init().then(() => Promise.all([window.currency.init(), window.forms.init()]));

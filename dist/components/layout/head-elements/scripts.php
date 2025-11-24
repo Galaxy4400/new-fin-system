@@ -2,7 +2,7 @@
   window.userCountry = '<?= t('v.country') ?>';
   window.languageList = <?= json_encode($supportedLanguages) ?>;
   window.defaultLang = '<?= $defaultLang ?>';
-  window.currentLangJson = <?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/lang/' . $currentLang . '.json') ?>;
+  window.translations = <?= json_encode($translations) ?>;
 </script>
 
 <script>
@@ -32,7 +32,6 @@
     await Promise.all([
       import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/intlTelInput.min.js'),
       import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js'),
-      import('/assets/js/localization.js'),
       import('/assets/js/geo.js'),
       import('/assets/js/currency.js'),
       import('/assets/js/forms.js'),
