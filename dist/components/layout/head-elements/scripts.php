@@ -7,7 +7,6 @@
 
 <script>
   document.documentElement.classList.add('loading');
-  document.documentElement.classList.add('intltel-loading');
 
   const waitForStylesheet = (href, cb) => {
     const id = setInterval(() => {
@@ -21,10 +20,6 @@
   waitForStylesheet('tailwind.min.css', () => {
     document.documentElement.classList.remove('loading');
     document.getElementById('skeleton').remove();
-  });
-
-  waitForStylesheet('intlTelInput.min.css', () => {
-    document.documentElement.classList.remove('intltel-loading');
   });
 </script>
 

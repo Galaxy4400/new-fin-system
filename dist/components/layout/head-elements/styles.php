@@ -8,25 +8,14 @@
     animation: none !important;
     transition: none !important;
   }
-
+  /* 
   html.intltel-loading .iti__dropdown-content {
     display: none !important;
-  }
+  } */
 </style>
 
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" /> -->
-
-<link
-  rel="preload"
-  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/css/intlTelInput.min.css"
-  as="style"
-  crossorigin="anonymous"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
-<noscript
-  ><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/css/intlTelInput.min.css"
-/></noscript>
 
 <link rel="preload" href="/assets/css/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css" /></noscript>

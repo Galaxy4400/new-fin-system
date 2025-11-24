@@ -4,6 +4,8 @@
 @source '../../dist/*.{html,php}';
 @source '../../dist/components/**/*.{html,php}';
 
+@import './intlTelInput.min';
+
 @import './theme.css';
 @import './base.css';
 @import './utilities.css';
