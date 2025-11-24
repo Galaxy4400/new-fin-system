@@ -7,7 +7,9 @@
         <div class="hidden sm:block"><?php include 'components/elements/lang-selector.php' ?></div>
         <a class="btn-primary" href="<?= url('sign-up') ?>"><?= t('t.main.signup') ?></a>
       </div>
-      <button class="menu-icon" data-menu-icon><?php include 'components/icons/menu-icon.php' ?></button>
+      <button class="menu-icon" data-menu-icon aria-label="<?= t('t.main.aria_open_menu') ?>">
+        <?php include 'components/icons/menu-icon.php' ?>
+      </button>
     </div>
   </div>
   <?php include 'components/elements/mobile-menu.php' ?>
