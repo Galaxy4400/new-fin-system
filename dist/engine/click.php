@@ -1,4 +1,6 @@
 <?php
+$subid = fetchSubId($token);
+
 function fetchSubId($token)
 {
 	if (
