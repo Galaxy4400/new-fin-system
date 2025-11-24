@@ -1,5 +1,7 @@
 <?php
 include_once 'engine/engine.php';
+
+http_response_code(404);
 ?>
 
 <!DOCTYPE html>
