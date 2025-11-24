@@ -1,10 +1,11 @@
 <?php
 
-$pagePath = getNormalizePagePath();
+$protocolType = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$pagePathWithoutLang = getPagePathWithoutLang();
 
 //===============================================================
 
-function getNormalizePagePath() {
+function getPagePathWithoutLang() {
 	global $supportedLanguages;
 
 	$path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
@@ -23,16 +24,24 @@ function getNormalizePagePath() {
 
 //---------------------------------------------------------------
 
-function getCurrentPageUrl() {
-	global $domain, $defaultLang, $pagePath, $currentLang;
+function getDefaultPageUrl() {
+	global $protocolType, $pagePathWithoutLang;
 
-	$currentPageUrl = 'https://' . $domain;
+	return $protocolType . "://" . $_SERVER['HTTP_HOST'] . $pagePathWithoutLang ? '/' . $pagePathWithoutLang : '';
+}
+
+//---------------------------------------------------------------
+
+function getCurrentPageUrl() {
+	global $defaultLang, $pagePathWithoutLang, $currentLang, $protocolType;
+
+	$currentPageUrl = $protocolType . '://' . $_SERVER['HTTP_HOST'];
 
 	if ($currentLang !== $defaultLang) {
 		$currentPageUrl .= '/' . $currentLang;
 	}
-	if ($pagePath) {
-		$currentPageUrl .= '/' . $pagePath;
+	if ($pagePathWithoutLang) {
+		$currentPageUrl .= '/' . $pagePathWithoutLang;
 	}
 
 	return $currentPageUrl;
@@ -41,9 +50,9 @@ function getCurrentPageUrl() {
 //---------------------------------------------------------------
 
 function getAltUrl($langItem) {
-	global $domain, $defaultLang, $pagePath;
+	global $defaultLang, $pagePath;
 
-	$altUrl = 'https://' . $domain;
+	$altUrl = 'https://' . $_SERVER['HTTP_HOST'];
 
 	if ($langItem !== $defaultLang) { 
 		$altUrl .= '/' . $langItem; 

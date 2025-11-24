@@ -9,7 +9,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="<?= t('t.main.meta_twitter_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
 	<meta name="twitter:description" content="<?= t('t.main.meta_twitter_description', ['{site_name}' => $offer_name]) ?>" />
-	<meta name="twitter:image" content="https://<?= $domain ?>/assets/img/og-img.png" />
+	<meta name="twitter:image" content="<?= $protocolType ?>://<?= $_SERVER['HTTP_HOST'] ?>/assets/img/og-img.png" />
 
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:type" content="website" />
@@ -17,7 +17,7 @@
 	<meta property="og:url" content="<?= getCurrentPageUrl() ?>" />
 	<meta property="og:title" content="<?= t('t.main.meta_og_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
 	<meta property="og:description" content="<?= t('t.main.meta_og_description', ['{site_name}' => $offer_name]) ?>" />
-	<meta property="og:image" content="https://<?= $domain ?>/assets/img/og-img.png" />
+	<meta property="og:image" content="<?= $protocolType ?>://<?= $_SERVER['HTTP_HOST'] ?>/assets/img/og-img.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="<?= $offer_name ?>" />
@@ -28,7 +28,7 @@
 
 	<!-- Canonical URL -->
 	<link rel="canonical" href="<?= getCurrentPageUrl() ?>" />
-	<link rel="alternate" hreflang="x-default" href="https://<?= $domain ?><?= $pagePath ? '/' . $pagePath : '' ?>" />
+	<link rel="alternate" hreflang="x-default" href="<?= getDefaultPageUrl() ?>" />
 	<?php foreach ($supportedLanguages as $langItem): ?>
 		<link rel="alternate" hreflang="<?= $langItem ?>" href="<?= getAltUrl($langItem) ?>" />
 	<?php endforeach; ?>
