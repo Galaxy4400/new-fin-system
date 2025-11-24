@@ -17,11 +17,11 @@ include_once 'engine/engine.php';
     <!-- main -->
     <main class="flex grow flex-col">
       <!-- main section -->
-      <?php include 'components/sections/main.php' ?>
+      <?php include 'components/sections/greeting.php' ?>
       <!-- experience section -->
       <?php include 'components/sections/experience.php' ?>
       <!-- main section -->
-      <?php include 'components/sections/main.php' ?>
+      <?php include 'components/sections/greeting.php' ?>
     </main>
 
     <!-- footer -->
