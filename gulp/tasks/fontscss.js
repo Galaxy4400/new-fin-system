@@ -37,8 +37,7 @@ export const fontscss = (done) => {
     css += `
 @font-face {
   font-family: '${fontFamily}';
-  src: url('../fonts/${fontName}.woff2') format('woff2'),
-       url('../fonts/${fontName}.woff') format('woff');
+  src: url('../fonts/${fontName}.woff2') format('woff2');
   font-weight: ${weight};
   font-style: ${style};
   font-display: swap;
