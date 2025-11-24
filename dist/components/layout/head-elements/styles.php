@@ -26,5 +26,3 @@
 
 <link rel="preload" href="/assets/css/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css" /></noscript>
-
-<link rel="prefetch" href="/lang/<?= $currentLang ?>.json" as="fetch" crossorigin="anonymous" />
