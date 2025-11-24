@@ -51,15 +51,21 @@ HTML;
  *  - banner-1280.avif
  *
  * @param string      $fileName Имя файла, например: "banner.png"
+ * @param string|null $class    CSS-классы <picture>
  * @param array|string       $attrs    Дополнительные атрибуты <img>
  * @param string|null $sizes    sizes="..." (по умолчанию 100vw)
- * @param string|null $class    CSS-классы <picture>
+ * @param bool $lazy    режим лейзилоада. По умолчанию включён
  *
  * @return string HTML <picture>
  */
-function pictureSetResponsive(string $fileName, array|string $attrs = "", ?string $sizes = null, ?string $class = ''): string
+function pictureSetResponsive(
+	string $fileName, 
+	array|string $attrs = "", 
+	?string $sizes = null,
+	?string $class = '', 
+	?bool $lazy = true): string
 {
-	$fallbackSize = 1280;
+	$fallbackSize = $lazy ? 320 : 1280;
 	$basePath = '/assets/img/responsive/';
 	$src = $basePath . $fileName;
 	$ext  = strtolower(pathinfo($src, PATHINFO_EXTENSION));
@@ -71,13 +77,18 @@ function pictureSetResponsive(string $fileName, array|string $attrs = "", ?strin
 	$imgSrcSet = getSrcSet($baseFileName, $ext);
 
 	$fallbackSrc = $baseFileName . "-{$fallbackSize}." . $ext;
+	$dataLazy = $lazy ? "data-lazy" : "";
+	$srcSetAttrKey = $lazy ? "data-srcset" : 'srcset';
+	$srcAttrKey = $lazy ? "data-src" : 'src';
+	$sizesAttrKey = $lazy ? "data-sizes" : 'sizes';
+
 	$imgAttrs = getAttributes($attrs);
 
 	return <<<HTML
 <picture class="{$class}">
-	<source type="image/avif" srcset="{$avifSrcSet}" sizes="{$sizes}">
-	<source type="image/webp" srcset="{$webpSrcSet}" sizes="{$sizes}">
-	<img src="{$fallbackSrc}" srcset="{$imgSrcSet}" sizes="{$sizes}" {$imgAttrs}>
+	<source type="image/avif" {$srcSetAttrKey}="{$avifSrcSet}" {$sizesAttrKey}="{$sizes}">
+	<source type="image/webp" {$srcSetAttrKey}="{$webpSrcSet}" {$sizesAttrKey}="{$sizes}">
+	<img {$srcAttrKey}="{$fallbackSrc}" {$srcSetAttrKey}="{$imgSrcSet}" {$sizesAttrKey}="{$sizes}" {$imgAttrs} {$dataLazy}>
 </picture>
 HTML;
 }

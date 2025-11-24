@@ -102,7 +102,15 @@ const initLangFlags = () => {
 };
 
 //===============================================================
+const initLazyLoad = () => {
+  new LazyLoad({
+    elements_selector: '[data-lazy]',
+  });
+};
+
+//===============================================================
 redirectToUserLanguage();
+initLazyLoad();
 initLangFlags();
 initLangSelect();
 initMobuleMenu();
