@@ -20,7 +20,7 @@ include_once 'engine/engine.php';
         <div class="absolute top-1/2 left-1/2 h-[942px] w-[2651px] -translate-1/2">
           <?php include 'components/icons/bg-deco-2.php' ?>
         </div>
-        <div class="content-container relative"><?php include 'components/forms/main.php' ?></div>
+        <div class="content-container relative"><?php include 'components/forms/register.php' ?></div>
       </div>
     </main>
 

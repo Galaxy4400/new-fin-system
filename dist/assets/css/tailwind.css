@@ -617,6 +617,11 @@
       max-width: 459px;
     }
   }
+  .sm\:max-w-\[495px\] {
+    @media (width >= 40rem) {
+      max-width: 495px;
+    }
+  }
   .md\:static {
     @media (width >= 48rem) {
       position: static;
@@ -700,6 +705,11 @@
   .md\:gap-x-12 {
     @media (width >= 48rem) {
       column-gap: calc(var(--spacing) * 12);
+    }
+  }
+  .md\:rounded-\[40px\] {
+    @media (width >= 48rem) {
+      border-radius: 40px;
     }
   }
   .md\:py-5 {
