@@ -14,7 +14,7 @@
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="<?= t('t.main.meta_og_site_name', ['{site_name}' => $offer_name]) ?>" />
-	<meta property="og:url" content="<?= getCurrentPageUrl() ?>" />
+	<meta property="og:url" content="<?= $currentUrl ?>" />
 	<meta property="og:title" content="<?= t('t.main.meta_og_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
 	<meta property="og:description" content="<?= t('t.main.meta_og_description', ['{site_name}' => $offer_name]) ?>" />
 	<meta property="og:image" content="<?= $protocolType ?>://<?= $_SERVER['HTTP_HOST'] ?>/assets/img/og-img.png" />
@@ -27,10 +27,10 @@
 	<link rel="icon" type="image/x-icon" sizes="256x256" href="/assets/img/favicon.ico">
 
 	<!-- Canonical URL -->
-	<link rel="canonical" href="<?= getCurrentPageUrl() ?>" />
-	<link rel="alternate" hreflang="x-default" href="<?= getDefaultPageUrl() ?>" />
+	<link rel="canonical" href="<?= $currentUrl ?>" />
+	<link rel="alternate" hreflang="x-default" href="<?= $defaultPageUrl ?>" />
 	<?php foreach ($supportedLanguages as $langItem): ?>
-		<link rel="alternate" hreflang="<?= $langItem ?>" href="<?= getAltUrl($langItem) ?>" />
+		<link rel="alternate" hreflang="<?= $langItem ?>" href="<?= getLocalizedUrl($langItem) ?>" />
 	<?php endforeach; ?>
 
 	<!-- Styles -->

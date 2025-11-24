@@ -14,7 +14,7 @@
       <li class="" data-lang="<?= $listLang ?>">
         <a
           class="<?php if ($currentLang === $listLang) { ?>bg-rose-100<?php } ?> inline-flex w-full cursor-pointer items-center gap-2 px-3 py-2 transition-colors hover:bg-rose-100 data-active:bg-rose-100"
-          href="<?= getAltUrl($listLang) ?>"
+          href="<?= getLocalizedUrl($listLang) ?>"
         >
           <div class="overflow-hidden rounded-sm">
             <img data-src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" height="20" data-flag-img />
