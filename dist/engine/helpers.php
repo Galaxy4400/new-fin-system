@@ -13,10 +13,11 @@
  * @param string      $fileName Имя файла (banner.jpg)
  * @param array|string       $attrs    Дополнительные атрибуты <img>
  * @param string|null $class    CSS-классы для <picture>
+ * @param bool $lazy    режим лейзилоада. По умолчанию включён
  *
  * @return string HTML <picture>
  */
-function pictureSet(string $fileName, array|string $attrs = "", ?string $class = ''): string
+function pictureSet(string $fileName, array|string $attrs = "", ?string $class = '', ?bool $lazy = true): string
 {
 	$basePath = '/assets/img/formats/';
 	$src = $basePath . $fileName;
@@ -27,13 +28,17 @@ function pictureSet(string $fileName, array|string $attrs = "", ?string $class =
 	$webpSrcSet = $baseFileName . '.webp';
 	$fallbackSrc = $baseFileName . '.' . $ext;
 
+	$dataLazy = $lazy ? "data-lazy" : "";
+	$srcSetAttrKey = $lazy ? "data-srcset" : 'srcset';
+	$srcAttrKey = $lazy ? "data-src" : 'src';
+
 	$imgAttrs = getAttributes($attrs);
 
 	return <<<HTML
 <picture class="{$class}">
-	<source type="image/avif" srcset="{$avifSrcSet}">
-	<source type="image/webp" srcset="{$webpSrcSet}">
-	<img src="{$fallbackSrc}" {$imgAttrs}>
+	<source type="image/avif" {$srcSetAttrKey}="{$avifSrcSet}">
+	<source type="image/webp" {$srcSetAttrKey}="{$webpSrcSet}">
+	<img {$srcAttrKey}="{$fallbackSrc}" {$imgAttrs} {$dataLazy}>
 </picture>
 HTML;
 }
