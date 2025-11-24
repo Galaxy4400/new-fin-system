@@ -28,22 +28,23 @@
   });
 </script>
 
-<link
-  rel="preload"
-  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js"
-  as="script"
-  crossorigin="anonymous"
-/>
-
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/intlTelInput.min.js" defer></script>
 
-<script
-  src="
-/assets/js/geo.js"
-  type="module"
-></script>
-<script src="/assets/js/localization.js" type="module"></script>
-<script src="/assets/js/currency.js" type="module"></script>
-<script src="/assets/js/forms.js" type="module"></script>
 <script src="/assets/js/scripts.js" type="module"></script>
+
+<script>
+  async function deferdScripts() {
+    await Promise.all([
+      import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/intlTelInput.min.js'),
+      import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.min.js'),
+      import('/assets/js/localization.js'),
+      import('/assets/js/geo.js'),
+      import('/assets/js/currency.js'),
+      import('/assets/js/forms.js'),
+    ]);
+
+    window.geo.init().then(() => Promise.all([window.currency.init(), window.forms.init()]));
+  }
+
+  document.addEventListener('DOMContentLoaded', () => setTimeout(deferdScripts, 1000));
+</script>

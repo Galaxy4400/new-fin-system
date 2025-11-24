@@ -117,4 +117,4 @@ initMobuleMenu();
 initConnectors();
 
 //===============================================================
-window.geo.init().then(() => Promise.all([window.currency.init(), window.forms.init()]));
+// window.geo.init().then(() => Promise.all([window.currency.init(), window.forms.init()]));
