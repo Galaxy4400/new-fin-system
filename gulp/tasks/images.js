@@ -4,8 +4,8 @@ import path from 'path';
 import fs from 'fs/promises';
 
 export async function images() {
-  const srcDir = `${app.path.srcFolder}/img`;
-  const distDir = app.path.build.img;
+  const srcDir = `${app.path.srcFolder}/img/formats`;
+  const distDir = app.path.build.imgf;
 
   await fs.mkdir(distDir, { recursive: true });
 

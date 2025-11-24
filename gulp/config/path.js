@@ -11,6 +11,7 @@ export const path = {
     js: `${assetsFolder}/js/`,
     css: `${assetsFolder}/css/`,
     img: `${assetsFolder}/img/`,
+    imgf: `${assetsFolder}/img/formats/`,
     imgr: `${assetsFolder}/img/responsive/`,
     fonts: `${assetsFolder}/fonts/`,
     html: `${buildFolder}/`,
@@ -18,6 +19,7 @@ export const path = {
   src: {
     js: `${assetsFolder}/js/*.js`,
     img: `${srcFolder}/img/*.*`,
+    imgf: `${srcFolder}/img/formats/*.{jpg,jpeg,png}`,
     imgr: `${srcFolder}/img/responsive/*.{jpg,jpeg,png}`,
     css: `${srcFolder}/css/tailwind.css`,
     fonts: `${srcFolder}/fonts/*.ttf`,
