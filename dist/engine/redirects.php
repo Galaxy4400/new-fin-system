@@ -22,9 +22,3 @@ if (preg_match('/[A-Z]/', $_SERVER['REQUEST_URI'])) {
 	header("Location: {$protocolType}://{$host}{$lowerUri}", true, 301);
 	exit;
 }
-
-// Обработка действий через параметр GET
-if (isset($_GET['action']) && $_GET['action'] === 'send') {
-	require __DIR__ . '/send.php';
-	exit;
-}

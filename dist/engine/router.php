@@ -5,6 +5,8 @@ $pagePathWithoutLang = getPagePathWithoutLang();
 $currentUrl = $protocolType . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $defaultPageUrl = $protocolType . "://" . $_SERVER['HTTP_HOST'] . ($pagePathWithoutLang ? '/' . $pagePathWithoutLang : '');
 
+apiRoutes();
+
 //===============================================================
 function detectProtocol(): string
 {
@@ -58,6 +60,16 @@ function url($path = '', $query = '', $hash = '')
 	$path = ltrim($path, '/');
 
 	return ($currentLang === $defaultLang ? "/$path" : "/$currentLang/$path") . $query . $hash;
+}
+
+//---------------------------------------------------------------
+function apiRoutes() {
+	$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+
+	if ($uri == 'send') {
+		require __DIR__ . '/send.php';
+		exit;
+	}
 }
 
 //---------------------------------------------------------------
