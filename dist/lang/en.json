@@ -66,9 +66,7 @@
       "faq_item_text_4": "Yes, we make use of verified algorithms and secure integration protocols to provide a safe and consistent trading experience.",
       "faq_item_title_5": "5. What Makes {site_name} Different From Similar Platforms?",
       "faq_item_text_5": "Yes, we make use of verified algorithms and secure integration protocols to provide a safe and consistent trading experience.",
-
       "form-block-2__title": "You can trade, analyse and track from the comfort of your own home.",
-
       "table-block__title": "Core Capabilities of the {site_name} Trading Platform",
       "table-block-table__th_1": "🤖 Platform Technology",
       "table-block-table__td_1": "Advanced AI-Driven Trading Engine",
@@ -84,17 +82,12 @@
       "table-block-table__td_6": "Quick and Efficient",
       "table-block-table__th_7": "📞 Customer Support",
       "table-block-table__td_7": "24/7 Professional Assistance",
-
       "reviews-body__title": "{site_name} Reviews",
       "reviews-body__tag": "Trusted",
-
       "reviews-body__text_reviews": "{reviews} reviews",
       "reviews-body__text_votes": "Based on {votes} ratings",
       "reviews-body__text_score": "Score out of {score}",
-
-      "reviews-body__label": "\"A powerful, easy-to-use trading platform with solid automation and education resources.\"",
-
-      "test": "test"
+      "reviews-body__label": "\"A powerful, easy-to-use trading platform with solid automation and education resources.\""
     },
     "main": {
       "meta_test": "The purpose of this test message is to ensure that this text has been rewritten in 2025",
@@ -121,6 +114,7 @@
       "form_email_label": "Email",
       "form_email_placeholder": "Enter your Email",
       "form_phone_label": "Phone",
+      "form_phone_placeholder": "Enter your Number Phone",
 
       "menu_home": "Home",
       "menu_about": "About",
