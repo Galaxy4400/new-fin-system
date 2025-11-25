@@ -80,8 +80,7 @@
 
     <footer class="grid items-center gap-5 text-center">
       <p class="text-sm leading-[140%] opacity-60">
-        <?= t('t.main.main-form__footer', [ '{privacy_link}' => url('privacy'), '{terms_link}' => url('conditions') ])
-        ?>
+        <?= t('t.main.main-form__footer', [ '{privacy_link}' => url('privacy'), '{terms_link}' => url('conditions') ])?>
       </p>
       <div class="flex flex-wrap justify-center gap-2"><?php include 'components/icons/payments.php' ?></div>
     </footer>
