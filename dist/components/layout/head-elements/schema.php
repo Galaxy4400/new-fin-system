@@ -3,7 +3,7 @@
   	"@context": "https://schema.org/",
   	"@type": "SoftwareApplication",
   	"name": "<?= $offer_name ?>",
-  	"url": "<?= getCurrentPageUrl() ?>",
+  	"url": "<?= $currentUrl ?>",
   	"logo": "https://<?= $domain ?>/assets/img/favicon.ico",
   	"image": "https://<?= $domain ?>/assets/img/twitter_image.png",
   	"description": "<?= t('t.main.meta_description', ['{site_name}' => $offer_name]) ?>",
