@@ -1,3 +1,55 @@
+const mockData = {
+  mockSuccess: {
+    success: true,
+  },
+
+  mockSuccessWithAutoLogin: {
+    success: true,
+    auto_login_url: 'https://site.com/autologin/abc123',
+  },
+
+  mockInvalidParamsObject: {
+    success: false,
+    code: 'invalid_params',
+    errors: {
+      email: 'Invalid email',
+      password: 'Too short',
+    },
+  },
+
+  mockInvalidParamsArray: {
+    success: false,
+    code: 'invalid_params',
+    errors: ['email_invalid', 'password_short', 'name_required'],
+  },
+
+  mockInvalidParamsString: {
+    success: false,
+    code: 'invalid_params',
+    errors: 'wrong_format',
+  },
+
+  mockUnknownError: {
+    success: false,
+    code: 'server_error',
+    errors: null,
+  },
+
+  mockNoCodeError: {
+    success: false,
+  },
+};
+
+//---------------------------------------------------------------
+const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
+  new Promise((resolve, reject) =>
+    setTimeout(() => {
+      success ? resolve(payload) : reject(payload);
+    }, ms),
+  );
+
+//===============================================================
+
 const local = (path) => {
   return path.split('.').reduce((obj, key) => obj?.[key], window.translations) ?? path;
 };
@@ -172,19 +224,31 @@ const initSubmit = (form) => {
     if (form.iti) formData.append('full_phone', form.iti.getNumber());
     if (form.iti) formData.append('country_code', '+' + form.iti.getSelectedCountryData().dialCode);
 
-    fetch(formAction, {
-      method: formMethod,
-      body: formData,
-    })
-      .then((response) => response.json())
+    mokFetch(1000, mockData.mockSuccessWithAutoLogin, true)
       .then((res) => {
-        if (!res.ok) throw new Error(res.status);
+        resetForm(form);
         responseHandler(form, res);
       })
-      .catch((err) => responseHandler(form, { tech: err }))
+      .catch((err) => {
+        console.log('CATCH:', err);
+      })
       .finally(() => {
         form.removeAttribute('data-loading');
       });
+
+    // fetch(formAction, {
+    //   method: formMethod,
+    //   body: formData,
+    // })
+    //   .then((response) => response.json())
+    //   .then((res) => {
+    //     if (!res.ok) throw new Error(res.status);
+    //     responseHandler(form, res);
+    //   })
+    //   .catch((err) => responseHandler(form, { tech: err }))
+    //   .finally(() => {
+    //     form.removeAttribute('data-loading');
+    //   });
   });
 
   form.addEventListener('input', () => {
