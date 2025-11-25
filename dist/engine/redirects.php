@@ -1,5 +1,12 @@
 <?php
 
+// Обработка отправки формы
+$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+if ($uri == 'send') {
+	require __DIR__ . '/send.php';
+	exit;
+}
+
 // Удаление лишних слэшей в URL
 $normalized = preg_replace('#/+#', '/', $_SERVER['REQUEST_URI']);
 if ($_SERVER['REQUEST_URI'] !== $normalized) {
@@ -9,9 +16,13 @@ if ($_SERVER['REQUEST_URI'] !== $normalized) {
 
 // Удаление языка из URL
 $segments = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-if (isset($segments[1]) && in_array($segments[1], $supportedLanguages)) {
-	$cleaned = '/' . $segments[0] . '/' . implode('/', array_slice($segments, 2));
-	header("Location: $cleaned", true, 301);
+if (isset($segments[0]) && in_array($segments[0], $supportedLanguages)) {
+	$cleaned = '/' . implode('/', array_slice($segments, 1));
+	if ($cleaned === '/') {
+		header("Location: /", true, 301);
+	} else {
+		header("Location: $cleaned", true, 301);
+	}
 	exit;
 }
 
