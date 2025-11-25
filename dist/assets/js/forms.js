@@ -208,7 +208,6 @@ const initSubmit = (form) => {
     })
       .then((response) => response.json())
       .then((res) => {
-        if (!res.ok) throw new Error(res.status);
         responseHandler(form, res);
       })
       .catch((err) => responseHandler(form, { tech: err }))

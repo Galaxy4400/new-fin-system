@@ -251,6 +251,7 @@ switch ($http_code) {
 		break;
 }
 
+header('Content-Type: application/json; charset=utf-8');
 $encoded_payload = json_encode($payload);
 
 echo $encoded_payload;
