@@ -62,13 +62,13 @@ function url($path = '', $query = '', $hash = '')
 
 //---------------------------------------------------------------
 function getPageFileName() {
-	$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+	global $pagePathWithoutLang;
 
-	if ($uri === '') {
+	if ($pagePathWithoutLang === '') {
 		return 'pages/home.php';
 	}
 
-	$pageFile = 'pages/' . $uri . '.php';
+	$pageFile = 'pages/' . $pagePathWithoutLang . '.php';
 
 	if (file_exists($pageFile)) {
 		return $pageFile;
