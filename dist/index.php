@@ -1,30 +1,5 @@
 <?php
 include_once 'engine/engine.php';
+
+include_once 'components/layout/main-layout.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="<?= $currentLang ?>">
-  <!-- head -->
-  <?php include 'components/layout/head.php' ?>
-
-  <body class="flex min-h-screen flex-col">
-    <!-- skeleton -->
-    <?php include 'components/layout/skeleton.php' ?>
-
-    <!-- header -->
-    <?php include 'components/layout/header.php' ?>
-
-    <!-- main -->
-    <main class="flex grow flex-col">
-      <!-- main section -->
-      <?php include 'components/sections/greeting.php' ?>
-      <!-- experience section -->
-      <?php include 'components/sections/experience.php' ?>
-      <!-- main section -->
-      <?php include 'components/sections/greeting.php' ?>
-    </main>
-
-    <!-- footer -->
-    <?php include 'components/layout/footer.php' ?>
-  </body>
-</html>

@@ -59,3 +59,23 @@ function url($path = '', $query = '', $hash = '')
 
 	return ($currentLang === $defaultLang ? "/$path" : "/$currentLang/$path") . $query . $hash;
 }
+
+//---------------------------------------------------------------
+function pageDisplay() {
+	$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+
+	if ($uri === '') {
+		include 'pages/home.php';
+		exit;
+	}
+
+	$pageFile = 'pages/' . $uri . '.php';
+
+	if (file_exists($pageFile)) {
+		include $pageFile;
+		exit;
+	}
+
+	http_response_code(404);
+	include 'pages/404.php';
+}
