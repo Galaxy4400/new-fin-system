@@ -3,7 +3,7 @@
 $protocolType = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $pagePathWithoutLang = getPagePathWithoutLang();
 $currentUrl = $protocolType . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$defaultPageUrl = $protocolType . "://" . $_SERVER['HTTP_HOST'] . $pagePathWithoutLang ? '/' . $pagePathWithoutLang : '';
+$defaultPageUrl = $protocolType . "://" . $_SERVER['HTTP_HOST'] . ($pagePathWithoutLang ? '/' . $pagePathWithoutLang : '');
 
 //===============================================================
 
