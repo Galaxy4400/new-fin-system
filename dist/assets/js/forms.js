@@ -1,55 +1,4 @@
-const mockData = {
-  mockSuccess: {
-    success: true,
-  },
-
-  mockSuccessWithAutoLogin: {
-    success: true,
-    auto_login_url: 'https://site.com/autologin/abc123',
-  },
-
-  mockInvalidParamsObject: {
-    success: false,
-    code: 'invalid_params',
-    errors: {
-      email: 'Invalid email',
-      password: 'Too short',
-    },
-  },
-
-  mockInvalidParamsArray: {
-    success: false,
-    code: 'invalid_params',
-    errors: ['email_invalid', 'password_short', 'name_required'],
-  },
-
-  mockInvalidParamsString: {
-    success: false,
-    code: 'invalid_params',
-    errors: 'wrong_format',
-  },
-
-  mockUnknownError: {
-    success: false,
-    code: 'server_error',
-    errors: null,
-  },
-
-  mockNoCodeError: {
-    success: false,
-  },
-};
-
-//---------------------------------------------------------------
-const mokFetch = (ms = 1000, payload = 'payload', success = true) =>
-  new Promise((resolve, reject) =>
-    setTimeout(() => {
-      success ? resolve(payload) : reject(payload);
-    }, ms),
-  );
-
 //===============================================================
-
 const local = (path) => {
   return path.split('.').reduce((obj, key) => obj?.[key], window.translations) ?? path;
 };
@@ -73,63 +22,6 @@ const initCountryPhones = (form) => {
     const cleaned = e.target.value.replace(/[^0-9-\s]+/g, '');
     if (cleaned !== e.target.value) e.target.value = cleaned;
   });
-};
-
-//===============================================================
-const validateForm = (form) => {
-  let isFormValid = true;
-  form.removeAttribute('data-novalid');
-
-  const inputs = form.querySelectorAll('[data-should-validate]');
-
-  for (const input of inputs) {
-    const type = input.type ? input.type : false;
-    const required = input.required ? true : false;
-    const regexp = input.dataset.regexp ? input.dataset.regexp : false;
-
-    // clean status
-    input.removeAttribute('data-valid');
-    input.removeAttribute('data-novalid');
-
-    let isValid = true;
-    const value = input.value.trim();
-
-    // required
-    if (isValid && required) {
-      if (!value) isValid = false;
-    }
-
-    // email
-    if (isValid && type === 'email') {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) isValid = false;
-    }
-
-    // tel
-    if (isValid && type === 'tel') {
-      if (!form.iti.isValidNumber()) isValid = false;
-    }
-
-    // regexp
-    if (isValid && regexp) {
-      const customRegex = new RegExp(regexp, 'gi');
-      if (!customRegex.test(value)) isValid = false;
-    }
-
-    // status
-    if (isValid) {
-      input.setAttribute('data-valid', '');
-    } else {
-      input.setAttribute('data-novalid', '');
-      isFormValid = false;
-    }
-  }
-
-  if (!isFormValid) {
-    form.setAttribute('data-novalid', '');
-  }
-
-  return isFormValid;
 };
 
 //===============================================================
@@ -225,6 +117,73 @@ const responseHandler = (form, { success, code, errors, auto_login_url, tech }) 
 };
 
 //===============================================================
+const validateForm = (form) => {
+  const formSubmitted = localStorage.getItem('form_submitted');
+
+  if (formSubmitted) {
+    showFormMessage(form, {
+      title: local('t.response.already_reg'),
+    });
+
+    return;
+  }
+
+  let isFormValid = true;
+  form.removeAttribute('data-novalid');
+
+  const inputs = form.querySelectorAll('[data-should-validate]');
+
+  for (const input of inputs) {
+    const type = input.type ? input.type : false;
+    const required = input.required ? true : false;
+    const regexp = input.dataset.regexp ? input.dataset.regexp : false;
+
+    // clean status
+    input.removeAttribute('data-valid');
+    input.removeAttribute('data-novalid');
+
+    let isValid = true;
+    const value = input.value.trim();
+
+    // required
+    if (isValid && required) {
+      if (!value) isValid = false;
+    }
+
+    // email
+    if (isValid && type === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) isValid = false;
+    }
+
+    // tel
+    if (isValid && type === 'tel') {
+      if (!form.iti.isValidNumber()) isValid = false;
+    }
+
+    // regexp
+    if (isValid && regexp) {
+      const customRegex = new RegExp(regexp, 'gi');
+      if (!customRegex.test(value)) isValid = false;
+    }
+
+    // status
+    if (isValid) {
+      input.setAttribute('data-valid', '');
+    } else {
+      input.setAttribute('data-novalid', '');
+      isFormValid = false;
+    }
+  }
+
+  if (!isFormValid) {
+    form.setAttribute('data-novalid', '');
+  }
+
+  return isFormValid;
+};
+
+//===============================================================
 const initSubmit = (form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -243,31 +202,19 @@ const initSubmit = (form) => {
     if (form.iti) formData.append('full_phone', form.iti.getNumber());
     if (form.iti) formData.append('country_code', '+' + form.iti.getSelectedCountryData().dialCode);
 
-    mokFetch(1000, mockData.mockSuccessWithAutoLogin, true)
+    fetch(formAction, {
+      method: formMethod,
+      body: formData,
+    })
+      .then((response) => response.json())
       .then((res) => {
-        resetForm(form);
+        if (!res.ok) throw new Error(res.status);
         responseHandler(form, res);
       })
-      .catch((err) => {
-        console.log('CATCH:', err);
-      })
+      .catch((err) => responseHandler(form, { tech: err }))
       .finally(() => {
         form.removeAttribute('data-loading');
       });
-
-    // fetch(formAction, {
-    //   method: formMethod,
-    //   body: formData,
-    // })
-    //   .then((response) => response.json())
-    //   .then((res) => {
-    //     if (!res.ok) throw new Error(res.status);
-    //     responseHandler(form, res);
-    //   })
-    //   .catch((err) => responseHandler(form, { tech: err }))
-    //   .finally(() => {
-    //     form.removeAttribute('data-loading');
-    //   });
   });
 
   form.addEventListener('input', () => {

@@ -389,6 +389,7 @@
       "reg_complete": "Registration completed",
       "redirect_timer": "In {{timer}} seconds you will be redirected to your account... <br>You will be contacted at the first opportunity by our representative.",
       "something_wrong": "Something went wrong",
+      "already_reg": "You have already registered",
       "try_again": "Your request could not be completed. Please make another attempt.",
       "ask_support": "Please reach out to our support team"
     }
