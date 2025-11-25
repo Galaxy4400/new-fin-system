@@ -148,7 +148,7 @@ const resetForm = (form) => {
 };
 
 //===============================================================
-const showFormMessage = (form, { type = 'success', title = '', text = '' }) => {
+const showFormMessage = (form, { type = 'success', title = '', text = '' }, link) => {
   const messageBlock = form.querySelector('[data-form-message]');
 
   messageBlock.removeAttribute('data-success');
@@ -158,10 +158,25 @@ const showFormMessage = (form, { type = 'success', title = '', text = '' }) => {
 
   if (typeof text === 'object') text = Object.values(text);
 
-  messageBlock.querySelector('[data-form-message-title]').innerHTML = title;
-  messageBlock.querySelector('[data-form-message-content]').innerHTML = Array.isArray(text)
+  const titleEl = messageBlock.querySelector('[data-form-message-title]');
+  const contentEl = messageBlock.querySelector('[data-form-message-content]');
+
+  titleEl.innerHTML = title;
+  contentEl.innerHTML = Array.isArray(text)
     ? `<ul>${text.map((t) => `<li>${t}</li>`).join('')}</ul>`
-    : text;
+    : text.replace('{{timer}}', `<span>5</span>`);
+
+  if (typeof text === 'string' && text.includes('{{timer}}')) {
+    let time = 5;
+    const intervalId = setInterval(() => {
+      time--;
+      contentEl.innerHTML = local('t.response.redirect_timer').replace('{{timer}}', `<span>${time}</span>`);
+      if (time <= 0) {
+        clearInterval(intervalId);
+        window.location.href = link;
+      }
+    }, 1000);
+  }
 };
 
 //===============================================================
@@ -170,10 +185,14 @@ const responseHandler = (form, { success, code, errors, auto_login_url, tech }) 
     resetForm(form);
 
     if (auto_login_url) {
-      return showFormMessage(form, {
-        title: local('t.response.reg_complete'),
-        text: local('t.response.redirect_timer'),
-      });
+      return showFormMessage(
+        form,
+        {
+          title: local('t.response.reg_complete'),
+          text: local('t.response.redirect_timer'),
+        },
+        auto_login_url,
+      );
     }
 
     return showFormMessage(form, {
