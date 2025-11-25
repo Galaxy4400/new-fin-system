@@ -74,7 +74,7 @@
       </button>
     </div>
 
-    <div class="form-message" data-form-message>
+    <div class="form-message" data-form-message role="alert">
       <p class="h4" data-form-message-title></p>
       <div data-form-message-content></div>
     </div>

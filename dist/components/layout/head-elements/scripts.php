@@ -23,9 +23,8 @@
   });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js" defer></script>
-
-<script src="/assets/js/scripts.js" type="module"></script>
+<script src="/assets/js/lazyload.min.js" defer></script>
+<script src="/assets/js/scripts.js" defer></script>
 
 <script>
   async function deferdScripts() {
