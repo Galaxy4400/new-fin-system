@@ -30,7 +30,7 @@
 	<link rel="canonical" href="<?= $currentUrl ?>" />
 	<link rel="alternate" hreflang="x-default" href="<?= $defaultPageUrl ?>" />
 	<?php foreach ($supportedLanguages as $langItem): ?>
-		<link rel="alternate" hreflang="<?= $langItem ?>" href="<?= getLocalizedUrl($langItem) ?>" />
+	<link rel="alternate" hreflang="<?= $langItem ?>" href="<?= getLocalizedUrl($langItem) ?>" />
 	<?php endforeach; ?>
 
 	<!-- Styles -->

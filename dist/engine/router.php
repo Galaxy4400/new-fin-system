@@ -1,12 +1,26 @@
 <?php
 
-$protocolType = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$protocolType = detectProtocol();
 $pagePathWithoutLang = getPagePathWithoutLang();
 $currentUrl = $protocolType . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $defaultPageUrl = $protocolType . "://" . $_SERVER['HTTP_HOST'] . ($pagePathWithoutLang ? '/' . $pagePathWithoutLang : '');
 
 //===============================================================
+function detectProtocol(): string
+{
+	if (
+		(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+		(isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ||
+		(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+		(isset($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on')
+	) {
+		return 'https';
+	}
 
+	return 'http';
+}
+
+//---------------------------------------------------------------
 function getPagePathWithoutLang() {
 	global $supportedLanguages;
 
@@ -25,7 +39,6 @@ function getPagePathWithoutLang() {
 }
 
 //---------------------------------------------------------------
-
 function getLocalizedUrl($langItem) {
 	global $protocolType, $defaultLang, $pagePathWithoutLang;
 
@@ -38,7 +51,6 @@ function getLocalizedUrl($langItem) {
 }
 
 //---------------------------------------------------------------
-
 function url($path = '', $query = '', $hash = '')
 {
 	global $currentLang, $defaultLang;
