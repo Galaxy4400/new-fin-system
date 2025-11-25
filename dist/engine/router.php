@@ -66,14 +66,14 @@ function pageDisplay() {
 
 	if ($uri === '') {
 		include 'pages/home.php';
-		exit;
+		return;
 	}
 
 	$pageFile = 'pages/' . $uri . '.php';
 
 	if (file_exists($pageFile)) {
 		include $pageFile;
-		exit;
+		return;
 	}
 
 	http_response_code(404);
