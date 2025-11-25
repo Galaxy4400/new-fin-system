@@ -73,21 +73,19 @@ function apiRoutes() {
 }
 
 //---------------------------------------------------------------
-function pageDisplay() {
+function getPageFileName() {
 	$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
 	if ($uri === '') {
-		include 'pages/home.php';
-		return;
+		return 'pages/home.php';
 	}
 
 	$pageFile = 'pages/' . $uri . '.php';
 
 	if (file_exists($pageFile)) {
-		include $pageFile;
-		return;
+		return $pageFile;
 	}
 
 	http_response_code(404);
-	include 'pages/404.php';
+	return 'pages/404.php';
 }
