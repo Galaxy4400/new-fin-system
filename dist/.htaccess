@@ -8,12 +8,16 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
+RewriteRule ^index(\.php)?/?$ / [R=301,L]
+
+RewriteRule ^en/?(.*)$ /$1 [R=302,L]
+RewriteRule ^([a-z]{2})(/.*)?$ $2 [QSA,L]
+
 RewriteCond %{SCRIPT_FILENAME} !index\.php$
 RewriteRule ^.+\.php$ - [F,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
 RewriteRule ^ index.php [L]
 
 
