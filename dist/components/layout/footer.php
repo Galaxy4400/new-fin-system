@@ -35,12 +35,12 @@
         <div class="inline-flex items-center gap-2"><?php include 'components/icons/footer-socials.php' ?></div>
       </div>
       <div class="grid gap-2.5 text-sm text-gray-500">
-        <p><?= t('t.main.footer__disclamer_1') ?></p>
-        <p><?= t('t.main.footer__disclamer_2') ?></p>
-        <p><?= t('t.main.footer__disclamer_3') ?></p>
-        <p><?= t('t.main.footer__disclamer_4') ?></p>
+        <p><?= t('t.main.footer_disclamer_1') ?></p>
+        <p><?= t('t.main.footer_disclamer_2') ?></p>
+        <p><?= t('t.main.footer_disclamer_3') ?></p>
+        <p><?= t('t.main.footer_disclamer_4') ?></p>
       </div>
-      <div class="text-center"><?= t('t.main.footer__copy', ['{year}' => date('Y')]) ?></div>
+      <div class="text-center"><?= t('t.main.footer_copy', ['{year}' => date('Y')]) ?></div>
     </div>
   </div>
 </footer>

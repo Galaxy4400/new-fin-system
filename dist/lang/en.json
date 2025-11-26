@@ -16,6 +16,28 @@
     "worst": 1
   },
   "t": {
+    "main": {
+      "menu_home": "Home",
+      "menu_about": "About",
+      "menu_features": "Features",
+      "menu_reviews": "Reviews",
+      "menu_faq": "FAQ",
+      "menu_privacy": "Privacy Policy",
+      "menu_conditions": "Conditions of Use",
+
+      "signin": "Sign In",
+      "signup": "Sign Up",
+      "signup_now": "Sign Up Now",
+      "register": "Register now",
+      "tohome": "to home",
+
+      "footer_disclamer_1": "HIGH RISK WARNING: Dealing or Trading FX, CFDs and Cryptocurrencies is highly speculative, carries a level of non-negligible risk and may not be suitable for all investors. You may lose some or all of your invested capital, therefore you should not speculate with capital that you cannot afford to lose. Please refer to the risk disclosure below. {site_name} does not gain or lose profits based on your activity and operates as a services company. {site_name} is not a financial services firm and is not eligible of providing financial advice. Therefore, {site_name} shall not be liable for any losses occurred via or in relation to this informational website.",
+      "footer_disclamer_2": "SITE RISK DISCLOSURE: {site_name} does not accept any liability for loss or damage as a result of reliance on the information contained within this website; this includes education material, price quotes and charts, and analysis. Please be aware of and seek professional advice for the risks associated with trading the financial markets; never invest more money than you can risk losing. The risks involved in FX, CFDs and Cryptocurrencies may not be suitable for all investors. {site_name} doesn't retain responsibility for any trading losses you might face as a result of using or inferring from the data hosted on this site.",
+      "footer_disclamer_3": "LEGAL RESTRICTIONS: Without limiting the above mentioned provisions, you understand that laws regarding financial activities vary throughout the world, and it is your responsibility to make sure you properly comply with any law, regulation or guideline in your country of residence regarding the use of the Site. To avoid any doubt, the ability to access our Site does not necessarily mean that our Services and/or your activities through the Site are legal under the laws, regulations or directives relevant to your country of residence. It is against the law to solicit US individuals to buy and sell commodity options, even if they are called \"prediction\" contracts, unless they are listed for trading and traded on a CFTC-registered exchange unless legally exempt. The UK Financial Conduct Authority has issued a policy statement PS20/10, which prohibits the sale, promotion, and distribution of CFD on Crypto assets. It prohibits the dissemination of marketing materials relating to distribution of CFDs and other financial products based on Cryptocurrencies that addressed to UK residents. The provision of trading services involving any MiFID II financial instruments is prohibited in the EU, unless when authorized/licensed by the applicable authorities and/or regulator(s). Please note that we may receive advertising fees for users opted to open an account with our partner advertisers via advertisers' websites. We have placed cookies on your computer to help improve your experience when visiting this website. You can change cookie settings on your computer at any time. Use of this website indicates your acceptance of this website.",
+      "footer_disclamer_4": "Please be advised that the names depicted on our website, including but not limited to {site_name}, are strictly for marketing and illustrative purposes. These names do not represent or imply the existence of specific entities, service providers, or any real-life individuals. Furthermore, the pictures and/or videos presented on our website are purely promotional in nature and feature professional actors. These actors are not actual users, clients, or traders, and their depictions should not be interpreted as endorsements or representations of real-life experiences. All content is intended solely for illustrative purposes and should not be construed as factual or as forming any legally binding relationship.",
+
+      "footer_copy": "Copyright {year} © {site_name}, All Right Reserved"
+    },
     "index": {
       "main_title": "The Official Website <mark>{site_name}</mark> for AI-Powered Trading in <mark>{country_name}</mark>",
       "main_label": "Learn about {site_name}, the AI-driven trading platform for users in {country_name} who use automated strategies, real-time market insights, and reliable security solutions.",
@@ -67,29 +89,32 @@
       "faq_item_title_5": "5. What Makes {site_name} Different From Similar Platforms?",
       "faq_item_text_5": "Yes, we make use of verified algorithms and secure integration protocols to provide a safe and consistent trading experience.",
       "form-block-2__title": "You can trade, analyse and track from the comfort of your own home.",
-      "table-block__title": "Core Capabilities of the {site_name} Trading Platform",
-      "table-block-table__th_1": "🤖 Platform Technology",
-      "table-block-table__td_1": "Advanced AI-Driven Trading Engine",
-      "table-block-table__th_2": "💳 Funding Methods",
-      "table-block-table__td_2": "Major Credit Cards, Bank Transfers, PayPal",
-      "table-block-table__th_3": "📱 Platform Access",
-      "table-block-table__td_3": "Multi-Device Compatibility",
-      "table-block-table__th_4": "🚀 Performance Rate",
-      "table-block-table__td_4": "85% Accuracy",
-      "table-block-table__th_5": "📊 Trading Instruments",
-      "table-block-table__td_5": "Equities, Forex, Commodities, Precious Metals, CFDs, Cryptocurrencies, and more…",
-      "table-block-table__th_6": "✍️ Account Setup",
-      "table-block-table__td_6": "Quick and Efficient",
-      "table-block-table__th_7": "📞 Customer Support",
-      "table-block-table__td_7": "24/7 Professional Assistance",
-      "reviews-body__title": "{site_name} Reviews",
-      "reviews-body__tag": "Trusted",
-      "reviews-body__text_reviews": "{reviews} reviews",
-      "reviews-body__text_votes": "Based on {votes} ratings",
-      "reviews-body__text_score": "Score out of {score}",
-      "reviews-body__label": "\"A powerful, easy-to-use trading platform with solid automation and education resources.\""
+      "table_title": "Core Capabilities of the {site_name} Trading Platform",
+      "table_th_1": "🤖 Platform Technology",
+      "table_td_1": "Advanced AI-Driven Trading Engine",
+      "table_th_2": "💳 Funding Methods",
+      "table_td_2": "Major Credit Cards, Bank Transfers, PayPal",
+      "table_th_3": "📱 Platform Access",
+      "table_td_3": "Multi-Device Compatibility",
+      "table_th_4": "🚀 Performance Rate",
+      "table_td_4": "85% Accuracy",
+      "table_th_5": "📊 Trading Instruments",
+      "table_td_5": "Equities, Forex, Commodities, Precious Metals, CFDs, Cryptocurrencies, and more…",
+      "table_th_6": "✍️ Account Setup",
+      "table_td_6": "Quick and Efficient",
+      "table_th_7": "📞 Customer Support",
+      "table_td_7": "24/7 Professional Assistance",
+      "reviews-body_title": "{site_name} Reviews",
+      "reviews-body_tag": "Trusted",
+      "reviews-body_text_reviews": "{reviews} reviews",
+      "reviews-body_text_votes": "Based on {votes} ratings",
+      "reviews-body_text_score": "Score out of {score}",
+      "reviews-body_label": "\"A powerful, easy-to-use trading platform with solid automation and education resources.\""
     },
-    "main": {
+    "pages": {
+      "404_label": "This page does not exist."
+    },
+    "meta": {
       "meta_test": "The purpose of this test message is to ensure that this text has been rewritten in 2025",
       "meta_title": "{site_name} | The Official Website {year}",
       "meta_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
@@ -97,72 +122,51 @@
       "meta_twitter_title": "{site_name}™ – The Official Website【Updated {year}】",
       "meta_og_title": "{site_name}™ – The Official Website【Updated {year}】",
       "meta_og_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
-      "meta_og_site_name": "{site_name}",
+      "meta_og_site_name": "{site_name}"
+    },
+    "aria": {
+      "aria_open_menu": "open menu"
+    },
+    "forms": {
+      "first_name_label": "First Name",
+      "first_name_placeholder": "Enter your First Name",
+      "last_name_label": "Last Name",
+      "last_name_placeholder": "Enter your Last Name",
+      "email_label": "Email",
+      "email_placeholder": "Enter your Email",
+      "phone_label": "Phone",
+      "phone_placeholder": "Enter your Number Phone",
 
-      "aria_open_menu": "open menu",
-      "aria_chose_days": "chose days",
-      "aria_enter_ammount": "enter ammount",
-      "aria_rating": "{rating} out of {score} stars",
-
-      "field_is_required": "Field is required",
-      "field_is_invalid": "Field is invalid",
-
-      "form_first_name_label": "First Name",
-      "form_first_name_placeholder": "Enter your First Name",
-      "form_last_name_label": "Last Name",
-      "form_last_name_placeholder": "Enter your Last Name",
-      "form_email_label": "Email",
-      "form_email_placeholder": "Enter your Email",
-      "form_phone_label": "Phone",
-      "form_phone_placeholder": "Enter your Number Phone",
-
-      "menu_home": "Home",
-      "menu_about": "About",
-      "menu_features": "Features",
-      "menu_reviews": "Reviews",
-      "menu_faq": "FAQ",
-      "menu_privacy": "Privacy Policy",
-      "menu_conditions": "Conditions of Use",
+      "form_footer": "By entering your personal information and clicking the button, you accept the <a class='link' href='{privacy_link}'>Privacy Policy</a> and <a class='link' href='{terms_link}'>Terms of Use</a> of the website.",
 
       "aggree": "I agree to the {terms_link} and the {privacy_link} policy",
       "forgot": "Forgot your password?",
       "have_account": "Do you already have an account?",
       "no_account": "No account?",
 
-      "conditions_of_use": "Conditions of Use",
-      "privacy_policy": "Privacy Policy",
-      "last_update": "Last update: 30/9/22",
-
-      "signin": "Sign In",
-      "signup": "Sign Up",
-      "signup-now": "Sign Up Now",
-      "register": "Register now",
-      "tohome": "to home",
-      "send": "Send",
-      "download": "download",
-      "learn_more": "learn more",
-      "apple_store": "App Store",
-      "google_store": "Google Store",
-
       "forgot_password": "Forgot password",
-      "no_worry": "No need to worry! Please enter your email address below, and we will send you a password reset code.",
-
-      "modal__title": "Leaving so soon?",
-      "modal__sub-title": "The future is yours – invest in crypto today!",
-
-      "block-404__label": "This page does not exist.",
-
-      "footer__label": "Your secure trading partner",
-
-      "main-form__footer": "By entering your personal information and clicking the button, you accept the <a class='link' href='{privacy_link}'>Privacy Policy</a> and <a class='link' href='{terms_link}'>Terms of Use</a> of the website.",
-
-      "footer__disclamer_1": "HIGH RISK WARNING: Dealing or Trading FX, CFDs and Cryptocurrencies is highly speculative, carries a level of non-negligible risk and may not be suitable for all investors. You may lose some or all of your invested capital, therefore you should not speculate with capital that you cannot afford to lose. Please refer to the risk disclosure below. {site_name} does not gain or lose profits based on your activity and operates as a services company. {site_name} is not a financial services firm and is not eligible of providing financial advice. Therefore, {site_name} shall not be liable for any losses occurred via or in relation to this informational website.",
-      "footer__disclamer_2": "SITE RISK DISCLOSURE: {site_name} does not accept any liability for loss or damage as a result of reliance on the information contained within this website; this includes education material, price quotes and charts, and analysis. Please be aware of and seek professional advice for the risks associated with trading the financial markets; never invest more money than you can risk losing. The risks involved in FX, CFDs and Cryptocurrencies may not be suitable for all investors. {site_name} doesn't retain responsibility for any trading losses you might face as a result of using or inferring from the data hosted on this site.",
-      "footer__disclamer_3": "LEGAL RESTRICTIONS: Without limiting the above mentioned provisions, you understand that laws regarding financial activities vary throughout the world, and it is your responsibility to make sure you properly comply with any law, regulation or guideline in your country of residence regarding the use of the Site. To avoid any doubt, the ability to access our Site does not necessarily mean that our Services and/or your activities through the Site are legal under the laws, regulations or directives relevant to your country of residence. It is against the law to solicit US individuals to buy and sell commodity options, even if they are called \"prediction\" contracts, unless they are listed for trading and traded on a CFTC-registered exchange unless legally exempt. The UK Financial Conduct Authority has issued a policy statement PS20/10, which prohibits the sale, promotion, and distribution of CFD on Crypto assets. It prohibits the dissemination of marketing materials relating to distribution of CFDs and other financial products based on Cryptocurrencies that addressed to UK residents. The provision of trading services involving any MiFID II financial instruments is prohibited in the EU, unless when authorized/licensed by the applicable authorities and/or regulator(s). Please note that we may receive advertising fees for users opted to open an account with our partner advertisers via advertisers' websites. We have placed cookies on your computer to help improve your experience when visiting this website. You can change cookie settings on your computer at any time. Use of this website indicates your acceptance of this website.",
-      "footer__disclamer_4": "Please be advised that the names depicted on our website, including but not limited to {site_name}, are strictly for marketing and illustrative purposes. These names do not represent or imply the existence of specific entities, service providers, or any real-life individuals. Furthermore, the pictures and/or videos presented on our website are purely promotional in nature and feature professional actors. These actors are not actual users, clients, or traders, and their depictions should not be interpreted as endorsements or representations of real-life experiences. All content is intended solely for illustrative purposes and should not be construed as factual or as forming any legally binding relationship.",
-
-      "footer__copy": "Copyright {year} © BRAND, All Right Reserved",
-
+      "no_worry": "No need to worry! Please enter your email address below, and we will send you a password reset code."
+    },
+    "reviews": {
+      "name_1": "Alex M.",
+      "text_1": "{site_name} exceeded all of my expectations. The AI trades are accurate, and I can monitor everything in real-time. It’s amazing to see the consistent growth, without the need for constant supervision on my part.",
+      "initials_1": "AM",
+      "name_2": "Sophie L.",
+      "text_2": "I started out with zero trading experience. {site_name} was able to get me up to speed while simplifying things every step of the way. Automated strategies deliver results every day, and the insights helped me understand how to optimize my account.",
+      "initials_2": "SL",
+      "name_3": "Marc D.",
+      "text_3": "The speed and accuracy of {site_name}’s AI is incredible. Withdrawals are seamless, and the platform’s transparency makes me feel secure about my investments. Highly recommended for anyone serious about trading.",
+      "initials_3": "MD"
+    },
+    "response": {
+      "reg_complete": "Registration completed",
+      "redirect_timer": "In {{timer}} seconds you will be redirected to your account... <br>You will be contacted at the first opportunity by our representative.",
+      "something_wrong": "Something went wrong",
+      "already_reg": "You have already registered",
+      "try_again": "Your request could not be completed. Please make another attempt.",
+      "ask_support": "Please reach out to our support team"
+    },
+    "policy": {
       "privacy_1": "Your personal data and your assets are our top concern. We are fully committed to protecting them.",
       "privacy_2": "{site_name} collects and stores data essential to your trading practice. The means of collecting and storing this data is explained in the following Privacy Policy.",
       "privacy_3": "Our policy is guided by the following principles:",
@@ -367,31 +371,7 @@
       "conditions_53": "9.4. No agreement or statement, written or spoken, outside of the specific items in these terms of use has no legal validity and is not binding in any way on either party. Only the Terms of Use and the Privacy Policy of the Company and Website, as amended and accepted, constitute a binding agreement between the user and the Website.",
       "conditions_54": "9.5.Any right granted by the Terms herein that isn’t exercised, through consent, neglect or inability, will be considered a waived right. If a right is exercised in whole or in part, that will be considered to be a part of any further exercise of that right or remedy, which shall remain in force.",
       "conditions_55": "9.6. In the case that one of the provisions within these Terms is found to be null and voice according to the decision of a competent court, it shall be struck from the Terms. However, the remainder of the Terms shall be considered to stand unaffected, minus the excluded terms. Those remaining terms will be interpreted according to the ruling of the court in terms of how it interprets the intent and meaning minus the excluded clause(s).",
-      "conditions_56": "9.7. It is accepted that these Terms permit the operation and management of the website, including all of its Services by third-party service providers. They may transfer in that case all of their rights and obligations. The user may not transfer their rights and obligations to another party and remain solely responsible.",
-
-      "close": "Close",
-      "exit": "Exit",
-      "skip": "Skip for now",
-      "continue": "Let's continue",
-      "complete": "Complete",
-      "complete_registration": "Complete registration",
-      "join_now": "Join now"
-    },
-    "reviews": {
-      "name_1": "Alex M.",
-      "text_1": "{site_name} exceeded all of my expectations. The AI trades are accurate, and I can monitor everything in real-time. It’s amazing to see the consistent growth, without the need for constant supervision on my part.",
-      "name_2": "Sophie L.",
-      "text_2": "I started out with zero trading experience. {site_name} was able to get me up to speed while simplifying things every step of the way. Automated strategies deliver results every day, and the insights helped me understand how to optimize my account.",
-      "name_3": "Marc D.",
-      "text_3": "The speed and accuracy of {site_name}’s AI is incredible. Withdrawals are seamless, and the platform’s transparency makes me feel secure about my investments. Highly recommended for anyone serious about trading."
-    },
-    "response": {
-      "reg_complete": "Registration completed",
-      "redirect_timer": "In {{timer}} seconds you will be redirected to your account... <br>You will be contacted at the first opportunity by our representative.",
-      "something_wrong": "Something went wrong",
-      "already_reg": "You have already registered",
-      "try_again": "Your request could not be completed. Please make another attempt.",
-      "ask_support": "Please reach out to our support team"
+      "conditions_56": "9.7. It is accepted that these Terms permit the operation and management of the website, including all of its Services by third-party service providers. They may transfer in that case all of their rights and obligations. The user may not transfer their rights and obligations to another party and remain solely responsible."
     }
   }
 }

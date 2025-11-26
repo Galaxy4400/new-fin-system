@@ -61,7 +61,7 @@
       <button
         class="btn-primary flex w-full items-center gap-2.5 group-data-novalid:cursor-default group-data-novalid:bg-gray-300"
       >
-        <?= t('t.main.signup-now') ?> <?php include 'components/icons/arrow.php' ?>
+        <?= t('t.main.signup_now') ?> <?php include 'components/icons/arrow.php' ?>
       </button>
     </div>
 

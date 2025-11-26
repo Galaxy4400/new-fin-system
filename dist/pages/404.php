@@ -4,7 +4,7 @@
   </div>
   <div class="content-container relative grid gap-12 text-center">
     <div class="w-[250px] md:w-[394px]"><?php include 'components/icons/404.php' ?></div>
-    <p class="md:text-xl"><?= t('t.main.block-404__label') ?></p>
+    <p class="md:text-xl"><?= t('t.main.404_label') ?></p>
     <a class="btn-primary justify-self-center capitalize" href="<?= url() ?>"><?= t('t.main.tohome') ?></a>
   </div>
 </div>
