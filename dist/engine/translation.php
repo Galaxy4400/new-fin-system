@@ -46,10 +46,13 @@ function getTranslations() {
 	$translations = [];
 
 	$langFile = __DIR__ . "/../lang/{$currentLang}.json";
+	$policyFile = __DIR__ . "/../lang/policy/{$currentLang}.json";
 
-	if (file_exists($langFile)) {
-		$jsonContent = file_get_contents($langFile);
-		$translations = json_decode($jsonContent, true);
+	if (file_exists($langFile) && file_exists($policyFile)) {
+		$translations = json_decode(file_get_contents($langFile), true);
+		$policyTranslations = json_decode(file_get_contents($policyFile), true);
+
+		$translations['t']['policy'] = $policyTranslations;
 
 		if (json_last_error() !== JSON_ERROR_NONE) {
 			error_log("Failed to parse {$langFile}: " . json_last_error_msg());
