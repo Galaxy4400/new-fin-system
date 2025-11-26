@@ -6,6 +6,3 @@
 
 <!-- main section -->
 <?php include 'components/sections/greeting.php' ?>
-
-<!-- test -->
-<?= t('t.policy.privacy_1') ?>

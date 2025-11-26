@@ -2,7 +2,7 @@
   <div class="absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>
-  <div class="content-container relative grid gap-7 md:grid-cols-2">
+  <div class="container-base relative grid gap-7 md:grid-cols-2">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
         <h1><?= t('t.index.main_title') ?></h1>

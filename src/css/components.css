@@ -15,8 +15,12 @@
     @apply text-base leading-[120%] font-medium md:text-lg;
   }
 
-  .content-container {
+  .container-base {
     @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  .container-narrow {
+    @apply max-w-container-narrow mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
   }
 
   .label {

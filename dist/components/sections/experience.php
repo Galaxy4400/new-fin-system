@@ -1,5 +1,5 @@
 <section class="py-8 md:py-20">
-  <div class="content-container">
+  <div class="container-base">
     <div class="grid gap-7 md:grid-cols-2">
       <div class="grid content-start gap-5">
         <h2><?= t('t.index.about_title') ?></h2>

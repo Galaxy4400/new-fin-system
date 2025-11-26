@@ -32,7 +32,7 @@ export const path = {
     intlTelCss: `${modulesFolder}/intl-tel-input/build/css/intlTelInput.css`,
   },
   watch: {
-    pages: `${buildFolder}/*.php`,
+    pages: `${buildFolder}/pages/**/*.php`,
     components: `${buildFolder}/components/**/*.php`,
     css: `${srcFolder}/css/*.css`,
   },
