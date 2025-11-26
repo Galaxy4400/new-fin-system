@@ -66,7 +66,11 @@ function t($key, $vars = [])
 {
 	global $translations, $offer_name;
 
-	$commonKeys = ['{site_name}' => $offer_name, '{country}' => getValueByPath($translations, 'v.country')];
+	$commonKeys = [
+		'{site_name}' => $offer_name, 
+		'{country}' => getValueByPath($translations, 'v.country'),
+		'{country_name}' => getValueByPath($translations, 'v.countryName'),
+	];
 
 	$translation = getValueByPath($translations, $key);
 

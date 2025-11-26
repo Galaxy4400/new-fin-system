@@ -1,22 +1,22 @@
 <head>
-	<title><?= t('t.main.meta_title', ['{site_name}' => $offer_name, '{country}' => t('v.countryName'), '{year}' => date("Y")]) ?></title>
+	<title><?= t('t.main.meta_title', ['{year}' => date("Y")]) ?></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="isoCode" content="<?= t('v.country') ?>">
-	<meta name="description" content="<?= t('t.main.meta_description', ['{site_name}' => $offer_name]) ?>">
+	<meta name="description" content="<?= t('t.main.meta_description') ?>">
 
 	<!-- Twitter Card Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="<?= t('t.main.meta_twitter_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
-	<meta name="twitter:description" content="<?= t('t.main.meta_twitter_description', ['{site_name}' => $offer_name]) ?>" />
+	<meta name="twitter:title" content="<?= t('t.main.meta_twitter_title', ['{year}' => date("Y")]) ?>" />
+	<meta name="twitter:description" content="<?= t('t.main.meta_twitter_description') ?>" />
 	<meta name="twitter:image" content="<?= $protocolType ?>://<?= $_SERVER['HTTP_HOST'] ?>/assets/img/og-img.png" />
 
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="<?= t('t.main.meta_og_site_name', ['{site_name}' => $offer_name]) ?>" />
+	<meta property="og:site_name" content="<?= t('t.main.meta_og_site_name') ?>" />
 	<meta property="og:url" content="<?= $currentUrl ?>" />
-	<meta property="og:title" content="<?= t('t.main.meta_og_title', ['{site_name}' => $offer_name, '{year}' => date("Y")]) ?>" />
-	<meta property="og:description" content="<?= t('t.main.meta_og_description', ['{site_name}' => $offer_name]) ?>" />
+	<meta property="og:title" content="<?= t('t.main.meta_og_title', ['{year}' => date("Y")]) ?>" />
+	<meta property="og:description" content="<?= t('t.main.meta_og_description') ?>" />
 	<meta property="og:image" content="<?= $protocolType ?>://<?= $_SERVER['HTTP_HOST'] ?>/assets/img/og-img.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
