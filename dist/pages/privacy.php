@@ -252,17 +252,13 @@
       </div>
 
       <div class="border-primary max-md:grid max-md:gap-1 md:rounded-2xl md:border md:p-6">
-        <!-- row 1 -->
         <div
           class="border-primary grid items-start gap-2 py-2 md:grid-cols-[15fr_50fr_35fr] md:gap-6 md:border-b md:py-4"
         >
-          <!-- col 1 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:min-h-12">The type of cookie</p>
             <p>Cookies are absolutely necessary</p>
           </div>
-
-          <!-- col 2 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:min-h-12">Scope</p>
             <p>
@@ -272,8 +268,6 @@
               utilize its features, and then return to pages you've previously been to.
             </p>
           </div>
-
-          <!-- col 3 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:min-h-12">Additional Information</p>
             <p>
@@ -282,18 +276,13 @@
             </p>
           </div>
         </div>
-
-        <!-- row 2 -->
         <div
           class="border-primary grid items-start gap-2 py-2 md:grid-cols-[15fr_50fr_35fr] md:gap-6 md:border-b md:py-4"
         >
-          <!-- col 1 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:hidden">The type of cookie</p>
             <p>Functionality Cookies</p>
           </div>
-
-          <!-- col 2 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:hidden">Scope</p>
             <p>
@@ -301,8 +290,6 @@
               preferences.
             </p>
           </div>
-
-          <!-- col 3 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:hidden">Additional Information</p>
             <p>
@@ -311,16 +298,11 @@
             </p>
           </div>
         </div>
-
-        <!-- row 3 -->
         <div class="grid items-start gap-6 py-4 md:grid-cols-[15fr_50fr_35fr]">
-          <!-- col 1 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:hidden">The type of cookie</p>
             <p>Cookies for performance</p>
           </div>
-
-          <!-- col 2 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:hidden">Scope</p>
             <p>
@@ -328,8 +310,6 @@
               also permit Us to carry out analysis on our website.
             </p>
           </div>
-
-          <!-- col 3 -->
           <div class="grid items-start gap-2 md:mb-0 md:gap-6">
             <p class="text-primary text-base md:hidden">Additional Information</p>
             <p>
