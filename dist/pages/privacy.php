@@ -9,15 +9,12 @@
     </div>
     <div class="grid gap-6 md:gap-8">
       <div class="grid gap-2">
-        <p class="text-sm">
-          <?= t('t.main.last_updated', ['{date}' =>
-          date('d.m.Y')]) ?>
-        </p>
+        <p class="text-sm"><?= t('t.main.last_updated', ['{date}' => date('d.m.Y')]) ?></p>
         <p>
           We (also known as "We", "Us" or "Our") are committed to safeguarding your Personal Data as well as your
           privacy.<br />
           This Privacy Policy was designed to inform you about the ways in which we collect and store the information
-          you provide through the website Gaingate (the "Website").<br />
+          you provide through the website {site_name} (the "Website").<br />
           These principles will be defended:
         </p>
       </div>
