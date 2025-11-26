@@ -2,7 +2,7 @@
   window.userCountry = '<?= t('v.country') ?>';
   window.languageList = <?= json_encode($supportedLanguages) ?>;
   window.defaultLang = '<?= $defaultLang ?>';
-  window.translations = <?= json_encode($translations) ?>;
+  window.translations = <?= json_encode($translations['t']['response']) ?>;
 </script>
 
 <script>
