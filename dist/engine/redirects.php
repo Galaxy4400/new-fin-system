@@ -8,11 +8,12 @@ if ($uri == 'send') {
 }
 
 // Редирект на нужный язык
-$initLang = isset($_COOKIE['init_lang']) ? $_COOKIE['init_lang'] : substr($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '', 0, 2);
-if ($initLang != $currentLang) {
-	if (langSupport($initLang)) {
-		setcookie('init_lang', $initLang, time() + 3600 * 24 * 365, '/');
-		header("Location: /$initLang/$pagePathWithoutLang", true, 302);
+if (!isset($_COOKIE['init_lang'])) {
+	$systemLang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '', 0, 2);
+	setcookie('init_lang', $systemLang, time() + 3600 * 24 * 365, '/');
+	if (langSupport($systemLang) && $systemLang !== $defaultLang) {
+		header("Location: /$systemLang/$pagePathWithoutLang", true, 302);
+		exit;
 	}
 }
 
