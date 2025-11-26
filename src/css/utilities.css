@@ -30,4 +30,12 @@
   .breadcrumb-item:not(:first-child) {
     @apply before:mr-4 before:content-['—'];
   }
+
+  .disc {
+    @apply list-item list-inside list-disc;
+  }
+
+  .list {
+    @apply list-inside list-disc;
+  }
 }

@@ -157,3 +157,10 @@ function getAttributes($attrs) {
 
 	return $attrsStr;
 }
+
+//===============================================================
+function getEmail() {
+	global $translations;
+
+	return getValueByPath($translations, 'v.email') . $_SERVER['HTTP_HOST'];
+}
