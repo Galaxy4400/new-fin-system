@@ -5,6 +5,7 @@
 /* Указываем, откуда Tailwind должен забирать классы */
 @source '../../dist/*.{html,php}';
 @source '../../dist/components/**/*.{html,php}';
+@source '../../dist/pages/**/*.{html,php}';
 
 @import './intlTelInput.min';
 
