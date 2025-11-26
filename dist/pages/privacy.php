@@ -142,7 +142,144 @@
           </p>
         </div>
       </div>
-      <div>table</div>
+
+      <div class="border-primary rounded-2xl md:border md:p-8">
+        <div class="mb-7 flex grid-cols-3 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="text-primary text-base">Scope</div>
+          <div class="text-primary text-base">Legal Basis</div>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="1."
+            >
+              <p class="h3">
+                To provide your personal information to third-party parties on your request to gain access to digital
+                trading<br />
+                If you ask for it We may request Personal Data from you to forward it to third-party companies.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>You have given your consent to processing of your Personal Data for one or multiple reasons.</p>
+          </div>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="2."
+            >
+              <p class="h3">
+                To answer your requests, questions or concerns<br />
+                Personal Data is necessary to help you answer any questions you might have regarding the Services.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>The legitimate interests of the Company or the interests of a third party need to be processed.</p>
+          </div>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="3."
+            >
+              <p class="h3">
+                To meet any legal obligation or administrative, judicial or legal or judicial Personal Data is processed
+                to meet the legal requirements.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>To ensure compliance with legal obligations, processing is required.</p>
+          </div>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="4."
+            >
+              <p class="h3">
+                To enhance Our Services Personal<br />
+                Data may be used by us to enhance Our Services. This includes, among other things, any crashes or
+                malfunction reports that we collect in relation to the Services.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>The legitimate interests of the Company or the interests of a third party need to be processed.</p>
+          </div>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="5."
+            >
+              <p class="h3">To stop fraud and misuse of Our Services</p>
+            </div>
+          </div>
+          <p>The legitimate interests of the Company or the interests of a third party need to be processed.</p>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="6."
+            >
+              <p class="h3">
+                To perform and manage actions that are in line with the requirements of Our Services<br />
+                Such activities include back-office functions, business development activities, strategic
+                decision-making, oversight mechanisms, etc.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>The legitimate interests of the Company or the interests of a third party need to be processed.</p>
+          </div>
+        </div>
+        <div class="border-primary gap-6 border-b py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="7."
+            >
+              <p class="h3">
+                To conduct analysis, such as statistical analysis<br />
+                To take decisions on different issues, we employ different analytical techniques (including those that
+                are statistical).
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>The legitimate interests of the Company or the interests of a third party need to be processed.</p>
+          </div>
+        </div>
+        <div class="gap-6 py-4 md:grid md:grid-cols-[3fr_2fr]">
+          <div class="">
+            <div
+              class="relative pl-6 before:absolute before:top-0 before:left-0 before:content-[attr(data-num)]"
+              data-num="8."
+            >
+              <p class="h3">
+                To safeguard our assets, rights and interests as well as those of third party We have developed HTML0 to
+                establish and defend legal claims<br />
+                Personal Data may be processed by us in order to safeguard our rights, interests and assets, or those of
+                a third parties, in compliance to any applicable laws, regulations or agreements and any conditions,
+                terms or policies.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>The legitimate interests of the Company or the interests of a third party need to be processed.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="grid gap-2 md:gap-4">
         <h2 class="text-2xl font-medium">6. Transfer of Personal Data to Third Party</h2>
         <p>
@@ -250,7 +387,7 @@
           <p>
             The Company can provide information about the security measures it employs to safeguard your Personal Data
             that is transferred to third-party countries or international organisations. Send an email to the following
-            address at info@wealthwaydigital.uk
+            address at info@wealthwaydigital.uk
           </p>
         </div>
       </div>

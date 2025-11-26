@@ -100,6 +100,7 @@
     --font-weight-semibold: 600;
     --radius-sm: 0.25rem;
     --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
     --radius-4xl: 2rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --animate-spin: spin 1s linear infinite;
@@ -312,6 +313,9 @@
       max-width: 96rem;
     }
   }
+  .mb-7 {
+    margin-bottom: calc(var(--spacing) * 7);
+  }
   .block {
     display: block;
   }
@@ -398,6 +402,9 @@
   .cursor-pointer {
     cursor: pointer;
   }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -476,11 +483,21 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
   .rounded-\[20px\] {
     border-radius: 20px;
   }
   .rounded-sm {
     border-radius: var(--radius-sm);
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-primary {
+    border-color: var(--color-primary);
   }
   .bg-primary-lighter {
     background-color: var(--color-primary-lighter);
@@ -509,6 +526,9 @@
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
@@ -530,12 +550,19 @@
   .pb-7 {
     padding-bottom: calc(var(--spacing) * 7);
   }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
   .text-center {
     text-align: center;
   }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -563,6 +590,9 @@
   }
   .text-gray-500 {
     color: var(--color-gray-500);
+  }
+  .text-primary {
+    color: var(--color-primary);
   }
   .capitalize {
     text-transform: capitalize;
@@ -622,6 +652,30 @@
       background-color: var(--color-gray-300);
     }
   }
+  .before\:absolute {
+    &::before {
+      content: var(--tw-content);
+      position: absolute;
+    }
+  }
+  .before\:top-0 {
+    &::before {
+      content: var(--tw-content);
+      top: calc(var(--spacing) * 0);
+    }
+  }
+  .before\:left-0 {
+    &::before {
+      content: var(--tw-content);
+      left: calc(var(--spacing) * 0);
+    }
+  }
+  .before\:content-\[attr\(data-num\)\] {
+    &::before {
+      --tw-content: attr(data-num);
+      content: var(--tw-content);
+    }
+  }
   .hover\:bg-rose-100 {
     &:hover {
       @media (hover: hover) {
@@ -674,6 +728,11 @@
       display: flex;
     }
   }
+  .md\:grid {
+    @media (width >= 48rem) {
+      display: grid;
+    }
+  }
   .md\:min-h-20 {
     @media (width >= 48rem) {
       min-height: calc(var(--spacing) * 20);
@@ -697,6 +756,11 @@
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-\[3fr_2fr\] {
+    @media (width >= 48rem) {
+      grid-template-columns: 3fr 2fr;
     }
   }
   .md\:flex-row {
@@ -762,6 +826,17 @@
   .md\:rounded-\[40px\] {
     @media (width >= 48rem) {
       border-radius: 40px;
+    }
+  }
+  .md\:border {
+    @media (width >= 48rem) {
+      border-style: var(--tw-border-style);
+      border-width: 1px;
+    }
+  }
+  .md\:p-8 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 8);
     }
   }
   .md\:py-5 {
@@ -2286,6 +2361,11 @@
   inherits: false;
   initial-value: 0;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-leading {
   syntax: "*";
   inherits: false;
@@ -2440,11 +2520,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -2456,6 +2531,7 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
@@ -2491,7 +2567,6 @@
       --tw-scale-y: 1;
       --tw-scale-z: 1;
       --tw-ease: initial;
-      --tw-border-style: solid;
     }
   }
 }
