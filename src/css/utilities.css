@@ -16,7 +16,7 @@
   }
 
   .h3 {
-    @apply text-lg leading-[120%] font-medium md:text-xl;
+    @apply text-base leading-[120%] font-medium md:text-xl;
   }
 
   .h4 {
