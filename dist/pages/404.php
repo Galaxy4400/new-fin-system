@@ -1,4 +1,4 @@
-<div class="bg-primary-lighter relative flex flex-1 items-center justify-center overflow-hidden py-20 md:py-10">
+<div class="bg-primary-lighter relative flex flex-1 items-center justify-center overflow-hidden py-10 md:py-20">
   <div class="absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>
