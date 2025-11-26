@@ -1,17 +1,4 @@
 //===============================================================
-// const redirectToUserLanguage = () => {
-//   const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
-
-//   const initLang = localStorage.getItem('init_lang');
-
-//   if (initLang || userLang === window.defaultLang || !window.languageList.includes(userLang)) return;
-
-//   localStorage.setItem('init_lang', userLang);
-
-//   window.location.replace(`${window.location.origin}/${userLang}`);
-// };
-
-//===============================================================
 const initConnectors = () => {
   document.querySelectorAll('[data-connector]').forEach((connector) => {
     let isOpen = false;
@@ -109,7 +96,6 @@ const initLazyLoad = () => {
 };
 
 //===============================================================
-// redirectToUserLanguage();
 initLazyLoad();
 initLangFlags();
 initLangSelect();
