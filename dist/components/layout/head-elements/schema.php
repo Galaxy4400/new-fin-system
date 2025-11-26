@@ -5,7 +5,7 @@
   	"name": "<?= $offer_name ?>",
   	"url": "<?= $currentUrl ?>",
   	"logo": "https://<?= $domain ?>/assets/img/favicon.ico",
-  	"image": "https://<?= $domain ?>/assets/img/twitter_image.png",
+  	"image": "https://<?= $domain ?>/assets/img/og-img.png",
   	"description": "<?= t('t.main.meta_description') ?>",
   	"applicationCategory": "FinanceApplication",
   	"operatingSystem": "Web Browser",
