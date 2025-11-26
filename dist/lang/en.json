@@ -88,7 +88,7 @@
       "faq_item_text_4": "Yes, we make use of verified algorithms and secure integration protocols to provide a safe and consistent trading experience.",
       "faq_item_title_5": "5. What Makes {site_name} Different From Similar Platforms?",
       "faq_item_text_5": "Yes, we make use of verified algorithms and secure integration protocols to provide a safe and consistent trading experience.",
-      "form-block-2__title": "You can trade, analyse and track from the comfort of your own home.",
+      "form_block_title": "You can trade, analyse and track from the comfort of your own home.",
       "table_title": "Core Capabilities of the {site_name} Trading Platform",
       "table_th_1": "🤖 Platform Technology",
       "table_td_1": "Advanced AI-Driven Trading Engine",
@@ -104,12 +104,12 @@
       "table_td_6": "Quick and Efficient",
       "table_th_7": "📞 Customer Support",
       "table_td_7": "24/7 Professional Assistance",
-      "reviews-body_title": "{site_name} Reviews",
-      "reviews-body_tag": "Trusted",
-      "reviews-body_text_reviews": "{reviews} reviews",
-      "reviews-body_text_votes": "Based on {votes} ratings",
-      "reviews-body_text_score": "Score out of {score}",
-      "reviews-body_label": "\"A powerful, easy-to-use trading platform with solid automation and education resources.\""
+      "reviews_title_2": "{site_name} Reviews",
+      "reviews_tag": "Trusted",
+      "reviews_text_reviews": "{reviews} reviews",
+      "reviews_text_votes": "Based on {votes} ratings",
+      "reviews_text_score": "Score out of {score}",
+      "reviews_label": "\"A powerful, easy-to-use trading platform with solid automation and education resources.\""
     },
     "pages": {
       "404_label": "This page does not exist."
