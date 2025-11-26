@@ -1,5 +1,34 @@
 @layer utilities {
-  .rounded-2lg {
-    border-radius: 10px;
+  .container-base {
+    @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  .container-narrow {
+    @apply max-w-container-narrow mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  .h1 {
+    @apply text-4xl leading-[120%] font-semibold md:text-5xl;
+  }
+
+  .h2 {
+    @apply text-3xl leading-[120%] font-semibold md:text-4xl;
+  }
+
+  .h3 {
+    @apply text-lg leading-[120%] font-medium md:text-xl;
+  }
+
+  .h4 {
+    @apply text-base leading-[120%] font-medium md:text-lg;
+  }
+
+  .breadcrumb-item {
+    @apply px-2 py-1;
+  }
+
+  .breadcrumb-item:not(:first-child)::before {
+    content: '—';
+    @apply mr-4;
   }
 }
