@@ -628,9 +628,9 @@
       display: none;
     }
   }
-  .sm\:max-w-\[459px\] {
+  .sm\:max-w-\[470px\] {
     @media (width >= 40rem) {
-      max-width: 459px;
+      max-width: 470px;
     }
   }
   .sm\:max-w-\[495px\] {
