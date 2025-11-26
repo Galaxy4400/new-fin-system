@@ -63,7 +63,7 @@ const showFormMessage = (form, { type = 'success', title = '', text = '' }, link
     let time = 5;
     const intervalId = setInterval(() => {
       time--;
-      contentEl.innerHTML = local('t.response.redirect_timer').replace('{{timer}}', `<span>${time}</span>`);
+      contentEl.innerHTML = local('redirect_timer').replace('{{timer}}', `<span>${time}</span>`);
       if (time <= 0) {
         clearInterval(intervalId);
         window.location.href = link;
@@ -81,15 +81,15 @@ const responseHandler = (form, { success, code, errors, auto_login_url, tech }) 
       return showFormMessage(
         form,
         {
-          title: local('t.response.reg_complete'),
-          text: local('t.response.redirect_timer'),
+          title: local('reg_complete'),
+          text: local('redirect_timer'),
         },
         auto_login_url,
       );
     }
 
     return showFormMessage(form, {
-      title: local('t.response.reg_complete'),
+      title: local('reg_complete'),
     });
   }
 
@@ -97,7 +97,7 @@ const responseHandler = (form, { success, code, errors, auto_login_url, tech }) 
   if (code === 'invalid_params') {
     return showFormMessage(form, {
       type: 'error',
-      title: local('t.response.something_wrong'),
+      title: local('something_wrong'),
       text: errors,
     });
   }
@@ -105,15 +105,15 @@ const responseHandler = (form, { success, code, errors, auto_login_url, tech }) 
   if (tech) {
     return showFormMessage(form, {
       type: 'error',
-      title: local('t.response.something_wrong'),
-      text: local('t.response.ask_support'),
+      title: local('something_wrong'),
+      text: local('ask_support'),
     });
   }
 
   return showFormMessage(form, {
     type: 'error',
-    title: local('t.response.something_wrong'),
-    text: local('t.response.try_again'),
+    title: local('something_wrong'),
+    text: local('try_again'),
   });
 };
 
@@ -123,7 +123,7 @@ const validateForm = (form) => {
 
   if (formSubmitted) {
     showFormMessage(form, {
-      title: local('t.response.already_reg'),
+      title: local('already_reg'),
     });
 
     return;
