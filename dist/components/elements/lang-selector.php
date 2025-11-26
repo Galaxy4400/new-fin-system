@@ -1,7 +1,9 @@
 <div class="relative" data-connect-parent>
   <button class="lang-icon group" data-connector="lang-menu">
-    <div class="aspect-25/13 min-w-[25px] overflow-hidden rounded-sm">
-      <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>" width="25" height="25" />
+    <div class="inline-flex aspect-25/20 min-w-[25px] items-center justify-center">
+      <div class="overflow-hidden rounded-sm">
+        <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>" width="25" height="25" />
+      </div>
     </div>
     <span class="uppercase"><?= $currentLang ?></span>
     <div class="min-w-5 transition-transform duration-300 group-data-active:rotate-180">
