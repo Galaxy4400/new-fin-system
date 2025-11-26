@@ -27,8 +27,7 @@
     @apply px-2 py-1;
   }
 
-  .breadcrumb-item:not(:first-child)::before {
-    content: '—';
-    @apply mr-4;
+  .breadcrumb-item:not(:first-child) {
+    @apply before:mr-4 before:content-['—'];
   }
 }
