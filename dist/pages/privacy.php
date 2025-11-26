@@ -9,7 +9,10 @@
     </div>
     <div class="grid gap-6 md:gap-8">
       <div class="grid gap-2">
-        <p class="text-sm"><?= t('t.main.last_updated', ['{date}' => date('d.m.Y')]) ?></p>
+        <p class="text-sm">
+          <?= t('t.main.last_updated', ['{date}' =>
+          date('d.m.Y')]) ?>
+        </p>
         <p>
           We (also known as "We", "Us" or "Our") are committed to safeguarding your Personal Data as well as your
           privacy.<br />
@@ -29,7 +32,8 @@
           If we believe that you require specific details, we'll provide information to you at the appropriate date and
           time.<br />
           We are happy to answer any questions you may have and will provide any clarifications you require with respect
-          to any limitations imposed by law. We can be reached via email at the address below: <?= getEmail() ?>
+          to any limitations imposed by law. We can be reached via email at the address below:
+          <a href="mailto:<?= getEmail() ?>"><?= getEmail() ?></a>
         </p>
       </div>
       <div class="grid gap-2 md:gap-4">
