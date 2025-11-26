@@ -18,42 +18,42 @@
     </header>
     <div class="grid gap-4">
       <label class="grid gap-1.5">
-        <span class="label"><?= t('t.main.form_first_name_label') ?></span>
+        <span class="label"><?= t('t.forms.first_name_label') ?></span>
         <input
           class="input"
           type="text"
           name="first_name"
-          placeholder="<?= t('t.main.form_first_name_placeholder') ?>"
+          placeholder="<?= t('t.forms.first_name_placeholder') ?>"
           required
           data-regexp="^[^\d]+$"
           data-should-validate
         />
       </label>
       <label class="grid gap-1.5">
-        <span class="label"><?= t('t.main.form_last_name_label') ?></span>
+        <span class="label"><?= t('t.forms.last_name_label') ?></span>
         <input
           class="input"
           type="text"
           name="last_name"
-          placeholder="<?= t('t.main.form_last_name_placeholder') ?>"
+          placeholder="<?= t('t.forms.last_name_placeholder') ?>"
           required
           data-regexp="^[^\d]+$"
           data-should-validate
         />
       </label>
       <label class="grid gap-1.5">
-        <span class="label"><?= t('t.main.form_email_label') ?></span>
+        <span class="label"><?= t('t.forms.email_label') ?></span>
         <input
           class="input"
           type="email"
           name="email"
-          placeholder="<?= t('t.main.form_email_placeholder') ?>"
+          placeholder="<?= t('t.forms.email_placeholder') ?>"
           required
           data-should-validate
         />
       </label>
       <label class="grid gap-1.5">
-        <span class="label"><?= t('t.main.form_phone_label') ?></span>
+        <span class="label"><?= t('t.forms.phone_label') ?></span>
         <input class="input" type="tel" name="phone" data-phone required data-should-validate />
       </label>
     </div>
@@ -72,7 +72,7 @@
 
     <footer class="grid items-center gap-5 text-center">
       <p class="text-sm leading-[140%] opacity-60">
-        <?= t('t.main.main-form__footer', [ '{privacy_link}' => url('privacy'), '{terms_link}' => url('conditions') ])?>
+        <?= t('t.forms.form_footer', [ '{privacy_link}' => url('privacy'), '{terms_link}' => url('conditions') ])?>
       </p>
       <div class="flex flex-wrap justify-center gap-2"><?php include 'components/icons/payments.php' ?></div>
     </footer>

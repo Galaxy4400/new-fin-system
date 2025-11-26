@@ -6,7 +6,7 @@
   	"url": "<?= $currentUrl ?>",
   	"logo": "https://<?= $domain ?>/assets/img/favicon.ico",
   	"image": "https://<?= $domain ?>/assets/img/og-img.png",
-  	"description": "<?= t('t.main.meta_description') ?>",
+  	"description": "<?= t('t.meta.description') ?>",
   	"applicationCategory": "FinanceApplication",
   	"operatingSystem": "Web Browser",
   	"aggregateRating": {

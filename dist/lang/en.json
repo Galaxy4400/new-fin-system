@@ -115,17 +115,16 @@
       "404_label": "This page does not exist."
     },
     "meta": {
-      "meta_test": "The purpose of this test message is to ensure that this text has been rewritten in 2025",
-      "meta_title": "{site_name} | The Official Website {year}",
-      "meta_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
-      "meta_twitter_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
-      "meta_twitter_title": "{site_name}™ – The Official Website【Updated {year}】",
-      "meta_og_title": "{site_name}™ – The Official Website【Updated {year}】",
-      "meta_og_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
-      "meta_og_site_name": "{site_name}"
+      "title": "{site_name} | The Official Website {year}",
+      "description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
+      "twitter_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
+      "twitter_title": "{site_name}™ – The Official Website【Updated {year}】",
+      "og_title": "{site_name}™ – The Official Website【Updated {year}】",
+      "og_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
+      "og_site_name": "{site_name}"
     },
     "aria": {
-      "aria_open_menu": "open menu"
+      "open_menu": "open menu"
     },
     "forms": {
       "first_name_label": "First Name",
