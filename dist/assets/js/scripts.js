@@ -1,15 +1,15 @@
 //===============================================================
-const redirectToUserLanguage = () => {
-  const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+// const redirectToUserLanguage = () => {
+//   const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
 
-  const initLang = localStorage.getItem('init_lang');
+//   const initLang = localStorage.getItem('init_lang');
 
-  if (initLang || userLang === window.defaultLang || !window.languageList.includes(userLang)) return;
+//   if (initLang || userLang === window.defaultLang || !window.languageList.includes(userLang)) return;
 
-  localStorage.setItem('init_lang', userLang);
+//   localStorage.setItem('init_lang', userLang);
 
-  window.location.replace(`${window.location.origin}/${userLang}`);
-};
+//   window.location.replace(`${window.location.origin}/${userLang}`);
+// };
 
 //===============================================================
 const initConnectors = () => {
@@ -109,7 +109,7 @@ const initLazyLoad = () => {
 };
 
 //===============================================================
-redirectToUserLanguage();
+// redirectToUserLanguage();
 initLazyLoad();
 initLangFlags();
 initLangSelect();
