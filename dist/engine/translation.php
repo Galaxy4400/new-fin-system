@@ -87,13 +87,13 @@ function getValueByPath($arr, $path, $separator = '.')
 
 //---------------------------------------------------------------
 
-function flagUrl($currentLang) {
-	switch ($currentLang) {
-		case 'en': $currentLang = 'gb'; break;
+function flagUrl($lang) {
+	switch ($lang) {
+		case 'en': $lang = 'gb'; break;
 		default: break;
 	}
 
-	return "https://flagcdn.com/$currentLang.svg";
+	return "https://flagcdn.com/$lang.svg";
 }
 
 //---------------------------------------------------------------
