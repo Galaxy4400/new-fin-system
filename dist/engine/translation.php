@@ -6,6 +6,14 @@ $translations = getTranslations();
 
 //===============================================================
 
+function langSupport($lang) {
+	global $supportedLanguages;
+
+	return in_array($lang, $supportedLanguages);
+}
+
+//---------------------------------------------------------------
+
 function getSupportedLanguages() {
 	$langFiles = glob(__DIR__ . '/../lang/*.json');
 
@@ -19,13 +27,13 @@ function getSupportedLanguages() {
 //---------------------------------------------------------------
 
 function getCurrentLang() {
-	global $supportedLanguages, $defaultLang;
+	global $defaultLang;
 
 	$uri = $_SERVER['REQUEST_URI'];
 	$segments = explode('/', trim($uri, '/'));
 	$firstSegment = $segments[0] ?? '';
 
-	$currentLang = in_array($firstSegment, $supportedLanguages) ? $firstSegment : $defaultLang;
+	$currentLang = langSupport($firstSegment) ? $firstSegment : $defaultLang;
 
 	return $currentLang;
 }

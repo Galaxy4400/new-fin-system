@@ -22,15 +22,13 @@ function detectProtocol(): string
 
 //---------------------------------------------------------------
 function getPagePathWithoutLang() {
-	global $supportedLanguages;
-
 	$path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 	$parts = $path ? explode('/', $path) : [];
 
 	if (!empty($parts)) {
 		$first = $parts[0];
 
-		if (in_array($first, $supportedLanguages)) {
+		if (langSupport($first)) {
 			array_shift($parts);
 		}
 	}

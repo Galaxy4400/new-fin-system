@@ -10,6 +10,7 @@ const initCountryPhones = (form) => {
   if (!intlTelInput) return;
 
   intlTelInput.setAttribute('autocomplete', 'tel');
+  intlTelInput.removeAttribute('placeholder');
 
   form.iti = window.intlTelInput(intlTelInput, {
     strictMode: false,
