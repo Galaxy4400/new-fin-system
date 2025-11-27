@@ -1,4 +1,28 @@
 @layer components {
+  .container-base {
+    @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  .container-narrow {
+    @apply max-w-container-narrow mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  .h1 {
+    @apply text-[40px] leading-[1.2] font-semibold md:text-[56px];
+  }
+
+  .h2 {
+    @apply text-3xl leading-[1.2] font-semibold md:text-[40px];
+  }
+
+  .h3 {
+    @apply text-base leading-[1.2] font-medium md:text-xl;
+  }
+
+  .h4 {
+    @apply text-base leading-[1.2] font-medium md:text-lg;
+  }
+
   .label {
     @apply text-sm leading-[140%];
   }
@@ -23,14 +47,6 @@
     @apply pointer-events-none absolute top-[calc(100%+10px)] left-0 z-50 max-h-[225px] w-[100px] translate-y-3 overflow-y-auto rounded-[10px] bg-white opacity-0 shadow-md transition-all duration-300 data-active:pointer-events-auto data-active:translate-y-0 data-active:opacity-100;
   }
 
-  .special-block {
-    @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
-  }
-
-  .special-block-lightest {
-    @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_var(--color-primary-lightest),6px_5px_18.1px_0_rgba(39,39,39,0.14)];
-  }
-
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark inline-flex min-h-10 cursor-pointer items-center justify-center rounded-[10px] px-5 py-1.5 font-medium whitespace-nowrap text-white transition-colors;
   }
@@ -45,5 +61,21 @@
 
   .input {
     @apply h-10 w-full rounded-[10px] border border-gray-300 px-2.5 py-2 text-sm data-novalid:border-red-500 data-valid:border-green-600;
+  }
+
+  .breadcrumb-item {
+    @apply px-2 py-1;
+  }
+
+  .breadcrumb-item:not(:first-child) {
+    @apply before:mr-4 before:content-['—'];
+  }
+
+  .disc {
+    @apply list-item list-inside list-disc;
+  }
+
+  .list {
+    @apply list-inside list-disc;
   }
 }

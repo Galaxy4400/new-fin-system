@@ -1,41 +1,17 @@
-@layer utilities {
-  .container-base {
-    @apply max-w-container mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
-  }
+@utility special-block {
+  border: 1px solid transparent;
+  background: linear-gradient(-30deg, var(--color-primary) 0%, white 100%);
+  background-origin: border-box;
+  box-shadow:
+    inset 0 0 0 999px white,
+    6px 5px 18.1px 0 rgba(39, 39, 39, 0.14);
+}
 
-  .container-narrow {
-    @apply max-w-container-narrow mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
-  }
-
-  .h1 {
-    @apply text-[40px] leading-[1.2] font-semibold md:text-[56px];
-  }
-
-  .h2 {
-    @apply text-3xl leading-[1.2] font-semibold md:text-[40px];
-  }
-
-  .h3 {
-    @apply text-base leading-[1.2] font-medium md:text-xl;
-  }
-
-  .h4 {
-    @apply text-base leading-[1.2] font-medium md:text-lg;
-  }
-
-  .breadcrumb-item {
-    @apply px-2 py-1;
-  }
-
-  .breadcrumb-item:not(:first-child) {
-    @apply before:mr-4 before:content-['—'];
-  }
-
-  .disc {
-    @apply list-item list-inside list-disc;
-  }
-
-  .list {
-    @apply list-inside list-disc;
-  }
+@utility special-block-lightest {
+  border: 1px solid transparent;
+  background: linear-gradient(-30deg, var(--color-primary) 0%, white 100%);
+  background-origin: border-box;
+  box-shadow:
+    inset 0 0 0 999px var(--color-primary-lightest),
+    6px 5px 18.1px 0 rgba(39, 39, 39, 0.14);
 }
