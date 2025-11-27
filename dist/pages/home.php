@@ -15,3 +15,6 @@
 
 <!-- reviews -->
 <?php include 'components/sections/reviews.php' ?>
+
+<!-- promo -->
+<?php include 'components/sections/promo.php' ?>
