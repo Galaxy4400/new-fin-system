@@ -1,4 +1,4 @@
-<footer class="bg-primary-lighter py-14">
+<footer class="bg-primary-lightest py-14">
   <div class="container-base">
     <div class="grid gap-7 md:gap-10">
       <div class="grid gap-5">
@@ -40,10 +40,7 @@
         <p><?= t('t.main.footer_disclamer_3') ?></p>
         <p><?= t('t.main.footer_disclamer_4') ?></p>
       </div>
-      <div class="text-center">
-        <?= t('t.main.footer_copy', ['{year}' =>
-        date('Y')]) ?>
-      </div>
+      <div class="text-center"><?= t('t.main.footer_copy', ['{year}' => date('Y')]) ?></div>
     </div>
   </div>
 </footer>

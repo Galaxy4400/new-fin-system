@@ -1,4 +1,4 @@
-<div class="bg-primary-lighter relative pt-5 pb-14 md:min-h-[716px] md:py-10">
+<div class="bg-primary-lightest relative pt-5 pb-14 md:min-h-[716px] md:py-10">
   <div class="absolute top-1/2 left-[40%] h-[1063px] w-[2513px] -translate-1/2">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>

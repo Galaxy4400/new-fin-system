@@ -23,8 +23,12 @@
     @apply pointer-events-none absolute top-[calc(100%+10px)] left-0 z-50 max-h-[225px] w-[100px] translate-y-3 overflow-y-auto rounded-[10px] bg-white opacity-0 shadow-md transition-all duration-300 data-active:pointer-events-auto data-active:translate-y-0 data-active:opacity-100;
   }
 
-  .gradient-border-block {
+  .special-block {
     @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_white,6px_5px_18.1px_0_rgba(39,39,39,0.14)];
+  }
+
+  .special-block-lightest {
+    @apply border border-transparent bg-[linear-gradient(-30deg,var(--color-primary)_0%,white_100%)] bg-origin-border shadow-[inset_0_0_0_999px_var(--color-primary-lightest),6px_5px_18.1px_0_rgba(39,39,39,0.14)];
   }
 
   .btn-primary {

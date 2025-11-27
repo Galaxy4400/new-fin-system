@@ -1,7 +1,7 @@
 <form
   name="form"
   method="post"
-  class="group gradient-border-block relative self-start overflow-hidden rounded-[20px] bg-white p-5 pb-7 sm:max-w-[470px] md:min-h-[602px]"
+  class="group special-block relative self-start overflow-hidden rounded-[20px] bg-white p-5 pb-7 sm:max-w-[470px] md:min-h-[602px]"
   action="/send<?= isset($_GET['test']) ? '?test=' . urlencode($_GET['test']) : '' ?>"
   data-form
 >
