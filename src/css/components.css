@@ -24,7 +24,7 @@
   }
 
   .h4 {
-    @apply text-base leading-[1.2] font-medium md:text-lg;
+    @apply text-base leading-[1.2] font-semibold;
   }
 
   .label {

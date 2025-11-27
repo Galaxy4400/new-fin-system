@@ -18,3 +18,6 @@
 
 <!-- promo -->
 <?php include 'components/sections/promo.php' ?>
+
+<!-- faq -->
+<?php include 'components/sections/faq.php' ?>
