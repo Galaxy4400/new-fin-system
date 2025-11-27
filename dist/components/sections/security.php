@@ -3,34 +3,45 @@
     <?php include 'components/icons/bg-deco.php' ?>
   </div>
   <div class="container-base grid gap-10 md:gap-12">
-    <div class="grid gap-5">
-      <h2 class="max-w-1/2"><?= t('t.index.security_title') ?></h2>
+    <div class="grid gap-3 md:gap-5">
+      <h2 class="md:max-w-1/2"><?= t('t.index.security_title') ?></h2>
       <div class="grid gap-2.5">
-        <p>
-          Streamlining your time and effort becomes a reality through our platform [brand] in several ways. Users in
-          [country] are free to take advantage of key features like autonomous trading, real-time marketing insights,
-          and advanced encryption security for peace of mind.
-        </p>
-        <p>
-          While these aren’t the only features available, you’ll find that navigating a volatile and somewhat
-          unpredictable market is easier than ever. Utilizing a blend of our key features is one of the best ways to
-          avoid high-risk decision-making.
-        </p>
+        <p><?= t('t.index.security_text_1') ?></p>
+        <p><?= t('t.index.security_text_2') ?></p>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-3">
-      <div class="special-block-lightest grid gap-2.5 rounded-[26px] px-5 py-4">
-        <div class="flex items-center gap-2.5">
+    <div class="grid gap-5 md:grid-cols-3 md:gap-1">
+      <div
+        class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px]"
+      >
+        <div class="flex min-h-11 items-center gap-2.5">
           <img src="/assets/img/svg/icon1.svg" alt="<?= $offer_name ?>" />
-          <p class="h4">Autonomous Trading, Tailored to You</p>
+          <p class="h4"><?= t('t.index.security_item_title_1') ?></p>
         </div>
         <div class="text-sm">
-          <p>
-            From fully automated trading bots to easily adjustable parameters, we take the workload while you remain in
-            full control. Align your account to individual risk preferences, while switching between automation and full
-            control for the flexibility you need. This also promises consistent and efficient execution when trading
-            cryptocurrencies, without the need for any user intervention.
-          </p>
+          <p><?= t('t.index.security_item_text_1') ?></p>
+        </div>
+      </div>
+      <div
+        class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px] md:-translate-y-2.5 md:-rotate-10"
+      >
+        <div class="flex min-h-11 items-center gap-2.5">
+          <img src="/assets/img/svg/icon2.svg" alt="<?= $offer_name ?>" />
+          <p class="h4"><?= t('t.index.security_item_title_2') ?></p>
+        </div>
+        <div class="text-sm">
+          <p><?= t('t.index.security_item_text_2') ?></p>
+        </div>
+      </div>
+      <div
+        class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px] md:rotate-6"
+      >
+        <div class="flex min-h-11 items-center gap-2.5">
+          <img src="/assets/img/svg/icon3.svg" alt="<?= $offer_name ?>" />
+          <p class="h4"><?= t('t.index.security_item_title_3') ?></p>
+        </div>
+        <div class="text-sm">
+          <p><?= t('t.index.security_item_text_3') ?></p>
         </div>
       </div>
     </div>
