@@ -4,11 +4,11 @@
   }
 
   h1 {
-    @apply text-4xl leading-[1.2] font-semibold md:text-5xl;
+    @apply text-[40px] leading-[1.2] font-semibold md:text-[56px];
   }
 
   h2 {
-    @apply text-3xl leading-[1.2] font-semibold md:text-4xl;
+    @apply text-3xl leading-[1.2] font-semibold md:text-[40px];
   }
 
   h3 {

@@ -4,5 +4,5 @@
 <!-- experience section -->
 <?php include 'components/sections/experience.php' ?>
 
-<!-- main section -->
-<?php include 'components/sections/greeting.php' ?>
+<!-- experience security -->
+<?php include 'components/sections/security.php' ?>

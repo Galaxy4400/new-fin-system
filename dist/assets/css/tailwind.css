@@ -92,10 +92,6 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --radius-sm: 0.25rem;
@@ -289,6 +285,9 @@
   .left-\[40\%\] {
     left: 40%;
   }
+  .-z-10 {
+    z-index: calc(10 * -1);
+  }
   .z-10 {
     z-index: 10;
   }
@@ -369,6 +368,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-1\/2 {
+    max-width: calc(1/2 * 100%);
   }
   .max-w-\[755px\] {
     max-width: 755px;
@@ -529,9 +531,6 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
@@ -544,11 +543,17 @@
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
   .pr-28 {
     padding-right: calc(var(--spacing) * 28);
   }
   .pb-7 {
     padding-bottom: calc(var(--spacing) * 7);
+  }
+  .pb-14 {
+    padding-bottom: calc(var(--spacing) * 14);
   }
   .text-center {
     text-align: center;
@@ -666,6 +671,11 @@
       display: grid;
     }
   }
+  .max-md\:hidden {
+    @media (width < 48rem) {
+      display: none;
+    }
+  }
   .max-md\:gap-1 {
     @media (width < 48rem) {
       gap: calc(var(--spacing) * 1);
@@ -746,9 +756,9 @@
       min-height: 602px;
     }
   }
-  .md\:min-h-\[682px\] {
+  .md\:min-h-\[716px\] {
     @media (width >= 48rem) {
-      min-height: 682px;
+      min-height: 716px;
     }
   }
   .md\:w-\[394px\] {
@@ -1957,15 +1967,13 @@
     }
   }
   h1 {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
+    font-size: 40px;
     --tw-leading: 1.2;
     line-height: 1.2;
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     @media (width >= 48rem) {
-      font-size: var(--text-5xl);
-      line-height: var(--tw-leading, var(--text-5xl--line-height));
+      font-size: 56px;
     }
   }
   h2 {
@@ -1976,8 +1984,7 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     @media (width >= 48rem) {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
+      font-size: 40px;
     }
   }
   h3 {
@@ -2059,34 +2066,31 @@
     }
   }
   .h1 {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    font-size: 40px;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     @media (width >= 48rem) {
-      font-size: var(--text-5xl);
-      line-height: var(--tw-leading, var(--text-5xl--line-height));
+      font-size: 56px;
     }
   }
   .h2 {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     @media (width >= 48rem) {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
+      font-size: 40px;
     }
   }
   .h3 {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     @media (width >= 48rem) {
@@ -2097,8 +2101,8 @@
   .h4 {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
-    --tw-leading: 120%;
-    line-height: 120%;
+    --tw-leading: 1.2;
+    line-height: 1.2;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     @media (width >= 48rem) {
