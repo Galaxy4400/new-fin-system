@@ -18,6 +18,7 @@ import { fontscss } from './gulp/tasks/fontscss.js';
 import { tailwind } from './gulp/tasks/tw.js';
 import { images } from './gulp/tasks/images.js';
 import { imagesResponsive } from './gulp/tasks/imagesResponsive.js';
+import { svg } from './gulp/tasks/svg.js';
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -27,7 +28,7 @@ function watcher() {
 }
 
 // Построение сценариев выполнения задач
-const build = gulp.series(reset, fonts, fontscss, tailwind, images, imagesResponsive);
+const build = gulp.series(reset, fonts, fontscss, tailwind, svg, images, imagesResponsive);
 const dev = gulp.series(reset, tailwind, watcher);
 
 // Экспорт сценариев для добавления в скрипт в package.json
