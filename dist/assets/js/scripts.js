@@ -96,6 +96,24 @@ const initLazyLoad = () => {
 };
 
 //===============================================================
+const toggleAccordion = (index) => {
+  const currentAccordion = document.getElementById(`accordion-${index}`);
+  const currentContent = document.getElementById(`content-${index}`);
+  const isActive = currentAccordion.hasAttribute('data-active');
+
+  const allAccordions = document.querySelectorAll('[id^="accordion-"]');
+  const allContents = document.querySelectorAll('[id^="content-"]');
+
+  allAccordions.forEach((acc) => acc.removeAttribute('data-active'));
+  allContents.forEach((content) => (content.style.maxHeight = '0'));
+
+  if (isActive) return;
+
+  currentAccordion.setAttribute('data-active', '');
+  currentContent.style.maxHeight = currentContent.scrollHeight + 'px';
+};
+
+//===============================================================
 initLazyLoad();
 initLangFlags();
 initLangSelect();

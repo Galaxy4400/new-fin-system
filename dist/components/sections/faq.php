@@ -1,7 +1,7 @@
 <div class="py-8 md:py-20">
   <div class="container-base grid gap-5 md:gap-10">
     <h2 class="md:text-center"><?= t('t.index.faq_title') ?></h2>
-    <div class="grid gap-2.5">
+    <div class="grid gap-2.5" data-accordion>
       <div
         id="accordion-1"
         class="group data-active:border-primary rounded-[10px] border border-gray-200 transition-all duration-300 data-active:shadow-[6px_5px_18.1px_0_rgba(39,39,39,0.14)]"
@@ -100,22 +100,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  function toggleAccordion(index) {
-    const currentAccordion = document.getElementById(`accordion-${index}`);
-    const currentContent = document.getElementById(`content-${index}`);
-    const isActive = currentAccordion.hasAttribute('data-active');
-
-    const allAccordions = document.querySelectorAll('[id^="accordion-"]');
-    const allContents = document.querySelectorAll('[id^="content-"]');
-
-    allAccordions.forEach((acc) => acc.removeAttribute('data-active'));
-    allContents.forEach((content) => (content.style.maxHeight = '0'));
-
-    if (isActive) return;
-
-    currentAccordion.setAttribute('data-active', '');
-    currentContent.style.maxHeight = currentContent.scrollHeight + 'px';
-  }
-</script>
