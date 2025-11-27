@@ -1,4 +1,4 @@
-<section class="relative py-8 md:py-20">
+<section class="relative py-8 md:py-20" id="features">
   <div class="absolute top-[65%] left-1/2 -z-10 h-[1063px] w-[2513px] -translate-1/2">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>

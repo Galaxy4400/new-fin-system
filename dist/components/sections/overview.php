@@ -1,4 +1,4 @@
-<section class="bg-primary-lightest relative pt-8 md:pt-20">
+<section class="bg-primary-lightest relative pt-8 md:pt-20" id="about">
   <div class="container-base">
     <div class="grid gap-7 md:grid-cols-2">
       <div class="grid content-start gap-5">
