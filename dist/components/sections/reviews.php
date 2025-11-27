@@ -1,4 +1,4 @@
-<div class="md:bg-primary-lightest relative overflow-hidden py-16 md:pt-24 md:pb-30">
+<section class="md:bg-primary-lightest relative overflow-hidden py-16 md:pt-24 md:pb-30">
   <div class="absolute top-1/2 left-1/2 h-[1063px] w-[2513px] -translate-1/2 max-md:hidden">
     <?php include 'components/icons/bg-deco.php' ?>
   </div>
@@ -49,4 +49,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

@@ -14,7 +14,7 @@
 
   <div class="grid gap-5">
     <header class="text-center">
-      <p class="h3"><?= t('t.main.register') ?></p>
+      <h1 class="h3"><?= t('t.main.register') ?></h1>
     </header>
     <div class="grid gap-4">
       <label class="grid gap-1.5">

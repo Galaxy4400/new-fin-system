@@ -1,4 +1,4 @@
-<div class="py-8 md:py-20">
+<section class="py-8 md:py-20">
   <div class="container-base grid gap-7 md:grid-cols-2">
     <h2><?= t('t.index.about_title') ?></h2>
     <div class="grid gap-5 md:gap-7">
@@ -12,4 +12,4 @@
       </a>
     </div>
   </div>
-</div>
+</section>

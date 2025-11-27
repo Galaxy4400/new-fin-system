@@ -1,4 +1,4 @@
-<div class="py-8">
+<section class="py-8">
   <div class="container-base grid gap-5 md:gap-10">
     <h2 class="md:text-center"><?= t('t.index.faq_title') ?></h2>
     <div class="grid gap-2.5" data-accordion>
@@ -99,4 +99,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>
