@@ -984,6 +984,11 @@
       border-bottom-width: 1px;
     }
   }
+  .md\:bg-primary-lightest {
+    @media (width >= 48rem) {
+      background-color: var(--color-primary-lightest);
+    }
+  }
   .md\:special-block-lightest {
     @media (width >= 48rem) {
       border: 1px solid transparent;
@@ -1027,11 +1032,6 @@
       padding-block: calc(var(--spacing) * 20);
     }
   }
-  .md\:py-24 {
-    @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 24);
-    }
-  }
   .md\:pt-7 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 7);
@@ -1042,9 +1042,19 @@
       padding-top: calc(var(--spacing) * 20);
     }
   }
+  .md\:pt-24 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 24);
+    }
+  }
   .md\:pr-0 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:pb-30 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 30);
     }
   }
   .md\:text-center {
