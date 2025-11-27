@@ -17,20 +17,22 @@ export const fontscss = (done) => {
   const fontNames = [...new Set(onlyFonts.map((f) => path.basename(f, path.extname(f))))];
 
   fontNames.forEach((fontName) => {
-    const fontFamily = fontName.replace(/-Regular|-Bold|-Medium|-Light|-Black/i, '').replace(/-/g, ' ');
+    const fontFamily = fontName
+      .replace(/-Thin|-ExtraLight|-Light|-Regular|-Medium|-SemiBold|-Bold|-ExtraBold|-Black/i, '')
+      .replace(/-/g, ' ');
 
     let weight = 400;
     let style = 'normal';
 
     if (/Thin/i.test(fontName)) weight = 100;
-    if (/ExtraLight/i.test(fontName)) weight = 200;
-    if (/Light/i.test(fontName)) weight = 300;
-    if (/Regular/i.test(fontName)) weight = 400;
-    if (/Medium/i.test(fontName)) weight = 500;
-    if (/SemiBold/i.test(fontName)) weight = 600;
-    if (/Bold/i.test(fontName)) weight = 700;
-    if (/ExtraBold/i.test(fontName)) weight = 800;
-    if (/Black/i.test(fontName)) weight = 900;
+    else if (/ExtraLight/i.test(fontName)) weight = 200;
+    else if (/Light/i.test(fontName)) weight = 300;
+    else if (/Regular/i.test(fontName)) weight = 400;
+    else if (/Medium/i.test(fontName)) weight = 500;
+    else if (/SemiBold/i.test(fontName)) weight = 600;
+    else if (/ExtraBold/i.test(fontName)) weight = 800;
+    else if (/Bold/i.test(fontName)) weight = 700;
+    else if (/Black/i.test(fontName)) weight = 900;
 
     if (/Italic/i.test(fontName)) style = 'italic';
 

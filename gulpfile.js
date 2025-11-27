@@ -27,7 +27,7 @@ function watcher() {
 }
 
 // Построение сценариев выполнения задач
-const build = gulp.series(reset, tailwind, fonts, fontscss, images, imagesResponsive);
+const build = gulp.series(reset, fonts, fontscss, tailwind, images, imagesResponsive);
 const dev = gulp.series(reset, tailwind, watcher);
 
 // Экспорт сценариев для добавления в скрипт в package.json
