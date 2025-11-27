@@ -5,16 +5,16 @@
   <div class="container-base relative grid gap-7 md:grid-cols-2">
     <div class="grid content-start gap-8 md:pt-7">
       <header class="grid gap-5">
-        <h1><?= t('t.index.main_title') ?></h1>
-        <p><?= t('t.index.main_label') ?></p>
+        <h1><?= t('t.index.hero_title') ?></h1>
+        <p><?= t('t.index.hero_label') ?></p>
         <a class="btn-primary flex w-full items-center gap-2.5 md:hidden" href="<?= url('sign-up') ?>">
           <?= t('t.main.signup_now') ?> <?php include 'components/icons/arrow.php' ?>
         </a>
       </header>
       <div class="grid gap-2.5 opacity-60">
-        <p class="text-sm md:text-base"><?= t('t.index.main_text_1') ?></p>
-        <p class="text-sm md:text-base"><?= t('t.index.main_text_2') ?></p>
-        <p class="text-sm md:text-base"><?= t('t.index.main_text_3') ?></p>
+        <p class="text-sm md:text-base"><?= t('t.index.hero_text_1') ?></p>
+        <p class="text-sm md:text-base"><?= t('t.index.hero_text_2') ?></p>
+        <p class="text-sm md:text-base"><?= t('t.index.hero_text_3') ?></p>
       </div>
     </div>
     <div class="flex justify-center max-md:hidden md:justify-end"><?php include 'components/forms/main.php' ?></div>
