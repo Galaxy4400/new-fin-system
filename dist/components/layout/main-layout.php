@@ -11,7 +11,7 @@
     <?php include 'components/layout/header.php' ?>
 
     <!-- main -->
-    <main class="flex grow flex-col"><?php include getPageFileName() ?></main>
+    <main class="flex grow flex-col overflow-hidden"><?php include getPageFileName() ?></main>
 
     <!-- footer -->
     <?php include 'components/layout/footer.php' ?>
