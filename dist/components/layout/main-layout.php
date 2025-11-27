@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?= $currentLang ?>">
+<html class="scroll-smooth" lang="<?= $currentLang ?>">
   <!-- head -->
   <?php include 'components/layout/head.php' ?>
 
