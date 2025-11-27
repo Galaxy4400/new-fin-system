@@ -21,3 +21,6 @@
 
 <!-- faq -->
 <?php include 'components/sections/faq.php' ?>
+
+<!-- specifications -->
+<?php include 'components/sections/specifications.php' ?>
