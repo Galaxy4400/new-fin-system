@@ -6,7 +6,7 @@
     <h2 class="md:text-center"><?= t('t.index.reviews_title') ?></h2>
     <div class="grid justify-items-center gap-5 md:grid-cols-3 md:gap-1">
       <div
-        class="special-block relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:max-w-[450px] md:translate-y-5 md:scale-90 md:-rotate-5 xl:translate-x-[25px] 2xl:translate-x-[60px]"
+        class="special-block relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:translate-y-5 md:scale-90 md:-rotate-5 lg:max-w-[450px] xl:translate-x-[25px] 2xl:translate-x-[60px]"
       >
         <div class="flex items-center gap-2.5">
           <p class="initials"><?= t('t.reviews.initials_1') ?></p>
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div
-        class="special-block relative z-10 grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:max-w-[450px]"
+        class="special-block relative z-10 grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 lg:max-w-[450px]"
       >
         <div class="flex items-center gap-2.5">
           <p class="initials"><?= t('t.reviews.initials_2') ?></p>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div
-        class="special-block relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:max-w-[450px] md:translate-y-5 md:scale-90 md:rotate-5 xl:translate-x-[-25px] 2xl:translate-x-[-60px]"
+        class="special-block relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:translate-y-5 md:scale-90 md:rotate-5 lg:max-w-[450px] xl:translate-x-[-25px] 2xl:translate-x-[-60px]"
       >
         <div class="flex items-center gap-2.5">
           <p class="initials"><?= t('t.reviews.initials_3') ?></p>

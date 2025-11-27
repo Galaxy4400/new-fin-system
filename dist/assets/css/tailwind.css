@@ -822,11 +822,6 @@
       max-width: calc(1/2 * 100%);
     }
   }
-  .md\:max-w-\[450px\] {
-    @media (width >= 48rem) {
-      max-width: 450px;
-    }
-  }
   .md\:-translate-y-2\.5 {
     @media (width >= 48rem) {
       --tw-translate-y: calc(var(--spacing) * -2.5);
@@ -1079,6 +1074,11 @@
     @media (width >= 48rem) {
       --tw-font-weight: var(--font-weight-medium);
       font-weight: var(--font-weight-medium);
+    }
+  }
+  .lg\:max-w-\[450px\] {
+    @media (width >= 64rem) {
+      max-width: 450px;
     }
   }
   .lg\:gap-x-14 {
