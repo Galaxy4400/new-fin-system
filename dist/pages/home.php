@@ -1,8 +1,14 @@
-<!-- main section -->
-<?php include 'components/sections/greeting.php' ?>
+<!-- hero -->
+<?php include 'components/sections/hero.php' ?>
 
-<!-- experience section -->
+<!-- overview -->
 <?php include 'components/sections/overview.php' ?>
 
-<!-- experience security -->
+<!-- features -->
 <?php include 'components/sections/features.php' ?>
+
+<!-- benefits -->
+<?php include 'components/sections/benefits.php' ?>
+
+<!-- about -->
+<?php include 'components/sections/about.php' ?>

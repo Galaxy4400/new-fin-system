@@ -18,7 +18,7 @@
           <img src="/assets/img/svg/icon1.svg" alt="<?= $offer_name ?>" />
           <p class="h4"><?= t('t.index.features_item_title_1') ?></p>
         </div>
-        <div class="text-sm">
+        <div class="grid gap-2.5 text-sm">
           <p><?= t('t.index.features_item_text_1') ?></p>
         </div>
       </div>
@@ -29,7 +29,7 @@
           <img src="/assets/img/svg/icon2.svg" alt="<?= $offer_name ?>" />
           <p class="h4"><?= t('t.index.features_item_title_2') ?></p>
         </div>
-        <div class="text-sm">
+        <div class="grid gap-2.5 text-sm">
           <p><?= t('t.index.features_item_text_2') ?></p>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <img src="/assets/img/svg/icon3.svg" alt="<?= $offer_name ?>" />
           <p class="h4"><?= t('t.index.features_item_title_3') ?></p>
         </div>
-        <div class="text-sm">
+        <div class="grid gap-2.5 text-sm">
           <p><?= t('t.index.features_item_text_3') ?></p>
         </div>
       </div>
