@@ -2,10 +2,12 @@
   --font-sans: 'Inter', sans-serif;
 
   --color-primary-lightest: #fff8f8;
+  --color-primary-lighter: #ffedee;
   --color-primary-light: #ff707c;
   --color-primary: #ff4757;
   --color-primary-dark: #e82939;
 
   --spacing-container: 1224px;
   --spacing-container-narrow: 1108px;
+  --spacing-container-whide: 1450px;
 }

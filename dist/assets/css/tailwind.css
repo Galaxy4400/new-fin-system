@@ -105,11 +105,13 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-primary-lightest: #fff8f8;
+    --color-primary-lighter: #ffedee;
     --color-primary-light: #ff707c;
     --color-primary: #ff4757;
     --color-primary-dark: #e82939;
     --spacing-container: 1224px;
     --spacing-container-narrow: 1108px;
+    --spacing-container-whide: 1450px;
   }
 }
 @layer base {
@@ -437,6 +439,12 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-items-center {
+    justify-items: center;
+  }
+  .gap-0\.5 {
+    gap: calc(var(--spacing) * 0.5);
+  }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
   }
@@ -566,6 +574,9 @@
   }
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
@@ -811,15 +822,44 @@
       max-width: calc(1/2 * 100%);
     }
   }
+  .md\:max-w-\[450px\] {
+    @media (width >= 48rem) {
+      max-width: 450px;
+    }
+  }
   .md\:-translate-y-2\.5 {
     @media (width >= 48rem) {
       --tw-translate-y: calc(var(--spacing) * -2.5);
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
+  .md\:translate-y-5 {
+    @media (width >= 48rem) {
+      --tw-translate-y: calc(var(--spacing) * 5);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .md\:scale-90 {
+    @media (width >= 48rem) {
+      --tw-scale-x: 90%;
+      --tw-scale-y: 90%;
+      --tw-scale-z: 90%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .md\:-rotate-5 {
+    @media (width >= 48rem) {
+      rotate: calc(5deg * -1);
+    }
+  }
   .md\:-rotate-10 {
     @media (width >= 48rem) {
       rotate: calc(10deg * -1);
+    }
+  }
+  .md\:rotate-5 {
+    @media (width >= 48rem) {
+      rotate: 5deg;
     }
   }
   .md\:rotate-6 {
@@ -992,6 +1032,11 @@
       padding-block: calc(var(--spacing) * 20);
     }
   }
+  .md\:py-24 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 24);
+    }
+  }
   .md\:pt-7 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 7);
@@ -1005,6 +1050,11 @@
   .md\:pr-0 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:text-center {
+    @media (width >= 48rem) {
+      text-align: center;
     }
   }
   .md\:text-base {
@@ -1034,6 +1084,30 @@
   .lg\:gap-x-14 {
     @media (width >= 64rem) {
       column-gap: calc(var(--spacing) * 14);
+    }
+  }
+  .xl\:translate-x-\[-25px\] {
+    @media (width >= 80rem) {
+      --tw-translate-x: -25px;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .xl\:translate-x-\[25px\] {
+    @media (width >= 80rem) {
+      --tw-translate-x: 25px;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .\32 xl\:translate-x-\[-60px\] {
+    @media (width >= 96rem) {
+      --tw-translate-x: -60px;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .\32 xl\:translate-x-\[60px\] {
+    @media (width >= 96rem) {
+      --tw-translate-x: 60px;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
 }
@@ -2155,6 +2229,24 @@
       padding-inline: calc(var(--spacing) * 20);
     }
   }
+  .container-whide {
+    margin-inline: auto;
+    box-sizing: content-box;
+    max-width: var(--spacing-container-whide);
+    padding-inline: calc(var(--spacing) * 4);
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 12);
+    }
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 16);
+    }
+    @media (width >= 80rem) {
+      padding-inline: calc(var(--spacing) * 20);
+    }
+  }
   .h1 {
     font-size: 40px;
     --tw-leading: 1.2;
@@ -2433,6 +2525,19 @@
   .list {
     list-style-position: inside;
     list-style-type: disc;
+  }
+  .initials {
+    display: inline-flex;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-primary-lighter);
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    color: var(--color-primary);
+    text-transform: uppercase;
   }
 }
 @media (any-hover: hover) {

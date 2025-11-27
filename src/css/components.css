@@ -7,6 +7,10 @@
     @apply max-w-container-narrow mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
   }
 
+  .container-whide {
+    @apply max-w-container-whide mx-auto box-content px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
   .h1 {
     @apply text-[40px] leading-[1.2] font-semibold md:text-[56px];
   }
@@ -77,5 +81,9 @@
 
   .list {
     @apply list-inside list-disc;
+  }
+
+  .initials {
+    @apply bg-primary-lighter text-primary inline-flex h-[50px] w-[50px] items-center justify-center rounded-full text-base uppercase;
   }
 }

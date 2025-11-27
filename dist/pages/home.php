@@ -12,3 +12,6 @@
 
 <!-- about -->
 <?php include 'components/sections/about.php' ?>
+
+<!-- reviews -->
+<?php include 'components/sections/reviews.php' ?>
