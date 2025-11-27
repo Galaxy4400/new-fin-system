@@ -4,49 +4,48 @@
     <table class="w-full border-collapse text-left">
       <tbody>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_1') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_1') ?></td>
+          <th class=""><?= t('t.index.specifications_th_1') ?></th>
+          <td class=""><?= t('t.index.specifications_td_1') ?></td>
         </tr>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_2') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_2') ?></td>
+          <th class=""><?= t('t.index.specifications_th_2') ?></th>
+          <td class=""><?= t('t.index.specifications_td_2') ?></td>
         </tr>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_3') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_3') ?></td>
+          <th class=""><?= t('t.index.specifications_th_3') ?></th>
+          <td class=""><?= t('t.index.specifications_td_3') ?></td>
         </tr>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_4') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_4') ?></td>
+          <th class=""><?= t('t.index.specifications_th_4') ?></th>
+          <td class=""><?= t('t.index.specifications_td_4') ?></td>
         </tr>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_5') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_5') ?></td>
+          <th class=""><?= t('t.index.specifications_th_5') ?></th>
+          <td class=""><?= t('t.index.specifications_td_5') ?></td>
         </tr>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_6') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_6') ?></td>
+          <th class=""><?= t('t.index.specifications_th_6') ?></th>
+          <td class=""><?= t('t.index.specifications_td_6') ?></td>
         </tr>
         <tr class="">
-          <th class=""><?= t('t.index.table-block-table__th_7') ?></th>
-          <td class=""><?= t('t.index.table-block-table__td_7') ?></td>
+          <th class=""><?= t('t.index.specifications_th_7') ?></th>
+          <td class=""><?= t('t.index.specifications_td_7') ?></td>
         </tr>
       </tbody>
     </table>
 
-    <div class="md:border-primary md:rounded-[20px] md:border">
-      <div class="border-primary grid justify-items-center gap-6 rounded-[20px] border md:gap-4">
+    <div class="md:border-primary-light md:rounded-[20px] md:border md:px-20 md:py-8">
+      <div class="border-primary-light grid justify-items-center gap-6 rounded-[20px] border px-8 py-6 md:gap-4">
         <h2 class="h3 flex flex-wrap items-center gap-x-4 gap-y-5">
-          <?= t('t.index.reviews-body__title') ?>
+          <?= t('t.index.ratting_title') ?>
           <span
-            class="inline-flex items-center justify-center rounded-full bg-emerald-500 leading-none text-white uppercase"
+            class="inline-flex items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-base leading-none text-white uppercase"
           >
-            <?= t('t.index.reviews-body__tag') ?>
+            <?= t('t.index.ratting_tag') ?>
           </span>
         </h2>
-
         <div class="flex flex-wrap items-center gap-2.5">
-          <strong class="leading-none text-emerald-500"> <?= t('v.rating') ?> </strong>
+          <strong class="leading-none text-emerald-600"> <?= t('v.rating') ?> </strong>
 
           <span
             class="leading-none text-amber-500"
@@ -56,21 +55,14 @@
           </span>
 
           <span class="flex gap-1 text-sm text-gray-400">
-            <span>
-              <?= t('t.index.reviews-body__text_reviews', ['{reviews}' => '<strong>' . t('v.reviews') . '</strong>']) ?>
-            </span>
+            <span> <?= t('t.index.ratting_text_reviews', ['{reviews}' => t('v.reviews')]) ?> </span>
             ·
-            <span>
-              <?= t('t.index.reviews-body__text_votes', ['{votes}' => '<strong>' . t('v.votes') . '</strong>']) ?>
-            </span>
+            <span> <?= t('t.index.ratting_text_votes', ['{votes}' => t('v.votes')]) ?> </span>
             ·
-            <span>
-              <?= t('t.index.reviews-body__text_score', ['{score}' => '<strong>' . t('v.score') . '</strong>']) ?>
-            </span>
+            <span> <?= t('t.index.ratting_text_score', ['{score}' => t('v.score')]) ?> </span>
           </span>
         </div>
-
-        <p class="md:text-[14px]"><?= t('t.index.reviews-body__label') ?></p>
+        <p class="text-center"><?= t('t.index.ratting_label') ?></p>
       </div>
     </div>
   </div>
