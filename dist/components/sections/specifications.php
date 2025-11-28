@@ -51,7 +51,7 @@
 
           <span
             class="leading-none text-amber-500"
-            aria-label="<?= t('t.main.aria_rating', ['{rating}' => t('v.rating'), '{score}' => t('v.score')]) ?>"
+            aria-label="<?= t('t.aria.rating', ['{rating}' => t('v.rating'), '{score}' => t('v.score')]) ?>"
           >
             ★★★★☆
           </span>

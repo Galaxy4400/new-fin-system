@@ -132,7 +132,8 @@
       "description_404": "Page not found, go back and continue working with digital assets using {site_name}"
     },
     "aria": {
-      "open_menu": "open menu"
+      "open_menu": "open menu",
+      "rating": "{rating} out of {score} stars"
     },
     "forms": {
       "first_name_label": "First Name",
