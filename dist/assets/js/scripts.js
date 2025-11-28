@@ -30,7 +30,7 @@ const initConnectors = () => {
 };
 
 //===============================================================
-const initMobuleMenu = () => {
+const initMobileMenu = () => {
   let isOpen = false;
 
   const icon = document.querySelector('[data-menu-icon]');
@@ -111,8 +111,6 @@ const initInitials = () => {
   });
 };
 
-initInitials();
-
 //===============================================================
 const toggleAccordion = (index) => {
   const currentAccordion = document.getElementById(`accordion-${index}`);
@@ -135,5 +133,6 @@ const toggleAccordion = (index) => {
 initLazyLoad();
 initLangFlags();
 initLangSelect();
-initMobuleMenu();
+initMobileMenu();
 initConnectors();
+initInitials();

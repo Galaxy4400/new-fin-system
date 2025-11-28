@@ -17,7 +17,7 @@
     }, 10);
   };
 
-  waitForStylesheet('tailwind.min.css', () => {
+  waitForStylesheet('styles.min.css', () => {
     document.documentElement.classList.remove('loading');
     document.getElementById('skeleton').remove();
   });

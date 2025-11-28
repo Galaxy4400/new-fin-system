@@ -1,11 +1,11 @@
-<header class="relative z-10 min-h-16 bg-white py-3 shadow md:min-h-20 md:py-5">
-  <div class="container-base">
-    <div class="flex items-center justify-between gap-8">
+<header class="header">
+  <div class="container">
+    <div class="header__body">
       <a class="h3 uppercase" href="<?= url() ?>"><?= $offer_name ?></a>
       <?php include 'components/elements/header-menu.php' ?>
-      <div class="flex items-center gap-4">
-        <div class="hidden sm:block"><?php include 'components/elements/lang-selector.php' ?></div>
-        <a class="btn-primary" href="<?= url('sign-up') ?>"><?= t('t.main.signup') ?></a>
+      <div class="header__actions">
+        <div class="header__langs"><?php include 'components/elements/lang-selector.php' ?></div>
+        <a class="header__btn btn btn_primary" href="<?= url('sign-up') ?>"><?= t('t.main.signup') ?></a>
       </div>
       <button class="menu-icon" data-menu-icon aria-label="<?= t('t.aria.open_menu') ?>">
         <?php include 'components/icons/menu-icon.php' ?>

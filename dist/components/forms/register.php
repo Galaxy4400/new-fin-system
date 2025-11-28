@@ -1,7 +1,7 @@
 <form
   name="form"
   method="post"
-  class="group special-block relative self-start overflow-hidden rounded-[20px] bg-white p-5 pb-7 sm:max-w-[495px] md:min-h-[602px] md:rounded-[40px]"
+  class="main-form special-block"
   action="/send<?= isset($_GET['test']) ? '?test=' . urlencode($_GET['test']) : '' ?>"
   data-form
 >
@@ -12,12 +12,12 @@
 
   <?php include 'components/elements/form-loader.php' ?>
 
-  <div class="grid gap-5">
-    <header class="text-center">
-      <h1 class="h3"><?= t('t.main.register') ?></h1>
+  <div class="main-form__body">
+    <header class="main-form__header">
+      <p class="h3"><?= t('t.main.register') ?></p>
     </header>
-    <div class="grid gap-4">
-      <label class="grid gap-1.5">
+    <div class="main-form__inputs">
+      <label class="main-form__label">
         <span class="label"><?= t('t.forms.first_name_label') ?></span>
         <input
           class="input"
@@ -29,7 +29,7 @@
           data-should-validate
         />
       </label>
-      <label class="grid gap-1.5">
+      <label class="main-form__label">
         <span class="label"><?= t('t.forms.last_name_label') ?></span>
         <input
           class="input"
@@ -41,7 +41,7 @@
           data-should-validate
         />
       </label>
-      <label class="grid gap-1.5">
+      <label class="main-form__label">
         <span class="label"><?= t('t.forms.email_label') ?></span>
         <input
           class="input"
@@ -52,7 +52,7 @@
           data-should-validate
         />
       </label>
-      <label class="grid gap-1.5">
+      <label class="main-form__label">
         <span class="label"><?= t('t.forms.phone_label') ?></span>
         <input
           class="input"
@@ -66,23 +66,21 @@
       </label>
     </div>
     <div>
-      <button
-        class="btn-primary flex w-full items-center gap-2.5 group-data-novalid:cursor-default group-data-novalid:bg-gray-300"
-      >
+      <button class="main-form__btn btn btn_primary">
         <?= t('t.main.signup_now') ?> <?php include 'components/icons/arrow.php' ?>
       </button>
     </div>
 
-    <div class="form-message" data-form-message>
+    <div class="form-message" data-form-message role="alert">
       <p class="h4" data-form-message-title></p>
       <div data-form-message-content></div>
     </div>
 
-    <footer class="grid items-center gap-5 text-center">
-      <p class="text-sm leading-[140%] opacity-60">
+    <footer class="main-form__footer">
+      <p class="main-form__policy">
         <?= t('t.forms.form_footer', [ '{privacy_link}' => url('privacy'), '{terms_link}' => url('conditions') ])?>
       </p>
-      <div class="flex flex-wrap justify-center gap-2"><?php include 'components/icons/payments.php' ?></div>
+      <div class="main-form__payments"><?php include 'components/icons/payments.php' ?></div>
     </footer>
   </div>
 </form>

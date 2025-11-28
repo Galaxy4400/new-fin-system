@@ -1,5 +1,5 @@
-<nav class="hidden grow justify-center md:flex">
-  <ul class="flex flex-row flex-wrap justify-center gap-x-6 gap-y-2 md:gap-x-10 lg:gap-x-14">
+<nav class="header-menu">
+  <ul class="header-menu__list">
     <li>
       <a href="<?= url('/', '', '#about') ?>"><?= t('t.main.menu_about') ?></a>
     </li>

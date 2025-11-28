@@ -3,7 +3,7 @@ import path from 'path';
 
 export const fontscss = (done) => {
   const fontsDir = app.path.build.fonts; // dist/assets/fonts/
-  const cssFile = `${app.path.srcFolder}/css/fonts.css`; // генерируем сюда
+  const cssFile = `${app.path.srcFolder}/scss/fonts.scss`; // генерируем сюда
 
   // Собираем список файлов
   const fontFiles = fs.readdirSync(fontsDir);

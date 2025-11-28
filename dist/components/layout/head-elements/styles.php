@@ -10,5 +10,5 @@
   }
 </style>
 
-<link rel="preload" href="/assets/css/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css" /></noscript>
+<link rel="preload" href="/assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/assets/css/styles.min.css" /></noscript>

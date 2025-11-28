@@ -1,0 +1,109 @@
+@media (any-hover: hover) {
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #fff;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--color-primary);
+		border-radius: 5px;
+		border: 2px solid #fff;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-primary-light);
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 18px;
+	line-height: 1.4;
+	color: var(--color-text);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow-x: hidden;
+
+	@media (max-width: 767.98px) {
+		font-size: 14px;
+	}
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.h1,
+h1 a,
+h1 {
+	font-size: 56px;
+	line-height: 1.2;
+	font-weight: 600;
+	color: var(--color-text);
+
+	@media (max-width: 767.98px) {
+		font-size: 40px;
+	}
+}
+
+.h2,
+h2 a,
+h2 {
+	font-size: 40px;
+	line-height: 1.2;
+	font-weight: 600;
+	color: var(--color-text);
+
+	@media (max-width: 767.98px) {
+		font-size: 30px;
+	}
+}
+
+.h3,
+h3 a,
+h3 {
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 500;
+	color: var(--color-text);
+
+	@media (max-width: 767.98px) {
+		font-size: 18px;
+	}
+}
+
+.h4,
+h4 a,
+h4 {
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 600;
+	color: var(--color-text);
+}
+
+a {
+	color: var(--color-text);
+	transition: color 0.3s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
+}
+
+mark {
+	color: var(--color-primary);
+	background: transparent;
+}

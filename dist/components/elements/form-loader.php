@@ -1,4 +1,4 @@
-<div class="absolute inset-0 z-20 hidden items-center justify-center bg-white/50 group-data-loading:flex">
+<div class="form-loader">
   <svg class="animate-spin" xmlns="http://www.w3.org/2000/svg" width="76" height="75" viewBox="0 0 76 75" fill="none">
     <g id="Group 1000003700">
       <circle id="Ellipse 715" cx="38.0004" cy="37.1953" r="28" stroke="#E5E7EB" stroke-width="8" />

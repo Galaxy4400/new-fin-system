@@ -40,6 +40,7 @@
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^6.0.1",
     "gulp-sharp-responsive": "^0.4.1",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-terser": "^2.1.0",
     "gulp-ttf2woff": "^2.0.0",
@@ -51,7 +52,7 @@
     "merge-stream": "^2.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "sass": "^1.94.0",
+    "sass": "^1.94.2",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.0.0"
   },

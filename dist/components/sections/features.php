@@ -1,46 +1,38 @@
-<section class="relative py-8 md:py-20" id="features">
-  <div class="absolute top-[65%] left-1/2 -z-10 h-[1063px] w-[2513px] -translate-1/2">
-    <?php include 'components/icons/bg-deco.php' ?>
-  </div>
-  <div class="container-base grid gap-10 md:gap-12">
-    <div class="grid gap-3 md:gap-5">
-      <h2 class="md:max-w-1/2"><?= t('t.index.features_title') ?></h2>
-      <div class="grid gap-2.5">
+<section class="features" id="features">
+  <div class="features__bg"><?php include 'components/icons/bg-deco.php' ?></div>
+  <div class="features__body container">
+    <div class="features__header">
+      <h2 class="features__title"><?= t('t.index.features_title') ?></h2>
+      <div class="features__text">
         <p><?= t('t.index.features_text_1') ?></p>
         <p><?= t('t.index.features_text_2') ?></p>
       </div>
     </div>
-    <div class="grid gap-5 md:grid-cols-3 md:gap-1">
-      <div
-        class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px]"
-      >
-        <div class="flex min-h-11 items-center gap-2.5">
+    <div class="features__cards">
+      <div class="feature-card special-block-lightest">
+        <div class="feature-card__header">
           <img data-src="/assets/img/svg/icon1.svg" alt="<?= $offer_name ?>" data-lazy />
           <p class="h4"><?= t('t.index.features_item_title_1') ?></p>
         </div>
-        <div class="grid gap-2.5 text-sm">
+        <div class="feature-card__content">
           <p><?= t('t.index.features_item_text_1') ?></p>
         </div>
       </div>
-      <div
-        class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px] md:-translate-y-2.5 md:-rotate-10"
-      >
-        <div class="flex min-h-11 items-center gap-2.5">
+      <div class="feature-card special-block-lightest">
+        <div class="feature-card__header">
           <img data-src="/assets/img/svg/icon2.svg" alt="<?= $offer_name ?>" data-lazy />
           <p class="h4"><?= t('t.index.features_item_title_2') ?></p>
         </div>
-        <div class="grid gap-2.5 text-sm">
+        <div class="feature-card__content">
           <p><?= t('t.index.features_item_text_2') ?></p>
         </div>
       </div>
-      <div
-        class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px] md:rotate-6"
-      >
-        <div class="flex min-h-11 items-center gap-2.5">
+      <div class="feature-card special-block-lightest">
+        <div class="feature-card__header">
           <img data-src="/assets/img/svg/icon3.svg" alt="<?= $offer_name ?>" data-lazy />
           <p class="h4"><?= t('t.index.features_item_title_3') ?></p>
         </div>
-        <div class="grid gap-2.5 text-sm">
+        <div class="feature-card__content">
           <p><?= t('t.index.features_item_text_3') ?></p>
         </div>
       </div>

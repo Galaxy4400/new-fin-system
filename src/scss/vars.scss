@@ -1,0 +1,26 @@
+:root {
+	--font-sans: "Inter", "Arial", "Helvetica", sans-serif;
+
+	--color-error: #b81111;
+	--color-warning: #ffc107;
+	--color-success: #198754;
+	--color-focus: #26b9ff;
+
+	// заменит на цифры
+	--color-gray-lighter: #e5e7eb;
+	--color-gray-light: #d1d5db;
+	--color-gray-dark: #9ca3af;
+	--color-gray-darker: #6b7280;
+
+	--color-primary-lightest: #fff8f8;
+	--color-primary-lighter: #ffedee;
+	--color-primary-light: #ff707c;
+	--color-primary: #ff4757;
+	--color-primary-dark: #e82939;
+
+	--color-text: #1a1a1a;
+
+	--spacing-container: 1224px;
+	--spacing-container-narrow: 1108px;
+	--spacing-container-whide: 1450px;
+}

@@ -9,13 +9,14 @@
  * Путь к файлам фиксирован: /assets/img/
  *
  * @param string      $fileName Имя файла (banner.jpg)
- * @param array|string       $attrs    Дополнительные атрибуты <img>
  * @param string|null $class    CSS-классы для <picture>
+ * @param array|string       $attrs    Дополнительные атрибуты <img>
+ * @param array|null $aspect    соотношение сторон картинки. [x, y]
  * @param bool $lazy    режим лейзилоада. По умолчанию включён
  *
  * @return string HTML <picture>
  */
-function pictureSet(string $fileName, array|string $attrs = "", ?string $class = '', ?bool $lazy = true): string
+function pictureSet(string $fileName, string $class = "", array|string $attrs = "", ?array $aspect = null, ?bool $lazy = true): string
 {
 	$basePath = '/assets/img/formats/';
 	$src = $basePath . $fileName;
@@ -31,9 +32,16 @@ function pictureSet(string $fileName, array|string $attrs = "", ?string $class =
 	$srcAttrKey = $lazy ? "data-src" : 'src';
 
 	$imgAttrs = getAttributes($attrs);
+	$pictureStyles = "";
+
+	if ($aspect) {
+		[$w, $h] = $aspect;
+		$imgAttrs .= " width=\"{$w}\" height=\"{$h}\"";
+		$pictureStyles = "style=\"aspect-ratio: {$w} / {$h};\"";
+	}
 
 	return <<<HTML
-<picture class="{$class}">
+<picture class="{$class}" {$pictureStyles}>
 	<source type="image/avif" {$srcSetAttrKey}="{$avifSrcSet}">
 	<source type="image/webp" {$srcSetAttrKey}="{$webpSrcSet}">
 	<img {$srcAttrKey}="{$fallbackSrc}" {$imgAttrs} {$dataLazy}>
@@ -56,6 +64,7 @@ HTML;
  * @param string      $fileName Имя файла, например: "banner.png"
  * @param string|null $class    CSS-классы <picture>
  * @param array|string       $attrs    Дополнительные атрибуты <img>
+ * @param array|null $aspect    соотношение сторон картинки. [x, y]
  * @param string|null $sizes    sizes="..." (по умолчанию 100vw)
  * @param bool $lazy    режим лейзилоада. По умолчанию включён
  *
@@ -63,9 +72,10 @@ HTML;
  */
 function pictureSetResponsive(
 	string $fileName, 
+	?string $class = "", 
 	array|string $attrs = "", 
+	?array $aspect = null,
 	?string $sizes = null,
-	?string $class = '', 
 	?bool $lazy = true): string
 {
 	$fallbackSize = $lazy ? 320 : 1280;
@@ -86,9 +96,16 @@ function pictureSetResponsive(
 	$sizesAttrKey = $lazy ? "data-sizes" : 'sizes';
 
 	$imgAttrs = getAttributes($attrs);
+	$pictureStyles = "";
+
+	if ($aspect) {
+		[$w, $h] = $aspect;
+		$imgAttrs .= " width=\"{$w}\" height=\"{$h}\"";
+		$pictureStyles = "style=\"aspect-ratio: {$w} / {$h};\"";
+	}
 
 	return <<<HTML
-<picture class="{$class}">
+<picture class="{$class}" {$pictureStyles}>
 	<source type="image/avif" {$srcSetAttrKey}="{$avifSrcSet}" {$sizesAttrKey}="{$sizes}">
 	<source type="image/webp" {$srcSetAttrKey}="{$webpSrcSet}" {$sizesAttrKey}="{$sizes}">
 	<img {$srcAttrKey}="{$fallbackSrc}" {$srcSetAttrKey}="{$imgSrcSet}" {$sizesAttrKey}="{$sizes}" {$imgAttrs} {$dataLazy}>
