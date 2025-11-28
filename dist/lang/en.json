@@ -122,7 +122,14 @@
       "twitter_title": "{site_name}™ – The Official Website【Updated {year}】",
       "og_title": "{site_name}™ – The Official Website【Updated {year}】",
       "og_description": "{site_name} – A five-star AI-enabled, trusted trading platform for crypto and other assets. We are your partner in providing secure, fast digital investment support, from analysis, to trading tools, to training. Start today!",
-      "og_site_name": "{site_name}"
+      "og_site_name": "{site_name}",
+
+      "title_privacy": "{site_name} | Privacy Policy",
+      "description_privacy": "Privacy Policy. Data protection and data security {site_name}",
+      "title_conditions": "Terms of Service | Trading Platform Usage Agreement | {site_name}",
+      "description_conditions": "Review our terms of service. Trading rules and platform usage guidelines {site_name}",
+      "title_404": "This Page Doesn't Exist",
+      "description_404": "Page not found, go back and continue working with digital assets using {site_name}"
     },
     "aria": {
       "open_menu": "open menu"

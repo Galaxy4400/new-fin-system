@@ -4,6 +4,7 @@ $protocolType = detectProtocol();
 $pagePathWithoutLang = getPagePathWithoutLang();
 $currentUrl = $protocolType . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $defaultPageUrl = $protocolType . "://" . $_SERVER['HTTP_HOST'] . ($pagePathWithoutLang ? '/' . $pagePathWithoutLang : '');
+$pageFileName = getPageFileName();
 
 //===============================================================
 function detectProtocol(): string
@@ -63,15 +64,18 @@ function getPageFileName() {
 	global $pagePathWithoutLang;
 
 	if ($pagePathWithoutLang === '') {
+		definePageMeta();
 		return 'pages/home.php';
 	}
 
 	$pageFile = 'pages/' . $pagePathWithoutLang . '.php';
 
 	if (file_exists($pageFile)) {
+		definePageMeta($pagePathWithoutLang);
 		return $pageFile;
 	}
 
+	definePageMeta('404');
 	http_response_code(404);
 	return 'pages/404.php';
 }
