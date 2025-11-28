@@ -9,9 +9,9 @@
         class="special-block relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:translate-y-5 md:scale-90 md:-rotate-5 lg:max-w-[450px] xl:translate-x-[25px] 2xl:translate-x-[60px]"
       >
         <div class="flex items-center gap-2.5">
-          <p class="initials"><?= t('t.reviews.initials_1') ?></p>
+          <p class="initials" data-initials="1"></p>
           <div class="grid gap-0.5">
-            <p class="font-semibold"><?= t('t.reviews.name_1') ?></p>
+            <p class="font-semibold" data-reviewer="1"><?= t('t.reviews.name_1') ?></p>
             <span class="text-primary"> <?php include 'components/icons/stars.php' ?> </span>
           </div>
         </div>
@@ -23,9 +23,9 @@
         class="special-block relative z-10 grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 lg:max-w-[450px]"
       >
         <div class="flex items-center gap-2.5">
-          <p class="initials"><?= t('t.reviews.initials_2') ?></p>
+          <p class="initials" data-initials="2"></p>
           <div class="grid gap-0.5">
-            <p class="font-semibold"><?= t('t.reviews.name_2') ?></p>
+            <p class="font-semibold" data-reviewer="2"><?= t('t.reviews.name_2') ?></p>
             <span class="text-primary"> <?php include 'components/icons/stars.php' ?> </span>
           </div>
         </div>
@@ -37,9 +37,9 @@
         class="special-block relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-8 md:translate-y-5 md:scale-90 md:rotate-5 lg:max-w-[450px] xl:translate-x-[-25px] 2xl:translate-x-[-60px]"
       >
         <div class="flex items-center gap-2.5">
-          <p class="initials"><?= t('t.reviews.initials_3') ?></p>
+          <p class="initials" data-initials="3"></p>
           <div class="grid gap-0.5">
-            <p class="font-semibold"><?= t('t.reviews.name_3') ?></p>
+            <p class="font-semibold" data-reviewer="3"><?= t('t.reviews.name_3') ?></p>
             <span class="text-primary"> <?php include 'components/icons/stars.php' ?> </span>
           </div>
         </div>

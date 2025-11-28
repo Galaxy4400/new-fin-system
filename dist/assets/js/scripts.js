@@ -96,6 +96,24 @@ const initLazyLoad = () => {
 };
 
 //===============================================================
+const initInitials = () => {
+  const initials = document.querySelectorAll('[data-initials]');
+  const reviewers = document.querySelectorAll('[data-reviewer]');
+
+  reviewers.forEach((reviewer, i) => {
+    const name = reviewer.innerText.trim();
+    const words = name.split(/\s+/).slice(0, 2);
+    const letters = words.map((word) => word[0]?.toUpperCase() || '').join('');
+
+    if (initials[i]) {
+      initials[i].innerText = letters;
+    }
+  });
+};
+
+initInitials();
+
+//===============================================================
 const toggleAccordion = (index) => {
   const currentAccordion = document.getElementById(`accordion-${index}`);
   const currentContent = document.getElementById(`content-${index}`);

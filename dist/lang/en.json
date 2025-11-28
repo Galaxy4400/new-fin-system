@@ -156,15 +156,12 @@
       "no_worry": "No need to worry! Please enter your email address below, and we will send you a password reset code."
     },
     "reviews": {
-      "name_1": "Alex M.",
+      "name_1": "Alex Marshall",
       "text_1": "{site_name} exceeded all of my expectations. The AI trades are accurate, and I can monitor everything in real-time. It’s amazing to see the consistent growth, without the need for constant supervision on my part.",
-      "initials_1": "AM",
-      "name_2": "Sophie L.",
+      "name_2": "Charlotte Evans",
       "text_2": "I started out with zero trading experience. {site_name} was able to get me up to speed while simplifying things every step of the way. Automated strategies deliver results every day, and the insights helped me understand how to optimize my account.",
-      "initials_2": "SL",
-      "name_3": "Marc D.",
-      "text_3": "The speed and accuracy of {site_name}’s AI is incredible. Withdrawals are seamless, and the platform’s transparency makes me feel secure about my investments. Highly recommended for anyone serious about trading.",
-      "initials_3": "MD"
+      "name_3": "Marcus Dyer",
+      "text_3": "The speed and accuracy of {site_name}’s AI is incredible. Withdrawals are seamless, and the platform’s transparency makes me feel secure about my investments. Highly recommended for anyone serious about trading."
     },
     "response": {
       "reg_complete": "Registration completed",
