@@ -15,7 +15,7 @@
         class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px]"
       >
         <div class="flex min-h-11 items-center gap-2.5">
-          <img data-src="/assets/img/svg/icon1.svg" alt="<?= $offer_name ?>" data-lazy />
+          <img data-src="/assets/img/svg/icon1.svg" alt="<?= $offer_name ?>" width="36" height="36" data-lazy />
           <p class="h4"><?= t('t.index.features_item_title_1') ?></p>
         </div>
         <div class="grid gap-2.5 text-sm">
@@ -26,7 +26,7 @@
         class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px] md:-translate-y-2.5 md:-rotate-10"
       >
         <div class="flex min-h-11 items-center gap-2.5">
-          <img data-src="/assets/img/svg/icon2.svg" alt="<?= $offer_name ?>" data-lazy />
+          <img data-src="/assets/img/svg/icon2.svg" alt="<?= $offer_name ?>" width="36" height="36" data-lazy />
           <p class="h4"><?= t('t.index.features_item_title_2') ?></p>
         </div>
         <div class="grid gap-2.5 text-sm">
@@ -37,7 +37,7 @@
         class="special-block md:special-block-lightest relative grid content-start items-start gap-2.5 rounded-[26px] px-5 py-4 md:min-h-[300px] md:rotate-6"
       >
         <div class="flex min-h-11 items-center gap-2.5">
-          <img data-src="/assets/img/svg/icon3.svg" alt="<?= $offer_name ?>" data-lazy />
+          <img data-src="/assets/img/svg/icon3.svg" alt="<?= $offer_name ?>" width="36" height="36" data-lazy />
           <p class="h4"><?= t('t.index.features_item_title_3') ?></p>
         </div>
         <div class="grid gap-2.5 text-sm">
