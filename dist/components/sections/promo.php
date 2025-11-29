@@ -9,10 +9,8 @@
       </div>
     </div>
     <div class="flex justify-center md:justify-end">
-      <div class="overflow-hidden rounded-[20px]">
-        <?= pictureSetResponsive('promo.jpg', ["alt" => "promo", "width" => "496", "height" => "489"],
-        "768:496px,300px", "max-w-full aspect-496/489") ?>
-      </div>
+      <?= pictureSetResponsive("aspect-496/489 max-w-full overflow-hidden rounded-[20px]", 'promo.jpg', ["alt" =>
+      "promo", "width" => "496", "height" => "489"], "768:496px,300px") ?>
     </div>
   </div>
 </section>

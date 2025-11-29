@@ -8,14 +8,14 @@
  * Первый параметр — ТОЛЬКО имя файла, например: "banner.jpg"
  * Путь к файлам фиксирован: /assets/img/
  *
+ * @param string $class    CSS-классы для <picture>
  * @param string      $fileName Имя файла (banner.jpg)
  * @param array|string       $attrs    Дополнительные атрибуты <img>
- * @param string|null $class    CSS-классы для <picture>
  * @param bool $lazy    режим лейзилоада. По умолчанию включён
  *
  * @return string HTML <picture>
  */
-function pictureSet(string $fileName, array|string $attrs = "", ?string $class = '', ?bool $lazy = true): string
+function pictureSet(string $class, string $fileName, array|string $attrs = "", ?bool $lazy = true): string
 {
 	$basePath = '/assets/img/formats/';
 	$src = $basePath . $fileName;
@@ -53,8 +53,8 @@ HTML;
  *  - banner-640.avif
  *  - banner-1280.avif
  *
+ * @param string $class    CSS-классы <picture>
  * @param string      $fileName Имя файла, например: "banner.png"
- * @param string|null $class    CSS-классы <picture>
  * @param array|string       $attrs    Дополнительные атрибуты <img>
  * @param string|null $sizes    sizes="..." (по умолчанию 100vw)
  * @param bool $lazy    режим лейзилоада. По умолчанию включён
@@ -62,10 +62,10 @@ HTML;
  * @return string HTML <picture>
  */
 function pictureSetResponsive(
+	string $class, 
 	string $fileName, 
 	array|string $attrs = "", 
 	?string $sizes = null,
-	?string $class = '', 
 	?bool $lazy = true): string
 {
 	$fallbackSize = $lazy ? 320 : 1280;

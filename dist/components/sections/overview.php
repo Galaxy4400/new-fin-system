@@ -7,8 +7,8 @@
         <p><?= t('t.index.overview_text_1') ?></p>
       </div>
       <div class="flex justify-center md:justify-end">
-        <?= pictureSetResponsive('experience-1.png', ["alt" => "overview 1", "width" => "458", "height" => "355"],
-        "768:458px,300px", "max-w-full aspect-458/355") ?>
+        <?= pictureSetResponsive("max-w-full aspect-458/355", 'experience-1.png', ["alt" => "overview 1", "width" =>
+        "458", "height" => "355"], "768:458px,300px") ?>
       </div>
     </div>
     <div class="grid items-center gap-7 md:grid-cols-2">
@@ -16,8 +16,8 @@
         <p><?= t('t.index.overview_text_2') ?></p>
       </div>
       <div class="flex justify-center md:order-1 md:justify-start">
-        <?= pictureSetResponsive('experience-2.png', ["alt" => "overview 2", "width" => "496", "height" => "351"],
-        "768:496px,300px", "max-w-full aspect-496/351") ?>
+        <?= pictureSetResponsive("max-w-full aspect-496/351", 'experience-2.png', ["alt" => "overview 2", "width" =>
+        "496", "height" => "351"], "768:496px,300px") ?>
       </div>
     </div>
     <div class="grid items-center gap-7 md:grid-cols-2">
@@ -25,8 +25,8 @@
         <p><?= t('t.index.overview_text_3') ?></p>
       </div>
       <div class="flex justify-center md:justify-end">
-        <?= pictureSetResponsive('experience-3.png', ["alt" => "overview 3", "width" => "496", "height" => "375"],
-        "768:496px,300px", "max-w-full aspect-496/375") ?>
+        <?= pictureSetResponsive("max-w-full aspect-496/375", 'experience-3.png', ["alt" => "overview 3", "width" =>
+        "496", "height" => "375"], "768:496px,300px") ?>
       </div>
     </div>
     <div class="grid items-center gap-7 md:grid-cols-2">
@@ -34,8 +34,8 @@
         <p><?= t('t.index.overview_text_4') ?></p>
       </div>
       <div class="flex justify-center md:order-1 md:justify-start">
-        <?= pictureSetResponsive('experience-4.png', ["alt" => "overview 4", "width" => "496", "height" => "393"],
-        "768:496px,300px", "max-w-full aspect-496/393") ?>
+        <?= pictureSetResponsive("max-w-full aspect-496/393", 'experience-4.png', ["alt" => "overview 4", "width" =>
+        "496", "height" => "393"], "768:496px,300px") ?>
       </div>
     </div>
   </div>
