@@ -39,5 +39,9 @@
     window.geo.init().then(() => Promise.all([window.currency.init(), window.forms.init()]));
   }
 
-  document.addEventListener('DOMContentLoaded', () => setTimeout(deferdScripts, 1000));
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(deferdScripts, { timeout: 3000 });
+  } else {
+    setTimeout(deferdScripts, 1000);
+  }
 </script>
