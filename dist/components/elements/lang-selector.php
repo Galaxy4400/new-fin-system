@@ -1,14 +1,21 @@
 <div class="relative" data-connect-parent>
   <button class="lang-icon group" data-connector="lang-menu">
-    <div class="inline-flex aspect-25/20 min-w-[25px] items-center justify-center">
-      <div class="overflow-hidden rounded-sm">
-        <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>-flag" width="25" height="25" />
-      </div>
-    </div>
+    <span class="inline-flex aspect-25/20 min-w-[25px] items-center justify-center">
+      <span class="overflow-hidden rounded-sm">
+        <img
+          src="/assets/img/no-flag.svg"
+          data-src="<?= flagUrl($currentLang) ?>"
+          alt="<?= $currentLang ?>-flag"
+          width="25"
+          height="25"
+          data-flag-img
+        />
+      </span>
+    </span>
     <span class="uppercase"><?= $currentLang ?></span>
-    <div class="min-w-5 transition-transform duration-300 group-data-active:rotate-180">
+    <span class="min-w-5 transition-transform duration-300 group-data-active:rotate-180">
       <?php include 'components/icons/select-arrow.php' ?>
-    </div>
+    </span>
   </button>
   <nav class="lang-menu" data-connect="lang-menu">
     <ul class="py-2">
@@ -20,6 +27,7 @@
         >
           <div class="overflow-hidden rounded-sm">
             <img
+              src="/assets/img/no-flag.svg"
               data-src="<?= flagUrl($listLang) ?>"
               alt="<?= $listLang ?>-flag"
               width="25"
