@@ -51,6 +51,7 @@
 
           <span
             class="leading-none text-amber-500"
+            role="img"
             aria-label="<?= t('t.aria.rating', ['{rating}' => t('v.rating'), '{score}' => t('v.score')]) ?>"
           >
             ★★★★☆
