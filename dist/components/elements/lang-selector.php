@@ -2,14 +2,7 @@
   <button class="lang-icon group" data-connector="lang-menu">
     <span class="inline-flex aspect-25/20 min-w-[25px] items-center justify-center">
       <span class="overflow-hidden rounded-sm">
-        <img
-          src="/assets/img/no-flag.svg"
-          data-src="<?= flagUrl($currentLang) ?>"
-          alt="<?= $currentLang ?>-flag"
-          width="25"
-          height="25"
-          data-flag-img
-        />
+        <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>-flag" width="25" height="25" />
       </span>
     </span>
     <span class="uppercase"><?= $currentLang ?></span>
