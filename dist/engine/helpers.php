@@ -152,7 +152,7 @@ function getAttributes($attrs) {
 	$attrsStr = "";
 
 	foreach ($attrs as $key => $value) {
-		$attrsStr .= "$key=\"$value\"";
+		$attrsStr .= " $key=\"$value\"";
 	}
 
 	return $attrsStr;
