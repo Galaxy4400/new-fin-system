@@ -1,9 +1,9 @@
 <div class="absolute inset-0 z-20 hidden items-center justify-center bg-white/50 group-data-loading:flex">
   <svg class="animate-spin" xmlns="http://www.w3.org/2000/svg" width="76" height="75" viewBox="0 0 76 75" fill="none">
-    <circle id="Ellipse 715" cx="38.0004" cy="37.1953" r="28" stroke="#E5E7EB" stroke-width="8" />
+    <circle id="Ellipse 715" cx="38" cy="37.195" r="28" stroke="#E5E7EB" stroke-width="8" />
     <path
       id="Ellipse 716"
-      d="M49.8079 62.5848C53.142 61.0342 56.138 58.842 58.6248 56.1335C61.1117 53.425 63.0407 50.2532 64.3018 46.7992C65.5629 43.3452 66.1313 39.6767 65.9745 36.003C65.8178 32.3293 64.939 28.7225 63.3884 25.3884C61.8378 22.0544 59.6456 19.0584 56.9371 16.5715C54.2286 14.0847 51.0568 12.1556 47.6028 10.8946C44.1488 9.63351 40.4802 9.06511 36.8066 9.22183C33.1329 9.37855 29.5261 10.2573 26.192 11.808"
+      d="M49.808 62.585a27.998 27.998 0 0 0 7.13-46.014 28 28 0 0 0-30.746-4.763"
       stroke="url(#paint0_linear_13416_7443)"
       stroke-width="8"
       stroke-linecap="round"
@@ -11,10 +11,10 @@
     <defs>
       <linearGradient
         id="paint0_linear_13416_7443"
-        x1="0.803595"
-        y1="23.6159"
-        x2="24.4195"
-        y2="74.3928"
+        x1=".804"
+        y1="23.616"
+        x2="24.419"
+        y2="74.393"
         gradientUnits="userSpaceOnUse"
       >
         <stop stop-color="#ff707c" />
