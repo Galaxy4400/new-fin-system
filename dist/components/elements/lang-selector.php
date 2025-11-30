@@ -2,7 +2,7 @@
   <button class="lang-icon group" data-connector="lang-menu">
     <div class="inline-flex aspect-25/20 min-w-[25px] items-center justify-center">
       <div class="overflow-hidden rounded-sm">
-        <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>" width="25" height="25" />
+        <img src="<?= flagUrl($currentLang) ?>" alt="<?= $currentLang ?>-flag" width="25" height="25" />
       </div>
     </div>
     <span class="uppercase"><?= $currentLang ?></span>
@@ -19,7 +19,13 @@
           href="<?= getLocalizedUrl($listLang) ?>"
         >
           <div class="overflow-hidden rounded-sm">
-            <img data-src="<?= flagUrl($listLang) ?>" alt="<?= $listLang ?>" width="25" height="25" data-flag-img />
+            <img
+              data-src="<?= flagUrl($listLang) ?>"
+              alt="<?= $listLang ?>-flag"
+              width="25"
+              height="25"
+              data-flag-img
+            />
           </div>
           <span class="uppercase"><?= $listLang ?></span>
         </a>
