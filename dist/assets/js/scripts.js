@@ -81,7 +81,7 @@ const initLangSelect = () => {
 
 //===============================================================
 const initLangFlags = () => {
-  window.addEventListener('load', () => {
+  window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-flag-img]').forEach((img) => {
       img.src = img.dataset.src;
     });
