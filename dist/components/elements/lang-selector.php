@@ -20,7 +20,7 @@
   <nav class="lang-menu" data-connect="lang-menu">
     <ul class="py-2">
       <?php foreach ($supportedLanguages as $listLang) { ?>
-      <li class="" data-lang="<?= $listLang ?>">
+      <li>
         <a
           class="<?php if ($currentLang === $listLang) { ?>bg-rose-100<?php } ?> inline-flex w-full cursor-pointer items-center gap-2 px-3 py-2 transition-colors hover:bg-rose-100 data-active:bg-rose-100"
           href="<?= getLocalizedUrl($listLang) ?>"
